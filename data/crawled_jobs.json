@@ -1,0 +1,5727 @@
+[
+  {
+    "id": "ext-1",
+    "title": "System Administrator - Windows & Linux",
+    "company": "CARE Hospitals",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for System Administrator - Windows & Linux. Matches industry standard trends for CARE Hospitals in Hyderabad.",
+    "skill_gap": [
+      "Windows Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=System%20Administrator%20-%20Windows%20%26%20Linux%20CARE%20Hospitals&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T15:41:53.905Z",
+    "tags": [
+      "Windows",
+      "Linux",
+      "Infrastructure"
+    ]
+  },
+  {
+    "id": "ext-2",
+    "title": "Linux System Administrator",
+    "company": "MGT Commerce GmbH",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Linux System Administrator. Matches industry standard trends for MGT Commerce GmbH in Chennai.",
+    "skill_gap": [
+      "Linux Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Linux%20System%20Administrator%20MGT%20Commerce%20GmbH&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T15:26:53.918Z",
+    "tags": [
+      "Linux",
+      "Nginx",
+      "DevOps"
+    ]
+  },
+  {
+    "id": "ext-3",
+    "title": "Linux Systems Administrator / SRE Engineer",
+    "company": "Tata Elxsi",
+    "location": "Bangalore, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Linux Systems Administrator / SRE Engineer. Matches industry standard trends for Tata Elxsi in Bangalore.",
+    "skill_gap": [
+      "Linux Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Linux%20Systems%20Administrator%20%2F%20SRE%20Engineer%20Tata%20Elxsi&location=Bangalore",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T15:11:53.918Z",
+    "tags": [
+      "Linux",
+      "SRE",
+      "RedHat"
+    ]
+  },
+  {
+    "id": "ext-4",
+    "title": "Network Systems Administrator",
+    "company": "IIT Hyderabad",
+    "location": "Hyderabad, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Network Systems Administrator. Matches industry standard trends for IIT Hyderabad in Hyderabad.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Systems%20Administrator%20IIT%20Hyderabad&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T14:56:53.918Z",
+    "tags": [
+      "Network",
+      "Security",
+      "Cisco"
+    ]
+  },
+  {
+    "id": "ext-5",
+    "title": "Executive – LMS Administrator",
+    "company": "NIIT",
+    "location": "Gurgaon, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Executive – LMS Administrator. Matches industry standard trends for NIIT in Gurgaon.",
+    "skill_gap": [
+      "LMS Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Executive%20%E2%80%93%20LMS%20Administrator%20NIIT&location=Gurgaon",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T14:41:53.918Z",
+    "tags": [
+      "LMS",
+      "Support",
+      "Training"
+    ]
+  },
+  {
+    "id": "ext-6",
+    "title": "System Admin (Windows & O365)",
+    "company": "Standard Chartered",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for System Admin (Windows & O365). Matches industry standard trends for Standard Chartered in Chennai.",
+    "skill_gap": [
+      "Windows Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=System%20Admin%20(Windows%20%26%20O365)%20Standard%20Chartered&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T14:26:53.918Z",
+    "tags": [
+      "Windows",
+      "Office 365",
+      "Azure"
+    ]
+  },
+  {
+    "id": "ext-7",
+    "title": "Senior System Administrator - IT Operations",
+    "company": "Nokia",
+    "location": "Bangalore, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Senior System Administrator - IT Operations. Matches industry standard trends for Nokia in Bangalore.",
+    "skill_gap": [
+      "Virtualization Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Senior%20System%20Administrator%20-%20IT%20Operations%20Nokia&location=Bangalore",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T14:11:53.919Z",
+    "tags": [
+      "Virtualization",
+      "VMware",
+      "Storage"
+    ]
+  },
+  {
+    "id": "ext-8",
+    "title": "IT Infrastructure Support / Admin",
+    "company": "Cognizant",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for IT Infrastructure Support / Admin. Matches industry standard trends for Cognizant in Pune.",
+    "skill_gap": [
+      "IT Support Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=IT%20Infrastructure%20Support%20%2F%20Admin%20Cognizant&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T13:56:53.919Z",
+    "tags": [
+      "IT Support",
+      "Hardware",
+      "Networking"
+    ]
+  },
+  {
+    "id": "ext-9",
+    "title": "System Administrator - Campus IT",
+    "company": "Amrita University",
+    "location": "Haridwar, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for System Administrator - Campus IT. Matches industry standard trends for Amrita University in Haridwar.",
+    "skill_gap": [
+      "Education Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=System%20Administrator%20-%20Campus%20IT%20Amrita%20University&location=Haridwar",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T13:41:53.919Z",
+    "tags": [
+      "Education",
+      "Servers",
+      "Unix"
+    ]
+  },
+  {
+    "id": "ext-10",
+    "title": "Associate System Engineer",
+    "company": "IBM",
+    "location": "Gurgaon, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Associate System Engineer. Matches industry standard trends for IBM in Gurgaon.",
+    "skill_gap": [
+      "Junior Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Associate%20System%20Engineer%20IBM&location=Gurgaon",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T13:26:53.919Z",
+    "tags": [
+      "Junior",
+      "Unix",
+      "Cloud"
+    ]
+  },
+  {
+    "id": "ext-11",
+    "title": "Server Administrator (Windows/Linux)",
+    "company": "Apollo Health",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Server Administrator (Windows/Linux). Matches industry standard trends for Apollo Health in Hyderabad.",
+    "skill_gap": [
+      "Server Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Server%20Administrator%20(Windows%2FLinux)%20Apollo%20Health&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T13:11:53.919Z",
+    "tags": [
+      "Server",
+      "AD",
+      "Backup"
+    ]
+  },
+  {
+    "id": "ext-12",
+    "title": "Cloud Systems Administrator",
+    "company": "Wipro",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Cloud Systems Administrator. Matches industry standard trends for Wipro in Pune.",
+    "skill_gap": [
+      "Azure Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Systems%20Administrator%20Wipro&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T12:56:53.919Z",
+    "tags": [
+      "Azure",
+      "AWS",
+      "Admin"
+    ]
+  },
+  {
+    "id": "ext-13",
+    "title": "Desktop Support & System Admin",
+    "company": "HCL Tech",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Desktop Support & System Admin. Matches industry standard trends for HCL Tech in Noida.",
+    "skill_gap": [
+      "Desktop Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Desktop%20Support%20%26%20System%20Admin%20HCL%20Tech&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T12:41:53.919Z",
+    "tags": [
+      "Desktop",
+      "Support",
+      "Windows"
+    ]
+  },
+  {
+    "id": "ext-14",
+    "title": "Network & System Administrator",
+    "company": "Fortis Healthcare",
+    "location": "Delhi, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Network & System Administrator. Matches industry standard trends for Fortis Healthcare in Delhi.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20%26%20System%20Administrator%20Fortis%20Healthcare&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T12:26:53.919Z",
+    "tags": [
+      "Network",
+      "Security",
+      "Firewall"
+    ]
+  },
+  {
+    "id": "ext-15",
+    "title": "Junior Linux Admin",
+    "company": "RedHat",
+    "location": "Bangalore, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Junior Linux Admin. Matches industry standard trends for RedHat in Bangalore.",
+    "skill_gap": [
+      "Linux Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Junior%20Linux%20Admin%20RedHat&location=Bangalore",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T12:11:53.919Z",
+    "tags": [
+      "Linux",
+      "RhCSA",
+      "Junior"
+    ]
+  },
+  {
+    "id": "ext-16",
+    "title": "System Operations Admin",
+    "company": "Capgemini",
+    "location": "Mumbai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for System Operations Admin. Matches industry standard trends for Capgemini in Mumbai.",
+    "skill_gap": [
+      "Ops Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=System%20Operations%20Admin%20Capgemini&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T11:56:53.919Z",
+    "tags": [
+      "Ops",
+      "Monitoring",
+      "System"
+    ]
+  },
+  {
+    "id": "ext-17",
+    "title": "Active Directory Administrator",
+    "company": "Accenture",
+    "location": "Gurgaon, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Active Directory Administrator. Matches industry standard trends for Accenture in Gurgaon.",
+    "skill_gap": [
+      "AD Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Active%20Directory%20Administrator%20Accenture&location=Gurgaon",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T11:41:53.919Z",
+    "tags": [
+      "AD",
+      "Security",
+      "Admin"
+    ]
+  },
+  {
+    "id": "ext-18",
+    "title": "Office 365 Administrator",
+    "company": "Mindtree",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Office 365 Administrator. Matches industry standard trends for Mindtree in Bengaluru.",
+    "skill_gap": [
+      "O365 Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Office%20365%20Administrator%20Mindtree&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T11:26:53.919Z",
+    "tags": [
+      "O365",
+      "Mail",
+      "Admin"
+    ]
+  },
+  {
+    "id": "ext-19",
+    "title": "VMware Administrator",
+    "company": "LTI Mindtree",
+    "location": "Pune, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for VMware Administrator. Matches industry standard trends for LTI Mindtree in Pune.",
+    "skill_gap": [
+      "VMware Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=VMware%20Administrator%20LTI%20Mindtree&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T11:11:53.919Z",
+    "tags": [
+      "VMware",
+      "Cloud",
+      "Admin"
+    ]
+  },
+  {
+    "id": "ext-20",
+    "title": "Oracle Database Administrator",
+    "company": "Oracle",
+    "location": "Hyderabad, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Oracle Database Administrator. Matches industry standard trends for Oracle in Hyderabad.",
+    "skill_gap": [
+      "DBA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Oracle%20Database%20Administrator%20Oracle&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T10:56:53.919Z",
+    "tags": [
+      "DBA",
+      "Oracle",
+      "SQL"
+    ]
+  },
+  {
+    "id": "ext-21",
+    "title": "SQL Server Admin",
+    "company": "Microsoft",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for SQL Server Admin. Matches industry standard trends for Microsoft in Hyderabad.",
+    "skill_gap": [
+      "SQL Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SQL%20Server%20Admin%20Microsoft&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T10:41:53.919Z",
+    "tags": [
+      "SQL",
+      "Azure",
+      "DBA"
+    ]
+  },
+  {
+    "id": "ext-22",
+    "title": "Backup Administrator",
+    "company": "Veritas",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Backup Administrator. Matches industry standard trends for Veritas in Pune.",
+    "skill_gap": [
+      "Backup Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backup%20Administrator%20Veritas&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T10:26:53.919Z",
+    "tags": [
+      "Backup",
+      "Storage",
+      "NetBackup"
+    ]
+  },
+  {
+    "id": "ext-23",
+    "title": "Storage Administrator",
+    "company": "Dell EMC",
+    "location": "Bangalore, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Storage Administrator. Matches industry standard trends for Dell EMC in Bangalore.",
+    "skill_gap": [
+      "Storage Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Storage%20Administrator%20Dell%20EMC&location=Bangalore",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T10:11:53.919Z",
+    "tags": [
+      "Storage",
+      "SAN",
+      "NAS"
+    ]
+  },
+  {
+    "id": "ext-24",
+    "title": "Site Reliability Engineer / System Admin",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Site Reliability Engineer / System Admin. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "SRE Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Site%20Reliability%20Engineer%20%2F%20System%20Admin%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T09:56:53.919Z",
+    "tags": [
+      "SRE",
+      "Linux",
+      "Scale"
+    ]
+  },
+  {
+    "id": "ext-25",
+    "title": "DevOps System Administrator",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for DevOps System Administrator. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "AWS Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20System%20Administrator%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T09:41:53.919Z",
+    "tags": [
+      "AWS",
+      "DevOps",
+      "Admin"
+    ]
+  },
+  {
+    "id": "ext-26",
+    "title": "Software Engineer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T09:26:53.919Z",
+    "tags": [
+      "Software",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-27",
+    "title": "Frontend Developer",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T09:11:53.919Z",
+    "tags": [
+      "Frontend",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-28",
+    "title": "Backend Developer",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T08:56:53.919Z",
+    "tags": [
+      "Backend",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-29",
+    "title": "Full Stack Developer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T08:41:53.919Z",
+    "tags": [
+      "Full",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-30",
+    "title": "UI/UX Designer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T08:26:53.919Z",
+    "tags": [
+      "UI/UX",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-31",
+    "title": "Product Manager",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T08:11:53.919Z",
+    "tags": [
+      "Product",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-32",
+    "title": "Data Scientist",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T07:56:53.919Z",
+    "tags": [
+      "Data",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-33",
+    "title": "Data Analyst",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T07:41:53.919Z",
+    "tags": [
+      "Data",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-34",
+    "title": "DevOps Engineer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T07:26:53.919Z",
+    "tags": [
+      "DevOps",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-35",
+    "title": "Cloud Architect",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T07:11:53.919Z",
+    "tags": [
+      "Cloud",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-36",
+    "title": "Security Specialist",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T06:56:53.919Z",
+    "tags": [
+      "Security",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-37",
+    "title": "Network Engineer",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T06:41:53.919Z",
+    "tags": [
+      "Network",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-38",
+    "title": "Database Admin",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T06:26:53.919Z",
+    "tags": [
+      "Database",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-39",
+    "title": "QA Automation Engineer",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T06:11:53.919Z",
+    "tags": [
+      "QA",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-40",
+    "title": "Mobile Developer",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T05:56:53.919Z",
+    "tags": [
+      "Mobile",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-41",
+    "title": "React Developer",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T05:41:53.919Z",
+    "tags": [
+      "React",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-42",
+    "title": "Node.js Developer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T05:26:53.919Z",
+    "tags": [
+      "Node.js",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-43",
+    "title": "Python Developer",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T05:11:53.919Z",
+    "tags": [
+      "Python",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-44",
+    "title": "Java Developer",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T04:56:53.919Z",
+    "tags": [
+      "Java",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-45",
+    "title": "Project Manager",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T04:41:53.919Z",
+    "tags": [
+      "Project",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-46",
+    "title": "Business Analyst",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T04:26:53.919Z",
+    "tags": [
+      "Business",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-47",
+    "title": "Marketing Specialist",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T04:11:53.919Z",
+    "tags": [
+      "Marketing",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-48",
+    "title": "Sales Representative",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T03:56:53.919Z",
+    "tags": [
+      "Sales",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-49",
+    "title": "HR Manager",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T03:41:53.919Z",
+    "tags": [
+      "HR",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-50",
+    "title": "Content Writer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T03:26:53.919Z",
+    "tags": [
+      "Content",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-51",
+    "title": "Graphic Designer",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T03:11:53.919Z",
+    "tags": [
+      "Graphic",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-52",
+    "title": "Video Editor",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T02:56:53.919Z",
+    "tags": [
+      "Video",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-53",
+    "title": "SEO Specialist",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T02:41:53.919Z",
+    "tags": [
+      "SEO",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-54",
+    "title": "Customer Success Manager",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T02:26:53.919Z",
+    "tags": [
+      "Customer",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-55",
+    "title": "Finance Manager",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T02:11:53.919Z",
+    "tags": [
+      "Finance",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-56",
+    "title": "Operation Executive",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T01:56:53.919Z",
+    "tags": [
+      "Operation",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-57",
+    "title": "Digital Marketer",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T01:41:53.919Z",
+    "tags": [
+      "Digital",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-58",
+    "title": "Software Engineer",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T01:26:53.919Z",
+    "tags": [
+      "Software",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-59",
+    "title": "Frontend Developer",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T01:11:53.919Z",
+    "tags": [
+      "Frontend",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-60",
+    "title": "Backend Developer",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T00:56:53.919Z",
+    "tags": [
+      "Backend",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-61",
+    "title": "Full Stack Developer",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-13T00:41:53.919Z",
+    "tags": [
+      "Full",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-62",
+    "title": "UI/UX Designer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T00:26:53.919Z",
+    "tags": [
+      "UI/UX",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-63",
+    "title": "Product Manager",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-13T00:11:53.919Z",
+    "tags": [
+      "Product",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-64",
+    "title": "Data Scientist",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T23:56:53.919Z",
+    "tags": [
+      "Data",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-65",
+    "title": "Data Analyst",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T23:41:53.919Z",
+    "tags": [
+      "Data",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-66",
+    "title": "DevOps Engineer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T23:26:53.919Z",
+    "tags": [
+      "DevOps",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-67",
+    "title": "Cloud Architect",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T23:11:53.919Z",
+    "tags": [
+      "Cloud",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-68",
+    "title": "Security Specialist",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T22:56:53.919Z",
+    "tags": [
+      "Security",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-69",
+    "title": "Network Engineer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T22:41:53.919Z",
+    "tags": [
+      "Network",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-70",
+    "title": "Database Admin",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T22:26:53.919Z",
+    "tags": [
+      "Database",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-71",
+    "title": "QA Automation Engineer",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T22:11:53.919Z",
+    "tags": [
+      "QA",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-72",
+    "title": "Mobile Developer",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T21:56:53.919Z",
+    "tags": [
+      "Mobile",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-73",
+    "title": "React Developer",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T21:41:53.919Z",
+    "tags": [
+      "React",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-74",
+    "title": "Node.js Developer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T21:26:53.919Z",
+    "tags": [
+      "Node.js",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-75",
+    "title": "Python Developer",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T21:11:53.919Z",
+    "tags": [
+      "Python",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-76",
+    "title": "Java Developer",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T20:56:53.919Z",
+    "tags": [
+      "Java",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-77",
+    "title": "Project Manager",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T20:41:53.919Z",
+    "tags": [
+      "Project",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-78",
+    "title": "Business Analyst",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T20:26:53.919Z",
+    "tags": [
+      "Business",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-79",
+    "title": "Marketing Specialist",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T20:11:53.919Z",
+    "tags": [
+      "Marketing",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-80",
+    "title": "Sales Representative",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T19:56:53.919Z",
+    "tags": [
+      "Sales",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-81",
+    "title": "HR Manager",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T19:41:53.919Z",
+    "tags": [
+      "HR",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-82",
+    "title": "Content Writer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T19:26:53.919Z",
+    "tags": [
+      "Content",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-83",
+    "title": "Graphic Designer",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T19:11:53.919Z",
+    "tags": [
+      "Graphic",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-84",
+    "title": "Video Editor",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T18:56:53.919Z",
+    "tags": [
+      "Video",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-85",
+    "title": "SEO Specialist",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T18:41:53.919Z",
+    "tags": [
+      "SEO",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-86",
+    "title": "Customer Success Manager",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T18:26:53.919Z",
+    "tags": [
+      "Customer",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-87",
+    "title": "Finance Manager",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T18:11:53.919Z",
+    "tags": [
+      "Finance",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-88",
+    "title": "Operation Executive",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T17:56:53.919Z",
+    "tags": [
+      "Operation",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-89",
+    "title": "Digital Marketer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T17:41:53.919Z",
+    "tags": [
+      "Digital",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-90",
+    "title": "Software Engineer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T17:26:53.919Z",
+    "tags": [
+      "Software",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-91",
+    "title": "Frontend Developer",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T17:11:53.919Z",
+    "tags": [
+      "Frontend",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-92",
+    "title": "Backend Developer",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T16:56:53.919Z",
+    "tags": [
+      "Backend",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-93",
+    "title": "Full Stack Developer",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T16:41:53.919Z",
+    "tags": [
+      "Full",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-94",
+    "title": "UI/UX Designer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T16:26:53.919Z",
+    "tags": [
+      "UI/UX",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-95",
+    "title": "Product Manager",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T16:11:53.919Z",
+    "tags": [
+      "Product",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-96",
+    "title": "Data Scientist",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T15:56:53.919Z",
+    "tags": [
+      "Data",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-97",
+    "title": "Data Analyst",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T15:41:53.919Z",
+    "tags": [
+      "Data",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-98",
+    "title": "DevOps Engineer",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T15:26:53.919Z",
+    "tags": [
+      "DevOps",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-99",
+    "title": "Cloud Architect",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T15:11:53.919Z",
+    "tags": [
+      "Cloud",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-100",
+    "title": "Security Specialist",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T14:56:53.919Z",
+    "tags": [
+      "Security",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-101",
+    "title": "Network Engineer",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T14:41:53.919Z",
+    "tags": [
+      "Network",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-102",
+    "title": "Database Admin",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T14:26:53.919Z",
+    "tags": [
+      "Database",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-103",
+    "title": "QA Automation Engineer",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T14:11:53.919Z",
+    "tags": [
+      "QA",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-104",
+    "title": "Mobile Developer",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T13:56:53.919Z",
+    "tags": [
+      "Mobile",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-105",
+    "title": "React Developer",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T13:41:53.919Z",
+    "tags": [
+      "React",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-106",
+    "title": "Node.js Developer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T13:26:53.919Z",
+    "tags": [
+      "Node.js",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-107",
+    "title": "Python Developer",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T13:11:53.919Z",
+    "tags": [
+      "Python",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-108",
+    "title": "Java Developer",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T12:56:53.919Z",
+    "tags": [
+      "Java",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-109",
+    "title": "Project Manager",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T12:41:53.919Z",
+    "tags": [
+      "Project",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-110",
+    "title": "Business Analyst",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T12:26:53.919Z",
+    "tags": [
+      "Business",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-111",
+    "title": "Marketing Specialist",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T12:11:53.919Z",
+    "tags": [
+      "Marketing",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-112",
+    "title": "Sales Representative",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T11:56:53.919Z",
+    "tags": [
+      "Sales",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-113",
+    "title": "HR Manager",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T11:41:53.919Z",
+    "tags": [
+      "HR",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-114",
+    "title": "Content Writer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T11:26:53.919Z",
+    "tags": [
+      "Content",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-115",
+    "title": "Graphic Designer",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T11:11:53.919Z",
+    "tags": [
+      "Graphic",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-116",
+    "title": "Video Editor",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T10:56:53.919Z",
+    "tags": [
+      "Video",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-117",
+    "title": "SEO Specialist",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T10:41:53.919Z",
+    "tags": [
+      "SEO",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-118",
+    "title": "Customer Success Manager",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T10:26:53.919Z",
+    "tags": [
+      "Customer",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-119",
+    "title": "Finance Manager",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T10:11:53.919Z",
+    "tags": [
+      "Finance",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-120",
+    "title": "Operation Executive",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T09:56:53.919Z",
+    "tags": [
+      "Operation",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-121",
+    "title": "Digital Marketer",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T09:41:53.919Z",
+    "tags": [
+      "Digital",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-122",
+    "title": "Software Engineer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T09:26:53.919Z",
+    "tags": [
+      "Software",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-123",
+    "title": "Frontend Developer",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T09:11:53.919Z",
+    "tags": [
+      "Frontend",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-124",
+    "title": "Backend Developer",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T08:56:53.919Z",
+    "tags": [
+      "Backend",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-125",
+    "title": "Full Stack Developer",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T08:41:53.919Z",
+    "tags": [
+      "Full",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-126",
+    "title": "UI/UX Designer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T08:26:53.919Z",
+    "tags": [
+      "UI/UX",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-127",
+    "title": "Product Manager",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T08:11:53.919Z",
+    "tags": [
+      "Product",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-128",
+    "title": "Data Scientist",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T07:56:53.919Z",
+    "tags": [
+      "Data",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-129",
+    "title": "Data Analyst",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T07:41:53.919Z",
+    "tags": [
+      "Data",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-130",
+    "title": "DevOps Engineer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T07:26:53.919Z",
+    "tags": [
+      "DevOps",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-131",
+    "title": "Cloud Architect",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T07:11:53.919Z",
+    "tags": [
+      "Cloud",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-132",
+    "title": "Security Specialist",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T06:56:53.919Z",
+    "tags": [
+      "Security",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-133",
+    "title": "Network Engineer",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T06:41:53.919Z",
+    "tags": [
+      "Network",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-134",
+    "title": "Database Admin",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T06:26:53.919Z",
+    "tags": [
+      "Database",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-135",
+    "title": "QA Automation Engineer",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T06:11:53.919Z",
+    "tags": [
+      "QA",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-136",
+    "title": "Mobile Developer",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T05:56:53.919Z",
+    "tags": [
+      "Mobile",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-137",
+    "title": "React Developer",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T05:41:53.919Z",
+    "tags": [
+      "React",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-138",
+    "title": "Node.js Developer",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T05:26:53.919Z",
+    "tags": [
+      "Node.js",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-139",
+    "title": "Python Developer",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T05:11:53.919Z",
+    "tags": [
+      "Python",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-140",
+    "title": "Java Developer",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T04:56:53.919Z",
+    "tags": [
+      "Java",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-141",
+    "title": "Project Manager",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T04:41:53.919Z",
+    "tags": [
+      "Project",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-142",
+    "title": "Business Analyst",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T04:26:53.919Z",
+    "tags": [
+      "Business",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-143",
+    "title": "Marketing Specialist",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T04:11:53.919Z",
+    "tags": [
+      "Marketing",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-144",
+    "title": "Sales Representative",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T03:56:53.919Z",
+    "tags": [
+      "Sales",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-145",
+    "title": "HR Manager",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T03:41:53.919Z",
+    "tags": [
+      "HR",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-146",
+    "title": "Content Writer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T03:26:53.919Z",
+    "tags": [
+      "Content",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-147",
+    "title": "Graphic Designer",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T03:11:53.919Z",
+    "tags": [
+      "Graphic",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-148",
+    "title": "Video Editor",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T02:56:53.919Z",
+    "tags": [
+      "Video",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-149",
+    "title": "SEO Specialist",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T02:41:53.919Z",
+    "tags": [
+      "SEO",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-150",
+    "title": "Customer Success Manager",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T02:26:53.919Z",
+    "tags": [
+      "Customer",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-151",
+    "title": "Finance Manager",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T02:11:53.919Z",
+    "tags": [
+      "Finance",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-152",
+    "title": "Operation Executive",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T01:56:53.919Z",
+    "tags": [
+      "Operation",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-153",
+    "title": "Digital Marketer",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T01:41:53.919Z",
+    "tags": [
+      "Digital",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-154",
+    "title": "Software Engineer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T01:26:53.919Z",
+    "tags": [
+      "Software",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-155",
+    "title": "Frontend Developer",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T01:11:53.919Z",
+    "tags": [
+      "Frontend",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-156",
+    "title": "Backend Developer",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T00:56:53.919Z",
+    "tags": [
+      "Backend",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-157",
+    "title": "Full Stack Developer",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-12T00:41:53.919Z",
+    "tags": [
+      "Full",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-158",
+    "title": "UI/UX Designer",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T00:26:53.919Z",
+    "tags": [
+      "UI/UX",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-159",
+    "title": "Product Manager",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-12T00:11:53.919Z",
+    "tags": [
+      "Product",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-160",
+    "title": "Data Scientist",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T23:56:53.919Z",
+    "tags": [
+      "Data",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-161",
+    "title": "Data Analyst",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T23:41:53.920Z",
+    "tags": [
+      "Data",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-162",
+    "title": "DevOps Engineer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T23:26:53.920Z",
+    "tags": [
+      "DevOps",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-163",
+    "title": "Cloud Architect",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T23:11:53.920Z",
+    "tags": [
+      "Cloud",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-164",
+    "title": "Security Specialist",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T22:56:53.920Z",
+    "tags": [
+      "Security",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-165",
+    "title": "Network Engineer",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T22:41:53.920Z",
+    "tags": [
+      "Network",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-166",
+    "title": "Database Admin",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T22:26:53.920Z",
+    "tags": [
+      "Database",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-167",
+    "title": "QA Automation Engineer",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T22:11:53.920Z",
+    "tags": [
+      "QA",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-168",
+    "title": "Mobile Developer",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T21:56:53.920Z",
+    "tags": [
+      "Mobile",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-169",
+    "title": "React Developer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T21:41:53.920Z",
+    "tags": [
+      "React",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-170",
+    "title": "Node.js Developer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T21:26:53.920Z",
+    "tags": [
+      "Node.js",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-171",
+    "title": "Python Developer",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T21:11:53.920Z",
+    "tags": [
+      "Python",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-172",
+    "title": "Java Developer",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T20:56:53.920Z",
+    "tags": [
+      "Java",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-173",
+    "title": "Project Manager",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T20:41:53.920Z",
+    "tags": [
+      "Project",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-174",
+    "title": "Business Analyst",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T20:26:53.920Z",
+    "tags": [
+      "Business",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-175",
+    "title": "Marketing Specialist",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T20:11:53.920Z",
+    "tags": [
+      "Marketing",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-176",
+    "title": "Sales Representative",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T19:56:53.920Z",
+    "tags": [
+      "Sales",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-177",
+    "title": "HR Manager",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T19:41:53.920Z",
+    "tags": [
+      "HR",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-178",
+    "title": "Content Writer",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T19:26:53.920Z",
+    "tags": [
+      "Content",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-179",
+    "title": "Graphic Designer",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T19:11:53.920Z",
+    "tags": [
+      "Graphic",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-180",
+    "title": "Video Editor",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T18:56:53.920Z",
+    "tags": [
+      "Video",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-181",
+    "title": "SEO Specialist",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T18:41:53.920Z",
+    "tags": [
+      "SEO",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-182",
+    "title": "Customer Success Manager",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T18:26:53.920Z",
+    "tags": [
+      "Customer",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-183",
+    "title": "Finance Manager",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T18:11:53.920Z",
+    "tags": [
+      "Finance",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-184",
+    "title": "Operation Executive",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T17:56:53.920Z",
+    "tags": [
+      "Operation",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-185",
+    "title": "Digital Marketer",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T17:41:53.920Z",
+    "tags": [
+      "Digital",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-186",
+    "title": "Software Engineer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T17:26:53.920Z",
+    "tags": [
+      "Software",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-187",
+    "title": "Frontend Developer",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T17:11:53.920Z",
+    "tags": [
+      "Frontend",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-188",
+    "title": "Backend Developer",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T16:56:53.920Z",
+    "tags": [
+      "Backend",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-189",
+    "title": "Full Stack Developer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T16:41:53.920Z",
+    "tags": [
+      "Full",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-190",
+    "title": "UI/UX Designer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T16:26:53.920Z",
+    "tags": [
+      "UI/UX",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-191",
+    "title": "Product Manager",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T16:11:53.920Z",
+    "tags": [
+      "Product",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-192",
+    "title": "Data Scientist",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T15:56:53.920Z",
+    "tags": [
+      "Data",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-193",
+    "title": "Data Analyst",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T15:41:53.920Z",
+    "tags": [
+      "Data",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-194",
+    "title": "DevOps Engineer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T15:26:53.920Z",
+    "tags": [
+      "DevOps",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-195",
+    "title": "Cloud Architect",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T15:11:53.920Z",
+    "tags": [
+      "Cloud",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-196",
+    "title": "Security Specialist",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T14:56:53.920Z",
+    "tags": [
+      "Security",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-197",
+    "title": "Network Engineer",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T14:41:53.920Z",
+    "tags": [
+      "Network",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-198",
+    "title": "Database Admin",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T14:26:53.920Z",
+    "tags": [
+      "Database",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-199",
+    "title": "QA Automation Engineer",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T14:11:53.920Z",
+    "tags": [
+      "QA",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-200",
+    "title": "Mobile Developer",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T13:56:53.920Z",
+    "tags": [
+      "Mobile",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-201",
+    "title": "React Developer",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T13:41:53.920Z",
+    "tags": [
+      "React",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-202",
+    "title": "Node.js Developer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T13:26:53.920Z",
+    "tags": [
+      "Node.js",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-203",
+    "title": "Python Developer",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T13:11:53.920Z",
+    "tags": [
+      "Python",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-204",
+    "title": "Java Developer",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T12:56:53.920Z",
+    "tags": [
+      "Java",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-205",
+    "title": "Project Manager",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T12:41:53.920Z",
+    "tags": [
+      "Project",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-206",
+    "title": "Business Analyst",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T12:26:53.920Z",
+    "tags": [
+      "Business",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-207",
+    "title": "Marketing Specialist",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T12:11:53.920Z",
+    "tags": [
+      "Marketing",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-208",
+    "title": "Sales Representative",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T11:56:53.920Z",
+    "tags": [
+      "Sales",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-209",
+    "title": "HR Manager",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T11:41:53.920Z",
+    "tags": [
+      "HR",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-210",
+    "title": "Content Writer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T11:26:53.920Z",
+    "tags": [
+      "Content",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-211",
+    "title": "Graphic Designer",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T11:11:53.920Z",
+    "tags": [
+      "Graphic",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-212",
+    "title": "Video Editor",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T10:56:53.920Z",
+    "tags": [
+      "Video",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-213",
+    "title": "SEO Specialist",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T10:41:53.920Z",
+    "tags": [
+      "SEO",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-214",
+    "title": "Customer Success Manager",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T10:26:53.920Z",
+    "tags": [
+      "Customer",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-215",
+    "title": "Finance Manager",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T10:11:53.920Z",
+    "tags": [
+      "Finance",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-216",
+    "title": "Operation Executive",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T09:56:53.920Z",
+    "tags": [
+      "Operation",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-217",
+    "title": "Digital Marketer",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T09:41:53.920Z",
+    "tags": [
+      "Digital",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-218",
+    "title": "Software Engineer",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T09:26:53.920Z",
+    "tags": [
+      "Software",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-219",
+    "title": "Frontend Developer",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Frontend Developer. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Frontend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Frontend%20Developer%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T09:11:53.920Z",
+    "tags": [
+      "Frontend",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-220",
+    "title": "Backend Developer",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Backend Developer. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Backend Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Backend%20Developer%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T08:56:53.920Z",
+    "tags": [
+      "Backend",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-221",
+    "title": "Full Stack Developer",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "0 - 4 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Full Stack Developer. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "Full Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Full%20Stack%20Developer%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T08:41:53.920Z",
+    "tags": [
+      "Full",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-222",
+    "title": "UI/UX Designer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "1 - 5 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for UI/UX Designer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "UI/UX Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=UI%2FUX%20Designer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T08:26:53.920Z",
+    "tags": [
+      "UI/UX",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-223",
+    "title": "Product Manager",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "2 - 6 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for Product Manager. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Product Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Product%20Manager%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T08:11:53.920Z",
+    "tags": [
+      "Product",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-224",
+    "title": "Data Scientist",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "3 - 7 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Data Scientist. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Scientist%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T07:56:53.920Z",
+    "tags": [
+      "Data",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-225",
+    "title": "Data Analyst",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹18L - ₹31L",
+    "experience": "4 - 8 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Data Analyst. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "Data Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Data%20Analyst%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T07:41:53.920Z",
+    "tags": [
+      "Data",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-226",
+    "title": "DevOps Engineer",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "0 - 4 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for DevOps Engineer. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "DevOps Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=DevOps%20Engineer%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T07:26:53.920Z",
+    "tags": [
+      "DevOps",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-227",
+    "title": "Cloud Architect",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "1 - 5 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for Cloud Architect. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Cloud Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Cloud%20Architect%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T07:11:53.920Z",
+    "tags": [
+      "Cloud",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-228",
+    "title": "Security Specialist",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "2 - 6 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Security Specialist. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Security Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Security%20Specialist%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T06:56:53.920Z",
+    "tags": [
+      "Security",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-229",
+    "title": "Network Engineer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "3 - 7 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Network Engineer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Network Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Network%20Engineer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T06:41:53.920Z",
+    "tags": [
+      "Network",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-230",
+    "title": "Database Admin",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "4 - 8 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Database Admin. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Database Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Database%20Admin%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T06:26:53.920Z",
+    "tags": [
+      "Database",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-231",
+    "title": "QA Automation Engineer",
+    "company": "Infosys",
+    "location": "Delhi, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "0 - 4 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for QA Automation Engineer. Matches industry standard trends for Infosys in Delhi.",
+    "skill_gap": [
+      "QA Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=QA%20Automation%20Engineer%20Infosys&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T06:11:53.920Z",
+    "tags": [
+      "QA",
+      "Infosys",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-232",
+    "title": "Mobile Developer",
+    "company": "Wipro",
+    "location": "Gurugram, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "1 - 5 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Mobile Developer. Matches industry standard trends for Wipro in Gurugram.",
+    "skill_gap": [
+      "Mobile Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Mobile%20Developer%20Wipro&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T05:56:53.920Z",
+    "tags": [
+      "Mobile",
+      "Wipro",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-233",
+    "title": "React Developer",
+    "company": "HCL",
+    "location": "Noida, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "2 - 6 yrs",
+    "match_score": 96,
+    "ai_insight": "Aligned with your search for React Developer. Matches industry standard trends for HCL in Noida.",
+    "skill_gap": [
+      "React Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=React%20Developer%20HCL&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T05:41:53.920Z",
+    "tags": [
+      "React",
+      "HCL",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-234",
+    "title": "Node.js Developer",
+    "company": "Zomato",
+    "location": "Kolkata, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "3 - 7 yrs",
+    "match_score": 97,
+    "ai_insight": "Aligned with your search for Node.js Developer. Matches industry standard trends for Zomato in Kolkata.",
+    "skill_gap": [
+      "Node.js Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Node.js%20Developer%20Zomato&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T05:26:53.920Z",
+    "tags": [
+      "Node.js",
+      "Zomato",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-235",
+    "title": "Python Developer",
+    "company": "Swiggy",
+    "location": "Remote",
+    "salary": "₹8L - ₹15L",
+    "experience": "4 - 8 yrs",
+    "match_score": 80,
+    "ai_insight": "Aligned with your search for Python Developer. Matches industry standard trends for Swiggy in Remote.",
+    "skill_gap": [
+      "Python Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Python%20Developer%20Swiggy&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T05:11:53.920Z",
+    "tags": [
+      "Python",
+      "Swiggy",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-236",
+    "title": "Java Developer",
+    "company": "Paytm",
+    "location": "Bengaluru, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "0 - 4 yrs",
+    "match_score": 81,
+    "ai_insight": "Aligned with your search for Java Developer. Matches industry standard trends for Paytm in Bengaluru.",
+    "skill_gap": [
+      "Java Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Java%20Developer%20Paytm&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T04:56:53.920Z",
+    "tags": [
+      "Java",
+      "Paytm",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-237",
+    "title": "Project Manager",
+    "company": "Zeta",
+    "location": "Hyderabad, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "1 - 5 yrs",
+    "match_score": 82,
+    "ai_insight": "Aligned with your search for Project Manager. Matches industry standard trends for Zeta in Hyderabad.",
+    "skill_gap": [
+      "Project Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Project%20Manager%20Zeta&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T04:41:53.920Z",
+    "tags": [
+      "Project",
+      "Zeta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-238",
+    "title": "Business Analyst",
+    "company": "Razorpay",
+    "location": "Pune, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "2 - 6 yrs",
+    "match_score": 83,
+    "ai_insight": "Aligned with your search for Business Analyst. Matches industry standard trends for Razorpay in Pune.",
+    "skill_gap": [
+      "Business Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Business%20Analyst%20Razorpay&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T04:26:53.920Z",
+    "tags": [
+      "Business",
+      "Razorpay",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-239",
+    "title": "Marketing Specialist",
+    "company": "Airbnb",
+    "location": "Mumbai, India",
+    "salary": "₹28L - ₹47L",
+    "experience": "3 - 7 yrs",
+    "match_score": 84,
+    "ai_insight": "Aligned with your search for Marketing Specialist. Matches industry standard trends for Airbnb in Mumbai.",
+    "skill_gap": [
+      "Marketing Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Marketing%20Specialist%20Airbnb&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T04:11:53.920Z",
+    "tags": [
+      "Marketing",
+      "Airbnb",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-240",
+    "title": "Sales Representative",
+    "company": "Uber",
+    "location": "Chennai, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "4 - 8 yrs",
+    "match_score": 85,
+    "ai_insight": "Aligned with your search for Sales Representative. Matches industry standard trends for Uber in Chennai.",
+    "skill_gap": [
+      "Sales Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Sales%20Representative%20Uber&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T03:56:53.920Z",
+    "tags": [
+      "Sales",
+      "Uber",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-241",
+    "title": "HR Manager",
+    "company": "Ola",
+    "location": "Delhi, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "0 - 4 yrs",
+    "match_score": 86,
+    "ai_insight": "Aligned with your search for HR Manager. Matches industry standard trends for Ola in Delhi.",
+    "skill_gap": [
+      "HR Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=HR%20Manager%20Ola&location=Delhi",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T03:41:53.920Z",
+    "tags": [
+      "HR",
+      "Ola",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-242",
+    "title": "Content Writer",
+    "company": "Flipkart",
+    "location": "Gurugram, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "1 - 5 yrs",
+    "match_score": 87,
+    "ai_insight": "Aligned with your search for Content Writer. Matches industry standard trends for Flipkart in Gurugram.",
+    "skill_gap": [
+      "Content Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Content%20Writer%20Flipkart&location=Gurugram",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T03:26:53.920Z",
+    "tags": [
+      "Content",
+      "Flipkart",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-243",
+    "title": "Graphic Designer",
+    "company": "Byju's",
+    "location": "Noida, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "2 - 6 yrs",
+    "match_score": 88,
+    "ai_insight": "Aligned with your search for Graphic Designer. Matches industry standard trends for Byju's in Noida.",
+    "skill_gap": [
+      "Graphic Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Graphic%20Designer%20Byju's&location=Noida",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T03:11:53.920Z",
+    "tags": [
+      "Graphic",
+      "Byju's",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-244",
+    "title": "Video Editor",
+    "company": "Jio",
+    "location": "Kolkata, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "3 - 7 yrs",
+    "match_score": 89,
+    "ai_insight": "Aligned with your search for Video Editor. Matches industry standard trends for Jio in Kolkata.",
+    "skill_gap": [
+      "Video Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Video%20Editor%20Jio&location=Kolkata",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T02:56:53.920Z",
+    "tags": [
+      "Video",
+      "Jio",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-245",
+    "title": "SEO Specialist",
+    "company": "Reliance",
+    "location": "Remote",
+    "salary": "₹28L - ₹47L",
+    "experience": "4 - 8 yrs",
+    "match_score": 90,
+    "ai_insight": "Aligned with your search for SEO Specialist. Matches industry standard trends for Reliance in Remote.",
+    "skill_gap": [
+      "SEO Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=SEO%20Specialist%20Reliance&location=Remote",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T02:41:53.920Z",
+    "tags": [
+      "SEO",
+      "Reliance",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-246",
+    "title": "Customer Success Manager",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "salary": "₹33L - ₹55L",
+    "experience": "0 - 4 yrs",
+    "match_score": 91,
+    "ai_insight": "Aligned with your search for Customer Success Manager. Matches industry standard trends for Google in Bengaluru.",
+    "skill_gap": [
+      "Customer Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Customer%20Success%20Manager%20Google&location=Bengaluru",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T02:26:53.920Z",
+    "tags": [
+      "Customer",
+      "Google",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-247",
+    "title": "Finance Manager",
+    "company": "Amazon",
+    "location": "Hyderabad, India",
+    "salary": "₹8L - ₹15L",
+    "experience": "1 - 5 yrs",
+    "match_score": 92,
+    "ai_insight": "Aligned with your search for Finance Manager. Matches industry standard trends for Amazon in Hyderabad.",
+    "skill_gap": [
+      "Finance Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Finance%20Manager%20Amazon&location=Hyderabad",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T02:11:53.920Z",
+    "tags": [
+      "Finance",
+      "Amazon",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-248",
+    "title": "Operation Executive",
+    "company": "Microsoft",
+    "location": "Pune, India",
+    "salary": "₹13L - ₹23L",
+    "experience": "2 - 6 yrs",
+    "match_score": 93,
+    "ai_insight": "Aligned with your search for Operation Executive. Matches industry standard trends for Microsoft in Pune.",
+    "skill_gap": [
+      "Operation Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Operation%20Executive%20Microsoft&location=Pune",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T01:56:53.920Z",
+    "tags": [
+      "Operation",
+      "Microsoft",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-249",
+    "title": "Digital Marketer",
+    "company": "Meta",
+    "location": "Mumbai, India",
+    "salary": "₹18L - ₹31L",
+    "experience": "3 - 7 yrs",
+    "match_score": 94,
+    "ai_insight": "Aligned with your search for Digital Marketer. Matches industry standard trends for Meta in Mumbai.",
+    "skill_gap": [
+      "Digital Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Digital%20Marketer%20Meta&location=Mumbai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": false,
+    "created": "2026-03-11T01:41:53.920Z",
+    "tags": [
+      "Digital",
+      "Meta",
+      "Tech",
+      "Hybrid"
+    ]
+  },
+  {
+    "id": "ext-250",
+    "title": "Software Engineer",
+    "company": "TCS",
+    "location": "Chennai, India",
+    "salary": "₹23L - ₹39L",
+    "experience": "4 - 8 yrs",
+    "match_score": 95,
+    "ai_insight": "Aligned with your search for Software Engineer. Matches industry standard trends for TCS in Chennai.",
+    "skill_gap": [
+      "Software Mastery"
+    ],
+    "source_url": "https://www.linkedin.com/jobs/search?keywords=Software%20Engineer%20TCS&location=Chennai",
+    "apply_type": "direct_url",
+    "isFresherFriendly": true,
+    "created": "2026-03-11T01:26:53.920Z",
+    "tags": [
+      "Software",
+      "TCS",
+      "Tech",
+      "Hybrid"
+    ]
+  }
+]
