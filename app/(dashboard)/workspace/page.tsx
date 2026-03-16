@@ -108,15 +108,15 @@ export default function WorkspaceView() {
     }
   };
 
-  const handleMakeNote = async (e?: React.FormEvent, contentOverride?: string) => {
+  const handleMakeNote = async (e?: React.FormEvent, isManual?: boolean) => {
     e?.preventDefault();
-    // If no summaryData and no contentOverride, ignore
-    if (!summaryData && !contentOverride) return;
+    // If no summaryData and no isManual, ignore
+    if (!summaryData && !isManual) return;
     
     setIsMakingNote(true);
     setErrorMsg("");
     try {
-      const payload = contentOverride ? { summaryData: [{ title: "Manual Note", description: contentOverride }] } : { summaryData };
+      const payload = isManual ? { title: "Untitled Note", content: "" } : { summaryData };
       const res = await fetch('/api/notes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -529,7 +529,7 @@ export default function WorkspaceView() {
                <div className="w-2/5 border-r border-zinc-800/80 bg-zinc-950/50 flex flex-col min-h-0">
                  <div className="p-3 border-b border-zinc-800/50 bg-zinc-900 shrink-0">
                     <button
-                      onClick={(e) => handleMakeNote(e, "Blank manual note just created.")}
+                      onClick={(e) => handleMakeNote(e, true)}
                       disabled={isMakingNote}
                       className="w-full bg-emerald-600 hover:bg-emerald-500 text-white disabled:opacity-50 rounded-lg py-2 flex items-center justify-center gap-1.5 text-xs font-semibold transition-colors shadow-sm"
                     >
