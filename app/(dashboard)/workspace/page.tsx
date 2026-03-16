@@ -26,6 +26,11 @@ export default function WorkspaceView() {
   const [isTutorLearning, setIsTutorLearning] = useState(false);
   const [selectedNote, setSelectedNote] = useState<any>(null);
   const [errorMsg, setErrorMsg] = useState("");
+  
+  const [isEditingNote, setIsEditingNote] = useState(false);
+  const [editedNoteTitle, setEditedNoteTitle] = useState("");
+  const [editedNoteContent, setEditedNoteContent] = useState("");
+  const [isSavingNote, setIsSavingNote] = useState(false);
 
   // State for Flashcards
   const [flashcards, setFlashcards] = useState<any[]>([]);
@@ -125,6 +130,11 @@ export default function WorkspaceView() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to save note');
       
+      setSelectedNote(data);
+      setEditedNoteTitle(data.title);
+      setEditedNoteContent(data.content || "");
+      setIsEditingNote(true);
+
       // Force SWR to re-fetch the notes list instantly
       await mutate('/api/notes');
     } catch (err: any) {
@@ -132,6 +142,39 @@ export default function WorkspaceView() {
       setErrorMsg(err.message || "Failed to make a note.");
     } finally {
       setIsMakingNote(false);
+    }
+  };
+
+  const handleSaveNote = async () => {
+    if (!selectedNote) return; 
+    setIsSavingNote(true);
+    
+    let finalTitle = editedNoteTitle.trim();
+    if (!finalTitle && editedNoteContent) { 
+      finalTitle = editedNoteContent.split('\n')[0].substring(0, 30) || "Untitled Note";
+    }
+
+    try {
+      const res = await fetch('/api/notes', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+           id: selectedNote.id, 
+           title: finalTitle || "Untitled Note",
+           content: editedNoteContent, 
+           tags: selectedNote.tags 
+        })
+      });
+      if (res.ok) {
+        const updated = await res.json(); 
+        setSelectedNote(updated); 
+        await mutate('/api/notes');
+        setIsEditingNote(false);
+      }
+    } catch (err) {
+      console.error("Save failed:", err); 
+    } finally {
+      setIsSavingNote(false);
     }
   };
 
@@ -542,7 +585,12 @@ export default function WorkspaceView() {
                    {notes && Array.isArray(notes) && notes.map((note: any) => (
                      <button 
                        key={note.id}
-                       onClick={() => setSelectedNote(note)}
+                       onClick={() => {
+                         setSelectedNote(note);
+                         setEditedNoteTitle(note.title);
+                         setEditedNoteContent(note.content || "");
+                         setIsEditingNote(false);
+                       }}
                        className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-colors border shadow-sm ${selectedNote?.id === note.id ? 'bg-zinc-800/80 border-zinc-700 text-emerald-400 font-semibold' : 'bg-transparent border-transparent hover:bg-zinc-800/30 text-zinc-500 font-medium'}`}
                      >
                         <div className="truncate">{note.title}</div>
@@ -556,10 +604,47 @@ export default function WorkspaceView() {
                   {selectedNote ? (
                     <>
                       <div className="flex flex-col h-full min-h-0">
-                         <h2 className="text-sm font-bold text-zinc-100 mb-2 shrink-0">{selectedNote.title}</h2>
-                         <div className="flex-1 overflow-y-auto text-xs text-zinc-400 leading-relaxed font-mono space-y-2 whitespace-pre-wrap break-words pr-2">
-                           {selectedNote.content}
+                         <div className="flex justify-between items-center mb-2 shrink-0">
+                            {isEditingNote ? (
+                              <input 
+                                value={editedNoteTitle}
+                                onChange={(e) => setEditedNoteTitle(e.target.value)}
+                                className="bg-zinc-950/50 border border-emerald-500/20 rounded-md px-2 py-1 text-sm font-bold text-zinc-100 focus:outline-none focus:border-emerald-500/50 flex-1 mr-2"
+                                placeholder="Note Title..."
+                              />
+                            ) : (
+                              <h2 className="text-sm font-bold text-zinc-100 truncate flex-1">{selectedNote.title}</h2>
+                            )}
+                            {isEditingNote ? (
+                              <button 
+                                onClick={handleSaveNote}
+                                disabled={isSavingNote}
+                                className="px-2 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-[10px] font-bold transition-all disabled:opacity-50 flex items-center gap-1"
+                              >
+                                {isSavingNote ? <Loader2 className="w-3 h-3 animate-spin" /> : <CheckCircle2 className="w-3 h-3" />}
+                                Save
+                              </button>
+                            ) : (
+                              <button 
+                                onClick={() => setIsEditingNote(true)}
+                                className="px-2 py-1 bg-zinc-800 hover:bg-emerald-500/20 text-zinc-400 hover:text-emerald-400 rounded text-[10px] font-bold transition-all border border-zinc-700 hover:border-emerald-500/30"
+                              >
+                                Edit
+                              </button>
+                            )}
                          </div>
+                         {isEditingNote ? (
+                           <textarea 
+                             value={editedNoteContent}
+                             onChange={(e) => setEditedNoteContent(e.target.value)}
+                             className="flex-1 w-full bg-zinc-950/30 p-3 rounded-xl border border-emerald-500/20 text-zinc-300 font-mono text-xs leading-relaxed focus:outline-none focus:border-emerald-500/40 transition-all resize-none shadow-inner"
+                             placeholder="Write your note content here..."
+                           />
+                         ) : (
+                           <div className="flex-1 overflow-y-auto text-xs text-zinc-400 leading-relaxed font-mono space-y-2 whitespace-pre-wrap break-words pr-2">
+                             {selectedNote.content}
+                           </div>
+                         )}
                       </div>
                       {selectedNote.tags && (
                         <div className="mt-4 pt-4 border-t border-zinc-800/80 flex flex-wrap gap-2 shrink-0">
