@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { 
   Search, MapPin, Briefcase, Filter, ExternalLink, Sparkles, 
-  Loader2, CheckCircle2, DollarSign, Calendar, SlidersHorizontal,
+  Loader2, CheckCircle2, IndianRupee, Calendar, SlidersHorizontal,
   ChevronRight, Building2, Globe, AlertCircle, X, Map
 } from 'lucide-react';
 import Link from 'next/link';
@@ -303,7 +303,7 @@ export default function JobSearchPage() {
                         
                         <div className="flex flex-wrap items-center gap-4 text-sm text-zinc-400">
                           <div className="flex items-center gap-1.5"><Briefcase className="h-4 w-4" /> {job.experience}</div>
-                          <div className="flex items-center gap-1.5"><DollarSign className="h-4 w-4" /> {job.salary}</div>
+                          <div className="flex items-center gap-1.5"><IndianRupee className="h-4 w-4" /> {job.salary}</div>
                           <div className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {job.location}</div>
                         </div>
                         
