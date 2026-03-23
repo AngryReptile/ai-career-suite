@@ -82,7 +82,6 @@ export async function GET(req: Request) {
     else if (jobType === 'permanent') url += `&permanent=1`;
 
     let formattedJobs: any[] = [];
-    let isLiveSearch = true;
 
     try {
       const res = await fetch(url);
@@ -152,92 +151,10 @@ export async function GET(req: Request) {
                    (job.location && job.location.toLowerCase().includes(location.toLowerCase().trim()));
           });
         }
-      } else {
-        isLiveSearch = false;
       }
     } catch (e) {
-      isLiveSearch = false;
+      console.error("Live job fetch failed:", e);
     }
-
-    // fallback / Crawl Enhancement logic
-    if (!isLiveSearch || formattedJobs.length === 0) {
-      const crawlerPath = path.join(process.cwd(), 'data', 'crawled_jobs.json');
-      if (fs.existsSync(crawlerPath)) {
-        const rawData = fs.readFileSync(crawlerPath, 'utf8');
-        const allCrawledJobs = JSON.parse(rawData);
-        
-        // Filter crawled jobs based on query
-        formattedJobs = allCrawledJobs.filter((job: any) => {
-          const q = query.toLowerCase().trim();
-          const queryWords = q.split(/\s+/).filter(w => w.length > 0);
-          const jobText = `${job.title} ${job.company} ${job.tags.join(' ')}`.toLowerCase();
-          
-          const matchesQuery = queryWords.length === 0 || queryWords.some(word => jobText.includes(word));
-            
-          const jobLocNorm = normalizeLocation(job.location);
-          const matchesLocation = !location || 
-                                  jobLocNorm.toLowerCase() === cleanLocation.toLowerCase() || 
-                                  job.location.toLowerCase().includes(location.toLowerCase().trim());
-                                  
-          return matchesQuery && matchesLocation;
-        });
-
-        // Relevance Scoring & Sorting
-        if (query) {
-          const q = query.toLowerCase().trim();
-          formattedJobs = formattedJobs.map(job => {
-            const title = job.title.toLowerCase();
-            let score = 0;
-            // Exact phrase match in title
-            if (title.includes(q)) score += 50;
-            // Words match in title
-            q.split(/\s+/).forEach(word => {
-              if (title.includes(word)) score += 10;
-            });
-            return { ...job, relevanceScore: score };
-          });
-          formattedJobs.sort((a, b) => (b.relevanceScore || 0) - (a.relevanceScore || 0));
-        }
-
-        // Recalculate AI matching for crawled jobs if user has resume
-        if (userResume) {
-          formattedJobs = formattedJobs.map(job => {
-            const jobText = `${job.title} ${job.company} ${job.tags.join(' ')}`.toLowerCase();
-            const overlap = resumeKeywords.filter((k: string) => jobText.includes(k));
-            const matchScore = Math.min(Math.round(45 + (overlap.length * 8)), 98);
-            
-            return {
-              ...job,
-              match_score: matchScore,
-              ai_insight: overlap.length > 0 
-                ? `Matches your ${overlap[0]} skills from your profile.` 
-                : job.ai_insight
-            };
-          });
-          
-          // Strict sort by match score BEFORE pagination
-          formattedJobs.sort((a: any, b: any) => b.match_score - a.match_score);
-        }
-
-        // Apply Pagination for fallback
-        const start = (parseInt(page) - 1) * parseInt(resultsPerPage);
-        const end = start + parseInt(resultsPerPage);
-        const totalMatches = formattedJobs.length;
-        formattedJobs = formattedJobs.slice(start, end);
-
-        const summary = query 
-          ? `Found ${totalMatches} local matches for "${query}".`
-          : `Exploring Global Job Index: Showing ${totalMatches} latest opportunities.`;
-
-        // Return structured data for fallback too
-        return NextResponse.json({
-          search_summary: summary,
-          jobs: formattedJobs,
-          count: totalMatches
-        });
-      }
-    }
-
     if (isFresher) {
       formattedJobs = formattedJobs.filter((job: any) => {
         const title = job.title.toLowerCase();
@@ -256,11 +173,11 @@ export async function GET(req: Request) {
       }
     }
 
-    const summary = !isLiveSearch 
-      ? (query ? `AI Crawler Active: Found ${formattedJobs.length} matches for "${query}"${cleanLocation ? ` in ${cleanLocation}` : ''}.` : (cleanLocation ? `Exploring opportunities in ${cleanLocation}.` : "Exploring Global Job Index: Showing latest opportunities."))
+    const summary = formattedJobs.length === 0 
+      ? `No live roles found currently matching "${query || searchTerm}" in ${cleanLocation || 'any location'}. Try adjusting your filters.`
       : (userResume 
-          ? `I've analyzed your resume and found live jobs matching your ${searchTerm.split(' ').join('/')} skills in ${cleanLocation || 'India'}.`
-          : (query ? `I've found live jobs matching your search for "${query}" in ${cleanLocation || 'India'}.` : "Exploring diverse tech opportunities."));
+        ? `I've analyzed your resume and found live jobs matching your ${searchTerm.split(' ').join('/')} skills in ${cleanLocation || 'India'}.`
+        : (query ? `I've found live jobs matching your search for "${query}" in ${cleanLocation || 'India'}.` : "Exploring diverse real-time tech opportunities."));
 
     return NextResponse.json({
       search_summary: summary,

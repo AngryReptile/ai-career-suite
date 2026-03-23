@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sans: var(--font-inter);
@@ -7,8 +8,15 @@
 
 @layer base {
   body {
-    background-color: #09090b; /* zinc-950 */
-    color: #fafafa;
+    background-color: #000; /* true black for OLED premium feel */
+    color: #ededed;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  ::selection {
+    background-color: #3b82f6; /* Blue selection */
+    color: white;
   }
 }
 

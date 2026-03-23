@@ -3,11 +3,16 @@
 import { useState, useEffect, useRef } from "react";
 import useSWR from "swr";
 import { GraduationCap, Star, Send, Loader2, Clock, Plus, BookOpen } from "lucide-react";
+import { DashboardShell } from "@/components/DashboardShell";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function TutorView() {
-  const { data: history, mutate } = useSWR('/api/tutor', fetcher);
+  const { data: history, mutate } = useSWR('/api/tutor', fetcher, {
+    revalidateIfStale: false,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false
+  });
 
   const [tutorMode, setTutorMode] = useState<'socratic' | 'direct'>('socratic');
   const [tutorInput, setTutorInput] = useState("");
@@ -110,46 +115,42 @@ export default function TutorView() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-6rem)] animate-in fade-in duration-500 font-sans p-6 lg:p-8">
-      <div className="max-w-[1400px] mx-auto w-full flex flex-col h-full">
-        <header className="flex items-center justify-between shrink-0 mb-6 bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-4 shadow-sm backdrop-blur-md">
-           <div>
-              <h1 className="text-xl font-bold text-zinc-50 flex items-center gap-2">AI Tutor Chat</h1>
-              <p className="text-sm text-zinc-400 font-medium">Your dedicated mentor for mastering topics and interview prep.</p>
-           </div>
-        </header>
-
-        <div className="flex-1 flex flex-col lg:flex-row gap-6 overflow-hidden">
-           {/* History Sidebar (Left) */}
-           <aside className="lg:w-[320px] shrink-0 border border-zinc-800/50 bg-zinc-950/50 flex flex-col overflow-hidden shadow-lg transition-all duration-300 rounded-2xl">
-              <div className="p-4 border-b border-zinc-800/80 bg-zinc-900 flex justify-between items-center shrink-0">
-                 <div className="flex items-center gap-2 font-semibold text-zinc-50/80">
-                   <Clock className="w-4 h-4 text-zinc-400" /> Past Sessions
-                 </div>
-                 <button onClick={startNewConversation} className="bg-indigo-500 hover:bg-indigo-500/80 text-white rounded p-1.5 transition-colors">
-                   <Plus className="w-4 h-4" />
-                 </button>
-              </div>
-              <div className="flex-1 overflow-y-auto p-2 space-y-1">
-                 {!history && <div className="p-4 text-center text-zinc-400 text-xs flex justify-center"><Loader2 className="w-4 h-4 animate-spin" /></div>}
-                 {history && history.length === 0 && <div className="p-4 text-center text-zinc-400 text-xs">No conversations yet.</div>}
-                 {history && Array.isArray(history) && history.map((item: any) => (
-                    <button 
-                       key={item.id}
-                       onClick={() => loadConversation(item)}
-                       className={`w-full text-left px-3 py-3 rounded-xl transition-all border ${activeConversationId === item.id ? 'bg-zinc-900 border-indigo-500/30 shadow-md text-indigo-400' : 'bg-transparent border-transparent hover:bg-zinc-900/40 text-zinc-50/80'}`}
-                    >
-                       <div className="text-sm font-semibold truncate">{item.topic}</div>
-                       <div className="text-[10px] text-zinc-400 mt-1 flex justify-between items-center">
-                          <span>{new Date(item.createdAt).toLocaleDateString()}</span>
-                       </div>
-                    </button>
-                 ))}
-              </div>
-           </aside>
-
-           {/* Main Content */}
-           <div className="flex-1 bg-zinc-900/60 border border-zinc-800/50 rounded-2xl flex flex-col overflow-hidden shadow-lg relative">
+    <DashboardShell
+      header={
+         <div>
+            <h1 className="text-xl font-bold text-zinc-50 flex items-center gap-2">AI Tutor Chat</h1>
+            <p className="text-sm text-zinc-400 font-medium">Your dedicated mentor for mastering topics and interview prep.</p>
+         </div>
+      }
+      sidebar={
+         <>
+            <div className="h-16 px-4 border-b border-zinc-800/80 bg-zinc-900 flex justify-between items-center shrink-0">
+               <div className="flex items-center gap-2 font-semibold text-zinc-50/80">
+                 <Clock className="w-4 h-4 text-zinc-400" /> Past Sessions
+               </div>
+               <button onClick={startNewConversation} className="bg-indigo-500 hover:bg-indigo-500/80 text-white rounded p-1.5 transition-colors shadow-sm">
+                 <Plus className="w-4 h-4" />
+               </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-2 space-y-1">
+               {!history && <div className="p-4 text-center text-zinc-400 text-xs flex justify-center"><Loader2 className="w-4 h-4 animate-spin" /></div>}
+               {history && history.length === 0 && <div className="p-4 text-center text-zinc-400 text-xs">No conversations yet.</div>}
+               {history && Array.isArray(history) && history.map((item: any) => (
+                  <button 
+                     key={item.id}
+                     onClick={() => loadConversation(item)}
+                     className={`w-full text-left px-3 py-3 rounded-xl transition-all border ${activeConversationId === item.id ? 'bg-zinc-900 border-indigo-500/30 shadow-md text-indigo-400' : 'bg-transparent border-transparent hover:bg-zinc-900/40 text-zinc-50/80'}`}
+                  >
+                     <div className="text-sm font-semibold truncate">{item.topic}</div>
+                     <div className="text-[10px] text-zinc-400 mt-1 flex justify-between items-center">
+                        <span>{new Date(item.createdAt).toLocaleDateString()}</span>
+                     </div>
+                  </button>
+               ))}
+            </div>
+         </>
+      }
+    >
             {/* Toggle Banner */}
             <div className="bg-zinc-950/80 border-b border-zinc-800 p-2 flex justify-center shrink-0">
                <div className="bg-zinc-900 rounded-lg p-1 flex items-center w-full max-w-xs border border-zinc-800 text-xs font-medium relative">
@@ -236,9 +237,6 @@ export default function TutorView() {
                   </button>
                </div>
             </form>
-         </div>
-        </div>
-      </div>
-    </div>
+    </DashboardShell>
   );
 }

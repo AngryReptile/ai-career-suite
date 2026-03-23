@@ -3,11 +3,16 @@
 import { useState } from "react";
 import useSWR from "swr";
 import { FileText, Upload, Trash2, Eye, Loader2, CheckCircle2, AlertCircle, Sparkles, Clock, MoreVertical, X } from "lucide-react";
+import { DashboardShell } from "@/components/DashboardShell";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ResumeManagementView() {
-  const { data: resumes = [], mutate, error } = useSWR('/api/resume', fetcher);
+  const { data: resumes = [], mutate, error } = useSWR('/api/resume', fetcher, {
+    revalidateIfStale: false,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false
+  });
   const [isUploading, setIsUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState<string | null>(null);
   const [previewResume, setPreviewResume] = useState<any>(null);
@@ -101,33 +106,35 @@ export default function ResumeManagementView() {
   };
 
   return (
-    <div className="animate-in fade-in duration-500 font-sans max-w-6xl mx-auto pb-20 p-6 lg:p-10">
-      <header className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-            <FileText className="h-8 w-8 text-indigo-400" />
-            Resume Management
-          </h1>
-          <p className="text-zinc-400 mt-2">Pick your active focus for AI matching or search normally.</p>
-        </div>
-        
-        <label className="cursor-pointer group">
-          <div className="flex items-center justify-center gap-2 px-6 py-3 bg-indigo-500 hover:bg-indigo-500/80 text-white rounded-2xl font-bold transition-all shadow-lg shadow-app-primary/20 active:scale-95">
-            {isUploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
-            {isUploading ? "Syncing..." : "Upload New Resume"}
+    <DashboardShell
+      header={
+        <>
+          <div>
+            <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-3">
+              Resume Management
+            </h1>
+            <p className="text-sm text-zinc-400 font-medium mt-1">Pick your active focus for AI matching or search normally.</p>
           </div>
-          <input type="file" className="hidden" accept=".pdf,.docx" onChange={handleUpload} disabled={isUploading} />
-        </label>
-      </header>
+          
+          <label className="cursor-pointer group">
+            <div className="flex items-center justify-center gap-2 px-6 h-[44px] bg-indigo-500 hover:bg-indigo-500/80 text-white rounded-xl font-bold text-sm transition-all shadow-lg shadow-indigo-500/20 active:scale-95">
+              {isUploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+              {isUploading ? "Syncing..." : "Upload New Resume"}
+            </div>
+            <input type="file" className="hidden" accept=".pdf,.docx" onChange={handleUpload} disabled={isUploading} />
+          </label>
+        </>
+      }
+    >
+      <div className="flex-1 overflow-y-auto w-full p-4 sm:p-6 lg:p-8 custom-scrollbar">
+        {uploadStatus && (
+          <div className={`mb-8 p-4 rounded-2xl border flex items-center gap-3 text-sm font-medium animate-in slide-in-from-top-4 ${uploadStatus.includes('Error') ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'}`}>
+             {uploadStatus.includes('Error') ? <AlertCircle className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
+             {uploadStatus}
+          </div>
+        )}
 
-      {uploadStatus && (
-        <div className={`mb-8 p-4 rounded-2xl border flex items-center gap-3 text-sm font-medium animate-in slide-in-from-top-4 ${uploadStatus.includes('Error') ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'}`}>
-           {uploadStatus.includes('Error') ? <AlertCircle className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
-           {uploadStatus}
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {resumes.map((res: any) => (
           <div 
             key={res.id}
@@ -162,25 +169,25 @@ export default function ResumeManagementView() {
                 {new Date(res.createdAt).toLocaleDateString()}
               </div>
 
-              <div className="mt-auto flex flex-col gap-3">
+              <div className="mt-auto flex flex-col sm:flex-row gap-3">
                 <button 
                   onClick={() => setPreviewResume(res)}
-                  className="w-full py-3 bg-zinc-950 hover:bg-zinc-950/80 text-zinc-50 rounded-xl text-sm font-bold transition-all border border-zinc-800 flex items-center justify-center gap-2"
+                  className="w-full sm:flex-1 py-3 px-4 bg-zinc-950 hover:bg-zinc-950/80 text-zinc-50 rounded-xl text-sm font-bold transition-all border border-zinc-800 flex items-center justify-center gap-2"
                 >
-                  <Eye className="h-4 w-4" /> Preview
+                  <Eye className="h-4 w-4" /> <span className="whitespace-nowrap">Preview</span>
                 </button>
                 
                 {res.isSelected ? (
                   <button 
                     onClick={(e) => handleUnselect(e)}
-                    className="w-full py-3 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-xl text-xs font-black uppercase tracking-widest transition-all border border-red-500/20"
+                    className="w-full sm:flex-1 py-3 px-4 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-xl text-xs font-black uppercase tracking-widest transition-all border border-red-500/20 flex items-center justify-center text-center"
                   >
                     Unselect Active
                   </button>
                 ) : (
                   <button 
                     onClick={(e) => handleSelect(res.id, e)}
-                    className="w-full py-3 bg-indigo-500 hover:bg-indigo-500/80 text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg"
+                    className="w-full sm:flex-1 py-3 px-4 bg-indigo-500 hover:bg-indigo-500/80 text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg flex items-center justify-center text-center"
                   >
                     Make Active
                   </button>
@@ -200,7 +207,7 @@ export default function ResumeManagementView() {
 
       {previewResume && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-2 lg:p-10 bg-zinc-950/95 backdrop-blur-xl animate-in fade-in">
-          <div className="bg-zinc-900 border border-zinc-800 w-full max-w-7xl h-full rounded-[2.5rem] overflow-hidden flex flex-col shadow-[0_0_100px_rgba(0,0,0,0.8)] relative">
+          <div className="bg-zinc-900 border border-zinc-800 w-full h-full rounded-[2.5rem] overflow-hidden flex flex-col shadow-[0_0_100px_rgba(0,0,0,0.8)] relative">
             <div className="p-6 border-b border-zinc-800 flex items-center justify-between shrink-0 bg-zinc-900/50">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-zinc-950 rounded-2xl border border-zinc-800">
@@ -268,6 +275,7 @@ export default function ResumeManagementView() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </DashboardShell>
   );
 }

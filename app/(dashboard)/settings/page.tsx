@@ -55,7 +55,7 @@ export default function SettingsPage() {
   if (!mounted || (!profile && !session)) return <div className="p-20 text-center"><Loader2 className="animate-spin mx-auto mb-4" /> Loading Preferences...</div>;
 
   return (
-    <div className="animate-in fade-in duration-500 font-sans max-w-4xl mx-auto pb-20 p-6 lg:p-10">
+    <div className="animate-in fade-in duration-500 font-sans w-full pb-20 p-6 lg:p-10">
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
           <Settings className="h-8 w-8 text-zinc-400" />

@@ -25,6 +25,13 @@ export default function LoginPage() {
           </svg>
           Continue with Google
         </button>
+
+        <button
+          onClick={() => signIn("credentials", { email: "test@example.com", password: "password", callbackUrl: "/dashboard" })}
+          className="w-full flex items-center justify-center mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 rounded-xl font-medium transition-colors shadow-sm cursor-pointer"
+        >
+          Test Login
+        </button>
       </div>
     </div>
   );

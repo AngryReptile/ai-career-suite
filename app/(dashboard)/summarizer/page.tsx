@@ -4,13 +4,21 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useSWR from "swr";
 import { Youtube, Search, Play, ChevronDown, Loader2, Clock, CheckCircle2, FileText, Sparkles } from "lucide-react";
-import ReactMarkdown from 'react-markdown';
+import { DashboardShell } from "@/components/DashboardShell";
+import { YouTubeSummarizerBox } from "@/components/YouTubeSummarizerBox";
+import dynamic from 'next/dynamic';
+
+const ReactMarkdown = dynamic(() => import('react-markdown'), { ssr: false });
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function SummarizerView() {
   const router = useRouter();
-  const { data: history, mutate } = useSWR('/api/summarize', fetcher);
+  const { data: history, mutate } = useSWR('/api/summarize', fetcher, {
+    revalidateIfStale: false,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false
+  });
   
   const [url, setUrl] = useState("");
   const [isSummarizing, setIsSummarizing] = useState(false);
@@ -105,82 +113,50 @@ export default function SummarizerView() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-6rem)] animate-in fade-in duration-500 font-sans p-6 lg:p-8">
-      <div className="max-w-[1400px] mx-auto w-full flex flex-col h-full">
-        <header className="flex items-center justify-between shrink-0 mb-6 bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-4 shadow-sm backdrop-blur-md">
-         <div>
-            <h1 className="text-xl font-bold text-zinc-50 flex items-center gap-2">YouTube Summarizer</h1>
-            <p className="text-sm text-zinc-400 font-medium">Extract key insights from any YouTube video instantly.</p>
-         </div>
-      </header>
-
-      <div className="flex-1 flex flex-col lg:flex-row gap-6 overflow-hidden">
-         {/* History Sidebar (Left) */}
-         <aside className="lg:w-[320px] shrink-0 border border-zinc-800/50 bg-zinc-950/50 flex flex-col overflow-hidden shadow-lg transition-all duration-300 rounded-2xl">
-            <div className="h-16 px-4 border-b border-zinc-800/80 bg-zinc-900 flex justify-between items-center shrink-0">
-               <div className="flex items-center gap-2 font-semibold text-zinc-50/80">
-                 <Clock className="w-4 h-4 text-zinc-400" /> Previous Scans
-               </div>
+    <DashboardShell
+      header={
+        <div>
+          <h1 className="text-xl font-bold text-zinc-50 flex items-center gap-2">YouTube Summarizer</h1>
+          <p className="text-sm text-zinc-400 font-medium">Extract key insights from any YouTube video instantly.</p>
+        </div>
+      }
+      sidebar={
+        <>
+          <div className="h-16 px-4 border-b border-zinc-800/80 bg-zinc-900 flex justify-between items-center shrink-0">
+            <div className="flex items-center gap-2 font-semibold text-zinc-50/80">
+              <Clock className="w-4 h-4 text-zinc-400" /> Previous Scans
             </div>
-            <div className="flex-1 overflow-y-auto p-2 space-y-1">
-               {!history && <div className="p-4 text-center text-zinc-400 text-xs flex justify-center"><Loader2 className="w-4 h-4 animate-spin" /></div>}
-               {history && history.length === 0 && <div className="p-4 text-center text-zinc-400 text-xs">No summaries generated yet.</div>}
-               {history && Array.isArray(history) && history.map((item: any) => (
-                  <button 
-                     key={item.id}
-                     onClick={() => loadHistoryItem(item)}
-                     className={`w-full text-left px-3 py-3 rounded-xl transition-all border ${selectedHistoryId === item.id ? 'bg-zinc-900 border-indigo-500/30 shadow-md text-indigo-400' : 'bg-transparent border-transparent hover:bg-zinc-900/40 text-zinc-50/80'}`}
-                  >
-                     <div className="text-sm font-semibold truncate">{item.title}</div>
-                     <div className="text-[10px] text-zinc-400 mt-1 flex justify-between items-center">
-                        <span className="truncate max-w-[120px]">{item.url}</span>
-                        <span>{new Date(item.createdAt).toLocaleDateString()}</span>
-                     </div>
-                  </button>
-               ))}
-            </div>
-         </aside>
-
-         {/* Main Content */}
-         <div className="flex-1 bg-zinc-900/60 border border-zinc-800/50 rounded-2xl flex flex-col overflow-hidden shadow-lg relative">
-              <div className="h-16 px-6 border-b border-zinc-800/80 bg-zinc-900 flex items-center shrink-0">
-                  <form onSubmit={handleSummarize} className="relative group w-full flex items-center gap-3">
-                     <div className="relative flex-1 group bg-zinc-950 border border-zinc-800 hover:border-zinc-800/80 rounded-xl transition-all shadow-inner overflow-hidden flex items-center">
-                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 z-10" />
-                        <input 
-                           type="url" 
-                           value={url}
-                           onChange={(e) => setUrl(e.target.value)}
-                           placeholder="Paste YouTube Link here..." 
-                           className="w-full bg-transparent border-none py-2.5 pl-10 pr-4 text-sm text-zinc-50 placeholder:text-zinc-400 focus:outline-none transition-all font-mono"
-                           style={{
-                             maskImage: 'linear-gradient(to right, black 85%, transparent 98%)',
-                             WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 98%)'
-                           }}
-                        />
-                     </div>
-
-                     <div className="flex items-center bg-zinc-950 border border-zinc-800 rounded-xl p-0.5 shrink-0 h-10">
-                        {(['short', 'medium', 'comprehensive'] as const).map((level) => (
-                           <button
-                             key={level}
-                             type="button"
-                             onClick={() => setSummaryLevel(level)}
-                             className={`px-3 py-1.5 h-full rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all flex items-center justify-center ${summaryLevel === level ? 'bg-zinc-900 text-indigo-400 shadow-sm' : 'text-zinc-400 hover:text-zinc-50'}`}
-                           >
-                             {level === 'short' ? 'Brief' : level === 'medium' ? 'Moderate' : 'Comprehensive'}
-                           </button>
-                        ))}
-                     </div>
-
-                     <button 
-                       type="submit"
-                       disabled={isSummarizing || isDeepScanning || !url}
-                       className="bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white font-semibold text-xs rounded-xl transition-all border border-rose-400/20 disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(225,29,72,0.2)] hover:shadow-[0_0_25px_rgba(225,29,72,0.3)] w-[110px] h-10 shrink-0"
-                     >
-                       {(isSummarizing || isDeepScanning) ? <Loader2 className="w-4 h-4 animate-spin" /> : <span>Generate</span>}
-                     </button>
-                  </form>
+          </div>
+          <div className="flex-1 overflow-y-auto p-2 space-y-1">
+            {!history && <div className="p-4 text-center text-zinc-400 text-xs flex justify-center"><Loader2 className="w-4 h-4 animate-spin" /></div>}
+            {history && history.length === 0 && <div className="p-4 text-center text-zinc-500 font-medium text-xs">No summaries generated yet.</div>}
+            {history && Array.isArray(history) && history.map((item: any) => (
+              <button 
+                key={item.id}
+                onClick={() => loadHistoryItem(item)}
+                className={`w-full text-left px-3 py-3 rounded-xl transition-all border ${selectedHistoryId === item.id ? 'bg-white/[0.06] border-white/[0.04] shadow-sm text-zinc-50 font-bold' : 'bg-transparent border-transparent hover:bg-white/[0.02] text-zinc-500 hover:text-zinc-300'}`}
+              >
+                <div className="text-sm tracking-tight truncate">{item.title}</div>
+                <div className="text-[10px] tracking-wide mt-1 flex justify-between items-center opacity-70">
+                  <span className="truncate max-w-[120px]">{item.url}</span>
+                  <span>{new Date(item.createdAt).toLocaleDateString()}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </>
+      }
+    >
+              <div className="min-h-[4rem] p-4 md:px-6 md:py-0 border-b border-white/[0.04] bg-black/20 flex flex-col justify-center shrink-0">
+                  <YouTubeSummarizerBox
+                    url={url} 
+                    setUrl={setUrl} 
+                    summaryLevel={summaryLevel} 
+                    setSummaryLevel={setSummaryLevel} 
+                    isSummarizing={isSummarizing} 
+                    isDeepScanning={isDeepScanning} 
+                    handleSummarize={handleSummarize} 
+                  />
               </div>
 
              <div className="flex-1 overflow-y-auto p-6 space-y-6">
@@ -210,23 +186,23 @@ export default function SummarizerView() {
                  )}
 
                   {summaryData && !(isSummarizing || isDeepScanning) && (
-                    <div className="w-full space-y-6 animate-in slide-in-from-bottom-4 duration-500">
+                    <div className="w-full space-y-6 animate-in slide-in-from-bottom-4 duration-700">
                       <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2 text-rose-500 font-bold text-lg">
+                        <div className="flex items-center gap-2 text-rose-500 font-black text-xl tracking-tight">
                           <CheckCircle2 className="w-6 h-6" /> Comprehensive Summary Ready
                         </div>
                         <button 
                           onClick={handleChatWithVideo}
                           disabled={isTutorLearning}
-                          className="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-indigo-500/20 active:scale-95 disabled:opacity-50"
+                          className="bg-zinc-50 hover:bg-zinc-200 text-zinc-950 text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95 disabled:opacity-50"
                         >
                           {isTutorLearning ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
                           {isTutorLearning ? 'Redirecting...' : 'Chat with Video'}
                         </button>
                       </div>
-                      <div className="border border-zinc-800 bg-zinc-950/50 rounded-2xl overflow-hidden shadow-2xl">
-                         <div className="p-8 prose prose-invert prose-rose max-w-none">
-                            <div className="text-zinc-300 leading-relaxed space-y-4">
+                      <div className="border border-white/[0.04] bg-white/[0.01] rounded-[2rem] overflow-hidden shadow-inner">
+                         <div className="p-8 md:p-12 prose prose-invert prose-rose max-w-none text-zinc-300 leading-relaxed space-y-4">
+                            <div className="text-zinc-300 leading-relaxed pt-2">
                               <ReactMarkdown
                                 components={{
                                   p: ({ children }) => {
@@ -280,9 +256,6 @@ export default function SummarizerView() {
                     </div>
                  )}
              </div>
-         </div>
-      </div>
-      </div>
-    </div>
+         </DashboardShell>
   );
 }

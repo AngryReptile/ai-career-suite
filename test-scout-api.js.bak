@@ -1,0 +1,69 @@
+require('dotenv').config({ path: '.env.local' });
+const { GoogleGenerativeAI } = require('@google/generative-ai');
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+const systemInstruction = `
+You are an elite, autonomous Career & Research AI Agent. 
+You have been provided with RAW MARKDOWN scraped directly from the web.
+Your strict task is to extract data and structure it into a perfect JSON format.
+
+If the markdown contains JOB LISTINGS, format as:
+{
+  "type": "jobs",
+  "data": [
+    {
+      "id": "generate-random-id",
+      "title": "Job Title",
+      "company": "Company Name",
+      "location": "Location",
+      "salary": "Extracted salary or 'Competitive'",
+      "experience": "Required experience",
+      "source_url": "The exact URL to apply",
+      "match_score": 70,
+      "ai_insight": "A customized 1-sentence insight",
+      "tags": ["Tag1", "Tag2"]
+    }
+  ]
+}
+`;
+
+async function testApi() {
+  console.log("Fetching actual Jina content...");
+  const res = await fetch("https://r.jina.ai/https://www.linkedin.com/jobs/search?keywords=frontend%20developer&location=Bangalore");
+  const markdown = await res.text();
+  console.log("Fetched " + markdown.length + " chars of markdown. Attempting Gemini Flash extraction...");
+
+  const model = genAI.getGenerativeModel({ 
+    model: "gemini-1.5-flash",
+    systemInstruction
+  });
+
+  const generationConfig = {
+    maxOutputTokens: 8192,
+    temperature: 0.3,
+    responseMimeType: "application/json"
+  };
+
+  const result = await model.generateContent({
+    contents: [{ role: 'user', parts: [{ text: "RAW SCRAPED MARKDOWN:\n\n" + markdown.slice(0, 100000) }] }],
+    generationConfig
+  });
+
+  let outputText = (await result.response).text().trim();
+  console.log("Output Length:", outputText.length);
+  
+  if (outputText.startsWith('```json')) outputText = outputText.slice(7);
+  if (outputText.startsWith('```')) outputText = outputText.slice(3);
+  if (outputText.endsWith('```')) outputText = outputText.slice(0, -3);
+
+  try {
+    JSON.parse(outputText.trim());
+    console.log("✅ PARSE SUCCESS!");
+  } catch (e) {
+    console.error("❌ PARSE FAILED at first chunk:\n", outputText.substring(0, 1500));
+    console.error("Error was:", e.message);
+  }
+}
+
+testApi();

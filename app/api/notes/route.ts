@@ -13,6 +13,14 @@ export async function POST(req: Request) {
     const session = await getServerSession(authOptions);
     const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
 
+    if (userId === 'demo_user') {
+       await prisma.user.upsert({
+          where: { id: 'demo_user' },
+          update: {},
+          create: { id: 'demo_user', email: 'demo@example.com', name: 'Demo User' }
+       });
+    }
+
     const { summaryData, title: manualTitle, content: manualContent } = await req.json();
 
     let title = manualTitle || "Generated Video Note";
@@ -75,8 +83,13 @@ export async function PATCH(req: Request) {
     
     const { id, title, content, tags } = await req.json();
 
+    const existingNote = await prisma.note.findUnique({ where: { id } });
+    if (!existingNote || existingNote.userId !== userId) {
+       return NextResponse.json({ error: "Unauthorized or not found" }, { status: 403 });
+    }
+
     const note = await prisma.note.update({
-      where: { id, userId },
+      where: { id },
       data: {
         title,
         content,

@@ -24,6 +24,7 @@ model User {
   userProfile   UserProfile?
   conversations Conversation[]
   summaries     Summary[]
+  scoutHistory  ScoutHistory[]
 }
 
 model Account {
@@ -127,5 +128,15 @@ model Conversation {
   messages  String   // JSON stringified history
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ScoutHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  query     String
+  type      String   // "jobs" | "research" | "products"
+  data      String   // Stringified JSON payload Array/Object of the final results returned
+  createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

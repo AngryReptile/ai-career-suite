@@ -40,18 +40,18 @@ export async function POST(req: Request) {
         const mimeType = fileData.split(';')[0].split(':')[1] || 'application/pdf';
         
         const promptParts = [
-          { text: "ACT AS A PROFESSIONAL RESUME PARSER. EXTRACT THE FULL TEXT CONTENT FROM THIS RESUME FILE PRECISELY. MAINTAIN THE ORIGINAL STRUCTURE AS MUCH AS POSSIBLE. DO NOT ADD ANY COMMENTARY, ACKNOWLEDGMENTS, OR FORMATTING NOTES. RETURN ONLY THE TEXT FOUND IN THE DOCUMENT." },
+          { text: "ACT AS A PROFESSIONAL RESUME PARSER. EXTRACT THE FULL TEXT CONTENT FROM THIS RESUME FILE PRECISELY. DO NOT ADD ANY COMMENTARY." },
           { inlineData: { mimeType, data: base64Data } }
         ];
         
-        const result = await generateWithRetry(promptParts);
+        const result = await generateWithRetry(promptParts, undefined, 2);
         const responseText = (await result.response).text().trim();
         
         if (responseText && responseText.length > 50) {
           extractedContent = responseText;
         }
       } catch (aiError: any) {
-        // AI extraction failed, continue with placeholder
+        console.error("AI extraction failed", aiError);
       }
     }
 
