@@ -9,7 +9,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function SettingsPage() {
   const { data: session } = useSession();
-  const { data: profile, mutate: mutateProfile } = useSWR('/api/profile', fetcher);
+  const { data: profile, mutate: mutateProfile } = useSWR('/api/profile', fetcher, { revalidateOnFocus: false, dedupingInterval: 60000 });
   
   const [aiEnabled, setAiEnabled] = useState(true);
   const [isSaving, setIsSaving] = useState(false);

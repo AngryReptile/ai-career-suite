@@ -7,7 +7,8 @@ import { generateWithRetry } from '@/lib/gemini';
 export async function GET(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
     
     const conversations = await prisma.conversation.findMany({ where: { userId }, orderBy: { createdAt: 'desc' } });
     return NextResponse.json(conversations);
@@ -19,7 +20,8 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
 
     const { messages, mode, conversationId } = await req.json();
 

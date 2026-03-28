@@ -31,11 +31,19 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET || "fallback_secret_for_local_dev",
   callbacks: {
+    async jwt({ token, user, trigger, session }) {
+      if (user) {
+        // Initial sign in
+        const dbUser = await prisma.user.findUnique({ where: { id: user.id } });
+        token.role = dbUser?.role || "USER";
+        token.id = user.id;
+      }
+      return token;
+    },
     async session({ session, token }) {
       if (session.user && token.sub) {
-        // Here you would inject the user ID from your shared database schema
-        // Mocking it for now
         (session.user as any).id = token.sub;
+        (session.user as any).role = token.role as string;
       }
       return session;
     },

@@ -20,7 +20,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     <>
       {/* Contextual Ambient Glow */}
       <div 
-        className={`fixed inset-0 pointer-events-none transition-colors duration-[1.5s] ease-in-out bg-gradient-to-br from-zinc-950 via-zinc-950 ${getGlowColor()} to-black`}
+        className={`fixed inset-0 pointer-events-none transition-colors duration-[1.5s] ease-in-out bg-gradient-to-br from-transparent via-transparent ${getGlowColor()} to-black/20`}
         style={{ zIndex: -10 }}
       />
       

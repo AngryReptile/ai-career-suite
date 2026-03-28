@@ -11,7 +11,8 @@ export const revalidate = 0;
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
 
     if (userId === 'demo_user') {
        await prisma.user.upsert({
@@ -79,7 +80,8 @@ Do not use markdown blocks outside the json. Summary context:\n${JSON.stringify(
 export async function PATCH(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
     
     const { id, title, content, tags } = await req.json();
 
@@ -107,7 +109,8 @@ export async function PATCH(req: Request) {
 // GET: Fetch user's saved notes
 export async function GET() {
   const session = await getServerSession(authOptions);
-  const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+  if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
   
   const notes = await prisma.note.findMany({
     where: { userId },

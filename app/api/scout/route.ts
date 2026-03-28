@@ -10,7 +10,10 @@ export const maxDuration = 60; // Allow more time for deep scraping
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : null;
+    if (!session?.user) {
+      return NextResponse.json({ error: "Unauthorized access detected." }, { status: 401 });
+    }
+    const userId = (session.user as any).id || session.user.email;
     
     const { input, mode, page = 1, schemaKeys, schemaIntent } = await req.json(); // mode can be 'url' or 'search', page defaults to 1
     
@@ -81,41 +84,74 @@ Respond ONLY with perfect JSON.`;
         isResearch = parsed.intent === 'research';
         
         if (isResearch && parsed.query) {
-           console.log(`[NLP ROUTER] Deep Research Triggered: "${parsed.query}"`);
-           const ddgUrl = `https://r.jina.ai/https://lite.duckduckgo.com/lite/?q=${encodeURIComponent(parsed.query)}`;
-           const res = await fetch(ddgUrl, { headers: { "X-Return-Format": "markdown" }, cache: 'no-store' });
-           if (!res.ok) throw new Error(`Failed to search Deep Web. Status: ${res.status}`);
-           markdown = await res.text();
+           console.log(`[SOVEREIGN AGENT] Phase 1: Research Planning for "${input}"`);
            
-           // Decrypt DDG redirect wrappers back into clean, pure URLs for the LLM!
+           // STAGE 1: ADAPTIVE QUERY DIVERSIFICATION
+           const planningInstruction = `You are a Deep Web Research Strategist. 
+Given the user query: "${input}", generate 3 distinct, highly targeted search strings to find the rawest, deepest data possible.
+- Query 1: Broad aggregator search (e.g. "top 10 sites for...")
+- Query 2: Direct transactional/booking search (e.g. "official booking showtimes", "price list store")
+- Query 3: Localized or specific query (e.g. "site:.in", "neighborhood specific shop")
+Respond ONLY with a JSON array of 3 strings: ["q1", "q2", "q3"]`;
+
+           let tacticalQueries = [parsed.query];
+           try {
+             const planResult = await generateWithRetry(`User Input: "${input}"`, planningInstruction, 2);
+             const planText = (await planResult.response).text().trim();
+             const planMatch = planText.match(/\[[\s\S]*\]/);
+             if (planMatch) tacticalQueries = JSON.parse(planMatch[0]);
+           } catch (e) { console.warn("[SOVEREIGN] Planning failed, falling back to single query."); }
+
+           console.log(`[SOVEREIGN AGENT] Phase 2: Executing Parallel Discovery (${tacticalQueries.length} streams)...`);
+           
+           // STAGE 2: MULTI-STREAM DISCOVERY
+           const searchPromises = tacticalQueries.map(q => 
+             fetch(`https://r.jina.ai/https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}`, { headers: { "X-Return-Format": "markdown" }, cache: 'no-store' })
+             .then(r => r.text())
+             .catch(() => "")
+           );
+           const searchRes = await Promise.all(searchPromises);
+           let discoveryMarkdown = searchRes.join("\n\n---\n\n");
+
+           // Decrypt DDG redirect wrappers
            const dggTrackerRegex = /https?:\/\/(?:lite\.)?duckduckgo\.com\/l\/\?uddg=([^&\s'"]+)[^\s'")]*/gi;
-           markdown = markdown.replace(dggTrackerRegex, (match, encodedUrl) => {
+           discoveryMarkdown = discoveryMarkdown.replace(dggTrackerRegex, (match, encodedUrl) => {
               try { return decodeURIComponent(encodedUrl); } catch { return match; }
            });
-           
-           // Deep Scrape: If the user explicitly requested a schema, or is asking for physical data (prices/stores/best/in),
-           // the agent MUST dynamically extract the top raw source links from the SERP, bypass them, and scrape their direct HTML.
-           if (schemaKeys || /(where|buy|shop|store|best|in |near|recommend|price|cost)/i.test(input)) {
-              console.log("[AGENT] Deep data extraction target detected. Attempting deep-fetch of source links...");
-              const deepSourceUrls = [...markdown.matchAll(/https?:\/\/[^\s\)]+/gi)]
-                 .map(m => m[0])
-                 .filter(url => !url.includes('duckduckgo') && !url.includes('wikipedia.org') && !url.includes('youtube.com') && !url.includes('apple.com') && !url.includes('amazon') && !url.includes('flipkart') && !url.includes('jiomart') && !url.includes('reliance'))
-                 .filter((v, i, a) => a.indexOf(v) === i)
-                 .sort((a, b) => {
-                     // Force the agent to prioritize mid-tier data aggregators (Smartprix, 91mobiles, etc) 
-                     // because heavy platforms like Amazon/Flipkart 503-block the headless scrapers.
-                     const isAggregatorA = /(smartprix|91mobiles|gadgets360|gizbot|digit\.in|gadgetsnow|mynextphone|findprix|mysmartprice)/i.test(a);
-                     const isAggregatorB = /(smartprix|91mobiles|gadgets360|gizbot|digit\.in|gadgetsnow|mynextphone|findprix|mysmartprice)/i.test(b);
-                     return isAggregatorA === isAggregatorB ? 0 : isAggregatorA ? -1 : 1;
-                 })
-                 .slice(0, 2); // Max 2 deep parses to keep execution blistering fast
-              
-              if (deepSourceUrls.length > 0) {
-                 console.log(`[AGENT] Deep Scraping ${deepSourceUrls.length} targeted websites directly...`);
-                 const deepRes = await Promise.allSettled(deepSourceUrls.map(u => fetch(`https://r.jina.ai/${u}`, { headers: {"X-Return-Format": "markdown"} }).then(async r => `[EXACT_SOURCE_URL: ${u}]\\n\\n` + await r.text())));
-                 const deepText = deepRes.map((r: any) => r.status === 'fulfilled' ? r.value : "").join('\\n\\n---\\n\\n');
-                 markdown = deepText + "\\n\\n---\\n\\n[ORIGINAL SERP]:\\n" + markdown;
-              }
+
+           // STAGE 3: TACTICAL TARGET EVALUATION
+           console.log("[SOVEREIGN AGENT] Phase 3: Analyzing SERP snippets for high-value Deep Links...");
+           const targetInstruction = `You are a Tactical Link Evaluator for an AI Agent. Read these search results and identify the TOP 8 URLs that are most likely to contain DIRECT, RAW DATA (e.g. Booking pages, Store product pages, price grids).
+PRIORITIZE: Official brand sites, known aggregators (BookMyShow, 91mobiles, JustDial).
+REJECT: Generic news homepages, login screens, or unrelated blogs.
+Respond ONLY with a JSON array of absolute URLs: ["url1", "url2", ...]`;
+
+           let deepSourceUrls: string[] = [];
+           try {
+             const targetResult = await generateWithRetry(discoveryMarkdown.slice(0, 50000), targetInstruction, 2);
+             const targetText = (await targetResult.response).text().trim();
+             const targetMatch = targetText.match(/\[[\s\S]*\]/);
+             if (targetMatch) deepSourceUrls = JSON.parse(targetMatch[0]);
+           } catch (e) {
+             console.warn("[SOVEREIGN] Link evaluation failed, using regex fallback.");
+             deepSourceUrls = [...discoveryMarkdown.matchAll(/https?:\/\/[^\s\)]+/gi)]
+                .map(m => m[0])
+                .filter(url => !url.includes('duckduckgo') && !url.includes('wikipedia.org') && !url.includes('youtube.com') && !url.includes('apple.com'))
+                .slice(0, 8);
+           }
+
+           // STAGE 4: MASSIVE RECURSIVE RECRUSION
+           if (deepSourceUrls.length > 0) {
+              console.log(`[SOVEREIGN AGENT] Phase 4: Recursing into ${deepSourceUrls.length} Targeted Nodes...`);
+              const recursiveRes = await Promise.allSettled(deepSourceUrls.slice(0, 8).map(u => 
+                fetch(`https://r.jina.ai/${u}`, { headers: {"X-Return-Format": "markdown"} })
+                .then(async r => `[SOURCE_NODE: ${u}]\n\n` + await r.text())
+                .catch(() => "")
+              ));
+              const deepText = recursiveRes.map((r: any) => r.status === 'fulfilled' ? r.value : "").join('\n\n---\n\n');
+              markdown = deepText + "\n\n---\n\n[DISCOVERY_SERP_SUMMARY]:\n" + discoveryMarkdown.slice(0, 10000);
+           } else {
+              markdown = discoveryMarkdown;
            }
         } else {
            if (parsed.keywords) keywords = parsed.keywords;
@@ -169,11 +205,19 @@ Respond ONLY with perfect JSON.`;
 
     const systemInstruction = schemaKeys && Array.isArray(schemaKeys) && schemaKeys.length > 0 ? `
 You are an elite, autonomous Data Extraction AI Agent. 
-You have been provided with CONCATENATED RAW MARKDOWN scraped directly from a Target Web Search.
+You have been provided with CONCATENATED RAW MARKDOWN scraped directly from a Target Web Search and/or Deep Scraped Sites.
 Your strict task is to extract information and structure it into a perfect custom JSON format based on the exact keys requested by the user. DO NOT return markdown blocks, just the raw JSON object.
 
 CRITICAL INSTRUCTION: You must extract the relevant items into a JSON array, where EVERY object has exactly the keys listed below.
 REQUESTED KEYS: ${JSON.stringify(schemaKeys)}
+
+DATA QUALITY RULES:
+1. DIVERSITY ENFORCEMENT: You MUST prioritize finding and including as many distinct companies, sellers, or domains as possible in your results. Do not ignore a different retailer just because one retailer has many items.
+2. UNLIMITED DOMAIN YIELD: If a single website or domain contains multiple distinct valid items (e.g., 10 different showtimes or 5 different product models), you MUST extract EVERY single one of them as a separate row. There is no limit per domain.
+3. MAXIMUM VOLUME: Extract AS MANY valid items as you can find in the provided text (aim for 10-20+ items if possible).
+4. STRICT DATA REJECTION: If an item in the text does not explicitly state the core metric (like Price or Location), YOU MUST NOT EXTRACT IT. Do NOT output "-", "N/A", or "Unknown". If a requested field is missing from the source text, skip the entire item.
+4. TRANSACTIONAL PRIORITY: While you should prioritize extracting from official stores, you MAY scrape news articles or blogs if they contain specific prices and booking links. CRITICAL: If you find a direct booking URL (e.g. BookMyShow, Amazon, Flipkart) buried inside a news article, you MUST extract the direct booking URL as the main Link, not the news article's URL.
+5. ABSOLUTE LINKING RULE: You MUST NEVER output Search Engine links (DuckDuckGo, Google, Bing). You must meticulously extract the EXACT, DIRECT deep-link to the specific item page. If the real deep-link is missing, skip the item.
 
 Format exactly as:
 {
@@ -185,15 +229,16 @@ ${schemaKeys.map(k => `      "${k}": "data value"`).join(',\n')}
   ]
 }
 
-If no data exists, return "data": [].
+If no data exists or no items meet the strict criteria, return "data": [].
 ` : mode === 'url' || (mode === 'search' && typeof isResearch !== 'undefined' && isResearch) ? `
-You are an elite, autonomous Career & Research AI Agent. 
-You have been provided with CONCATENATED RAW MARKDOWN scraped directly from a Target Web Search.
-Your absolute strict task is to read the search results, synthesize a highly accurate answer, and structure it into a perfect JSON format. DO NOT return markdown blocks, just the raw JSON object.
+You are an elite, autonomous Career & Research AI Agent: **SOVEREIGN CORE**. 
+You have been provided with a MASSIVE DATA POOL containing:
+1. RAW SCRAPED DATA from 6-8 specifically targeted "Deep Web" nodes (Booking pages, store grids).
+2. A summary of the original search results (SERP).
 
-CRITICAL FORMATTING RULE: ALWAYS default to the LIST format arrays ("type": "jobs") if the user is looking for products, prices, laptops, phones, tools, links, datasets, or multiple entities. You must ONLY output a continuous narrative summary ("type": "research") if the query explicitly requested an essay, abstract analysis, or biographical history.
-SPECIAL EXCLUSION RULE: YOU MUST NEVER output links to social media or forums (Reddit, Quora, Facebook, Twitter) as items in your list! If the user asks where to buy something locally or requests recommendations, you MUST read the provided text, FIGURE THINGS OUT YOURSELF, and explicitly extract ONLY the actual physical store names, neighborhoods, companies, or malls.
-ABSOLUTE LINKING RULE: You MUST NEVER output Search Engine links (DuckDuckGo, Google, Bing) as the source_url! You must meticulously extract the EXACT, DIRECT deep-link to the specific product/job/article page on the target website. DO NOT output generic homepage URLs or internal retailer search URLs (e.g., avoid "amazon.com/s?k=abc", you must find "amazon.com/dp/123"). If the real deep-link is missing, output an empty string "".
+Your task is to synthesize this multi-source data into one highly accurate, clean result. 
+CRITICAL: If different sources provide conflicting info (e.g. different prices for the same seat), prioritize the one that appears to be the direct official storefront link.
+ABSOLUTE LINKING RULE: You MUST extract the EXACT, DIRECT deep-link to the item. DO NOT output search engine links. If a deep link is found in a "SOURCE_NODE" block, use that as the primary URL.
 
 If the query is a LIST of items or products, format exactly as:
 {
@@ -361,16 +406,38 @@ CRITICAL:
 
     // FINAL SANITIZATION PASS: Guarantee no malformed 'https:https' or remaining duckduckgo tracker wrappers reach the UI
     if (parsedData?.data && Array.isArray(parsedData.data)) {
-        parsedData.data = parsedData.data.map((item: any) => {
-            if (item.source_url && typeof item.source_url === 'string') {
-                if (item.source_url.startsWith('https:https://')) {
-                    item.source_url = item.source_url.replace('https:https://', 'https://');
-                }
-                if (item.source_url.includes('duckduckgo.com/l/?uddg=')) {
-                    const match = item.source_url.match(/uddg=([^&]+)/);
-                    item.source_url = match ? decodeURIComponent(match[1]) : "";
-                } else if (item.source_url.includes('duckduckgo.com')) {
-                    item.source_url = ""; 
+        // Filter out items that are functionally useless (missing deep links or filled with empty/dash placeholders)
+        parsedData.data = parsedData.data.filter((item: any) => {
+            const values = Object.values(item).map(v => typeof v === 'string' ? v.trim().toLowerCase() : v);
+            // Deep RegEx to instantly destroy any field filled with dashes, em-dashes, underscores, or 'N/A' variants.
+            const emptyFields = values.filter(v => typeof v === 'string' && (v === '' || /^[-—_~]+$/.test(v) || v === 'n/a' || v === 'unknown' || v === 'null' || v.includes('not specified')));
+            
+            // If the schema requested a 'price', it MUST have a valid price.
+            const hasEmptyPrice = Object.entries(item).some(([k, v]) => 
+               k.toLowerCase().includes('price') && 
+               (typeof v !== 'string' || v.trim().toLowerCase() === '' || /^[-—_~]+$/.test(v.trim()) || v.trim().toLowerCase() === 'n/a' || v.trim().toLowerCase().includes('unknown'))
+            );
+
+            if (hasEmptyPrice) return false;
+            
+            // Strict rejection if 2 or more fields are totally empty/dash
+            if (emptyFields.length >= 2) {
+                return false;
+            }
+            return true;
+        }).map((item: any) => {
+            // Iterate over all keys since dynamic schema keys could be 'url', 'link', 'website', etc.
+            for (const key of Object.keys(item)) {
+                if (typeof item[key] === 'string') {
+                    if (item[key].startsWith('https:https://')) {
+                        item[key] = item[key].replace('https:https://', 'https://');
+                    }
+                    if (item[key].includes('duckduckgo.com/l/?uddg=')) {
+                        const match = item[key].match(/uddg=([^&]+)/);
+                        item[key] = match ? decodeURIComponent(match[1]) : "";
+                    } else if (item[key].includes('duckduckgo.com')) {
+                        item[key] = ""; 
+                    }
                 }
             }
             return item;

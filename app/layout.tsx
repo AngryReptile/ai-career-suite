@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,8 +7,15 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+});
+
+const vt323 = VT323({
+  weight: "400",
+  variable: "--font-vt323",
   subsets: ["latin"],
 });
 
@@ -18,6 +25,8 @@ export const metadata: Metadata = {
 };
 
 import { Providers } from "@/components/Providers";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { LiquidGlassEffects } from "@/components/LiquidGlassEffects";
 
 export default function RootLayout({
   children,
@@ -27,9 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased font-sans`}
+        className={`${inter.variable} ${spaceMono.variable} ${vt323.variable} antialiased font-sans`}
       >
-        <Providers>{children}</Providers>
+        <LiquidGlassEffects />
+        <AnimatedBackground />
+        <div className="relative z-0 min-h-screen">
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   );

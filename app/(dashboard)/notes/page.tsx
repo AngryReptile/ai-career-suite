@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function NotesSaverView() {
-  const { data: notes, mutate } = useSWR('/api/notes', fetcher);
+  const { data: notes, mutate } = useSWR('/api/notes', fetcher, { revalidateOnFocus: false, dedupingInterval: 60000 });
   
   const [selectedNote, setSelectedNote] = useState<any>(null);
   const [isMakingNote, setIsMakingNote] = useState(false);
@@ -208,9 +208,9 @@ export default function NotesSaverView() {
          </div>
       }
        sidebar={
-         <div className="flex flex-col h-full bg-black/40 border-r border-white/[0.04]">
-            <div className="h-16 px-6 border-b border-white/[0.04] flex justify-between items-center shrink-0">
-               <div className="flex items-center gap-2 font-black tracking-widest text-[10px] uppercase text-zinc-500">
+         <div className="flex flex-col h-full md:border-r border-white/5">
+            <div className="h-16 px-6 border-b border-white/10 flex justify-between items-center shrink-0">
+               <div className="flex items-center gap-2 font-bold tracking-wide text-xs uppercase text-zinc-400">
                  <Clock className="w-4 h-4" /> Saved Notes
                </div>
                <button 
@@ -221,17 +221,17 @@ export default function NotesSaverView() {
                  {isMakingNote ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />}
                </button>
              </div>
-            <div className="px-5 py-4 border-b border-white/[0.04] shrink-0">
+            <div className="px-5 py-4 border-b border-white/10 shrink-0">
                <form onSubmit={handleAISearch} className="relative group">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 group-hover:text-indigo-400 transition-colors" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
                   <input
                      type="text"
                      value={searchQuery}
                      onChange={(e) => setSearchQuery(e.target.value)}
                      placeholder="AI Semantic Search..."
-                     className="w-full bg-white/[0.02] border border-white/[0.04] rounded-xl py-2.5 pl-10 pr-3 text-sm text-zinc-50 placeholder:text-zinc-600 focus:outline-none focus:border-indigo-500/50 transition-all shadow-inner"
+                     className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-10 pr-3 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all shadow-inner"
                   />
-                  {isSearching && <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-indigo-400 animate-spin" />}
+                  {isSearching && <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white animate-spin" />}
                </form>
                <AnimatePresence>
                  {searchResult && (
@@ -239,7 +239,7 @@ export default function NotesSaverView() {
                        initial={{ opacity: 0, height: 0 }}
                        animate={{ opacity: 1, height: 'auto' }}
                        exit={{ opacity: 0, height: 0 }}
-                       className="mt-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-3 text-xs text-indigo-100 leading-relaxed overflow-hidden relative"
+                       className="mt-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-3 text-xs text-indigo-100 leading-relaxed overflow-hidden relative backdrop-blur-md"
                     >
                        <button onClick={() => setSearchResult('')} className="absolute top-1 right-1 p-1 text-indigo-400/50 hover:text-indigo-400"><X className="w-3 h-3" /></button>
                        <strong className="text-indigo-400 block mb-1">AI Answer:</strong>
@@ -263,9 +263,9 @@ export default function NotesSaverView() {
                         setEditedContent(note.content);
                         setIsEditing(false);
                      }}
-                     className={`w-full text-left px-4 py-3.5 rounded-2xl transition-all border ${selectedNote?.id === note.id ? 'bg-white/[0.06] border-white/[0.04] shadow-sm text-zinc-50 font-bold' : 'bg-transparent border-transparent hover:bg-white/[0.02] text-zinc-500 hover:text-zinc-300'}`}
+                     className={`w-full text-left px-4 py-3.5 rounded-xl transition-all border ${selectedNote?.id === note.id ? 'bg-white/10 border-white/10 shadow-sm text-white font-semibold' : 'bg-transparent border-transparent hover:bg-white/5 text-zinc-400 hover:text-white'}`}
                   >
-                     <div className="text-sm tracking-tight truncate">{note.title}</div>
+                     <div className="text-sm tracking-tight truncate font-sans">{note.title}</div>
                      <div className="text-[10px] tracking-wide mt-1 flex justify-between items-center opacity-70">
                         <span>{new Date(note.createdAt).toLocaleDateString()}</span>
                      </div>
@@ -277,7 +277,7 @@ export default function NotesSaverView() {
     >
         <div className="flex-1 flex flex-col overflow-hidden p-6 relative">
             {isProcessingBridge && (
-               <div className="absolute inset-0 z-50 bg-zinc-950/60 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8">
+               <div className="absolute inset-0 z-50 bg-white/5 backdrop-blur-[20px] backdrop-saturate-150 flex flex-col items-center justify-center text-center p-8">
                   <div className="relative">
                     <Loader2 className="w-12 h-12 text-emerald-500 animate-spin mb-4" />
                     <div className="absolute inset-0 blur-xl bg-emerald-500/20 animate-pulse"></div>
@@ -288,29 +288,29 @@ export default function NotesSaverView() {
             )}
             {selectedNote ? (
                <div className="flex-1 flex flex-col overflow-hidden">
-                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
                    {isEditing ? (
                      <input 
                        value={editedTitle}
                        onChange={(e) => setEditedTitle(e.target.value)}
-                       className="bg-white/[0.02] border border-white/[0.04] rounded-xl px-4 py-2 sm:py-2.5 text-xl font-black tracking-tight text-zinc-50 focus:outline-none focus:border-indigo-500/50 focus:bg-white/[0.04] transition-all flex-1 w-full sm:mr-4 shadow-inner"
+                       className="bg-white/5 border border-white/10 rounded-xl px-4 py-2 sm:py-2.5 text-2xl font-bold tracking-tight text-white focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all flex-1 w-full sm:mr-4 shadow-inner"
                        placeholder="Note Title..."
                      />
                    ) : (
-                     <h2 className="text-3xl font-black tracking-tight text-zinc-50 break-words flex-1">{selectedNote.title}</h2>
+                     <h2 className="text-3xl font-bold tracking-tight text-white break-words flex-1">{selectedNote.title}</h2>
                    )}
                    <div className="flex flex-row gap-3 shrink-0 items-center w-full sm:w-auto justify-start sm:justify-end">
                      {!isEditing && (
                        <button
                          onClick={handleGenerateFlashcards}
                          disabled={isGeneratingFlashcards}
-                         className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg flex items-center gap-2 transition-all shadow-sm ${
+                         className={`text-xs font-semibold px-4 py-2 rounded-xl flex items-center gap-2 transition-all shadow-sm ${
                            selectedNote
-                             ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 active:scale-95'
-                             : 'bg-zinc-800 text-zinc-600 border border-zinc-700/50 opacity-50 cursor-not-allowed'
+                             ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20 hover:bg-amber-500/20 active:scale-95'
+                             : 'bg-white/5 text-zinc-500 border border-white/10 opacity-50 cursor-not-allowed'
                          }`}
                        >
-                         {isGeneratingFlashcards ? <Loader2 className="w-3.5 h-3.5 animate-spin text-emerald-400" /> : <Sparkles className="w-3.5 h-3.5" />}
+                         {isGeneratingFlashcards ? <Loader2 className="w-4 h-4 animate-spin text-amber-500" /> : <Sparkles className="w-4 h-4" />}
                          {isGeneratingFlashcards ? 'Generating...' : 'Flashcards'}
                        </button>
                      )}
@@ -318,15 +318,15 @@ export default function NotesSaverView() {
                        <button 
                          onClick={handleSaveChanges}
                          disabled={isSaving}
-                         className="flex items-center gap-2 px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl text-xs font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-95 disabled:opacity-50"
+                         className="flex items-center gap-2 px-6 py-2.5 bg-white text-black hover:bg-zinc-200 rounded-xl text-sm font-bold transition-all shadow-lg active:scale-95 disabled:opacity-50"
                        >
-                         {isSaving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <CheckCircle2 className="w-3.5 h-3.5" />}
-                         Save Profile
+                         {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
+                         Save Note
                        </button>
                      ) : (
                        <button 
                          onClick={() => setIsEditing(true)}
-                         className="px-4 py-1.5 bg-zinc-900 hover:bg-indigo-500/10 text-zinc-400 hover:text-zinc-50 text-xs font-bold rounded-lg transition-all border border-zinc-800"
+                         className="px-4 py-2 bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white text-sm font-semibold rounded-xl transition-all border border-white/10 shadow-sm"
                        >
                          Edit Note
                        </button>
@@ -341,20 +341,20 @@ export default function NotesSaverView() {
                          onChange={setEditedContent}
                        />
                     ) : (
-                        <div 
-                          className="prose prose-invert prose-indigo max-w-none text-sm text-zinc-300 leading-relaxed font-sans space-y-4 bg-white/[0.01] p-6 sm:p-10 rounded-[2rem] border border-white/[0.04] shadow-inner min-h-[400px]"
-                          dangerouslySetInnerHTML={{ 
-                            __html: selectedNote.content?.includes('<') && selectedNote.content?.includes('>') 
-                              ? selectedNote.content 
-                              : selectedNote.content?.replace(/\n/g, '<br/>') || ''
-                          }}
-                        />
-                     )}
+                         <div 
+                           className="prose prose-invert prose-indigo max-w-none text-sm text-zinc-300 leading-relaxed font-sans space-y-4 bg-white/5 backdrop-blur-3xl p-6 sm:p-10 rounded-[2.5rem] border border-white/10 shadow-2xl min-h-[400px]"
+                           dangerouslySetInnerHTML={{ 
+                             __html: selectedNote.content?.includes('<') && selectedNote.content?.includes('>') 
+                               ? selectedNote.content 
+                               : selectedNote.content?.replace(/\n/g, '<br/>') || ''
+                           }}
+                         />
+                      )}
                     
                     {selectedNote.tags && (
-                       <div className="mt-8 flex flex-wrap gap-2">
+                       <div className="mt-8 flex flex-wrap gap-2 pb-10">
                          {selectedNote.tags.split(',').map((tag: string, i: number) => (
-                            <span key={i} className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg flex items-center gap-1 border border-emerald-500/20">
+                            <span key={i} className="text-xs font-semibold text-zinc-300 bg-white/10 px-3 py-1.5 rounded-xl flex items-center gap-1 border border-white/10 shadow-sm">
                               <Tag className="w-3 h-3" /> {tag.trim()}
                             </span>
                          ))}
@@ -379,22 +379,22 @@ export default function NotesSaverView() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-zinc-950/90 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-white/5 backdrop-blur-[40px] backdrop-saturate-150"
           >
-            <div className="w-full relative">
+            <div className="w-full max-w-4xl relative">
               <button 
                 onClick={() => setShowFlashcardModal(false)}
-                className="absolute -top-12 right-0 p-2 text-zinc-400 hover:text-zinc-100 bg-zinc-900/50 rounded-xl border border-zinc-800 transition-all hover:scale-110"
+                className="absolute -top-16 right-0 p-3 text-zinc-300 hover:text-white bg-white/10 backdrop-blur-3xl rounded-2xl border border-white/20 transition-all active:scale-95 shadow-xl"
               >
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="mb-6 flex items-center justify-between">
+              <div className="mb-8 flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-black tracking-tight text-white focus:outline-none">Study Flashcards</h2>
-                  <p className="text-xs font-semibold text-zinc-500 mt-1">Master your notes with AI-generated drills.</p>
+                  <h2 className="text-3xl font-bold tracking-tight text-white focus:outline-none">Study Flashcards</h2>
+                  <p className="text-sm font-medium text-zinc-400 mt-2">Master your notes with AI-generated drills.</p>
                 </div>
-                <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
+                <div className="px-4 py-1.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-xs font-bold text-white shadow-inner">
                   {currentCardIndex + 1} / {flashcards.length}
                 </div>
               </div>
@@ -408,34 +408,34 @@ export default function NotesSaverView() {
                   className="w-full h-full relative"
                 >
                   {/* Front */}
-                  <div className={`absolute inset-0 w-full h-full bg-zinc-900/60 border-2 ${isFlipped ? 'border-transparent' : 'border-emerald-500/30'} rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center backdrop-blur-2xl shadow-2xl backface-hidden transition-all duration-500`}>
-                     <div className="absolute top-6 left-6 p-2 bg-emerald-500/10 rounded-xl">
-                        <Star className="w-4 h-4 text-emerald-400" />
+                  <div className={`absolute inset-0 w-full h-full bg-white/5 border ${isFlipped ? 'border-transparent' : 'border-white/20'} rounded-[3rem] p-12 flex flex-col items-center justify-center text-center backdrop-blur-3xl shadow-[0_0_80px_rgba(255,255,255,0.05)] backface-hidden transition-all duration-500`}>
+                     <div className="absolute top-8 left-8 p-3 bg-white/10 border border-white/20 rounded-2xl shadow-inner">
+                        <Star className="w-5 h-5 text-white" />
                      </div>
-                     <h3 className="text-2xl font-bold text-zinc-50 leading-tight">
+                     <h3 className="text-3xl font-bold text-white leading-tight max-w-[90%]">
                         {flashcards[currentCardIndex]?.front}
                      </h3>
-                     <div className="absolute bottom-10 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 group-hover:text-emerald-400 transition-colors">
-                        <RotateCw className="w-3.5 h-3.5" /> Tap to flip
+                     <div className="absolute bottom-10 flex items-center gap-2 text-xs font-bold tracking-wide text-zinc-400 group-hover:text-white transition-colors">
+                        <RotateCw className="w-4 h-4" /> Tap to flip
                      </div>
                   </div>
 
                   {/* Back */}
-                  <div className={`absolute inset-0 w-full h-full bg-zinc-950/80 border-2 ${!isFlipped ? 'border-transparent' : 'border-indigo-500/40'} rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center backdrop-blur-3xl shadow-2xl backface-hidden transition-all duration-500`} style={{ transform: 'rotateY(180deg)' }}>
-                     <div className="absolute top-6 left-6 p-2 bg-indigo-500/10 rounded-xl">
-                        <BookOpen className="w-4 h-4 text-indigo-400" />
+                  <div className={`absolute inset-0 w-full h-full bg-white/10 backdrop-blur-3xl border ${!isFlipped ? 'border-transparent' : 'border-white/30'} rounded-[3rem] p-12 flex flex-col items-center justify-center text-center shadow-[0_0_100px_rgba(255,255,255,0.1)] backface-hidden transition-all duration-500`} style={{ transform: 'rotateY(180deg)' }}>
+                     <div className="absolute top-8 left-8 p-3 bg-white/20 border border-white/30 rounded-2xl shadow-inner">
+                        <BookOpen className="w-5 h-5 text-white" />
                      </div>
-                     <p className="text-lg text-zinc-200 leading-relaxed max-w-[90%]">
+                     <p className="text-xl text-white leading-relaxed max-w-[90%] font-medium">
                         {flashcards[currentCardIndex]?.back}
                      </p>
-                     <div className="absolute bottom-10 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-400">
+                     <div className="absolute bottom-10 flex items-center gap-2 text-xs font-bold tracking-wide text-zinc-300">
                         Knowledge Mastery
                      </div>
                   </div>
                 </motion.div>
               </div>
 
-              <div className="mt-8 flex items-center justify-center gap-6">
+              <div className="mt-10 flex items-center justify-center gap-8">
                  <button 
                    disabled={currentCardIndex === 0}
                    onClick={(e) => {
@@ -443,16 +443,16 @@ export default function NotesSaverView() {
                      setCurrentCardIndex(prev => prev - 1);
                      setIsFlipped(false);
                    }}
-                   className="w-14 h-14 rounded-full bg-zinc-900/50 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 transition-all disabled:opacity-20 disabled:cursor-not-allowed group"
+                   className="w-16 h-16 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/20 transition-all shadow-lg active:scale-95 disabled:opacity-30 disabled:pointer-events-none group"
                  >
-                   <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+                   <ChevronLeft className="w-8 h-8 group-hover:-translate-x-1 transition-transform" />
                  </button>
                  
-                 <div className="h-1.5 w-32 bg-zinc-800 rounded-full overflow-hidden">
+                 <div className="h-2 w-48 bg-white/10 rounded-full overflow-hidden shadow-inner border border-white/5">
                     <motion.div 
                        initial={{ width: 0 }}
                        animate={{ width: `${((currentCardIndex + 1) / flashcards.length) * 100}%` }}
-                       className="h-full bg-gradient-to-r from-emerald-500 to-indigo-500"
+                       className="h-full bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                     />
                  </div>
 
@@ -463,9 +463,9 @@ export default function NotesSaverView() {
                      setCurrentCardIndex(prev => prev + 1);
                      setIsFlipped(false);
                    }}
-                   className="w-14 h-14 rounded-full bg-zinc-900/50 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 transition-all disabled:opacity-20 disabled:cursor-not-allowed group"
+                   className="w-16 h-16 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/20 transition-all shadow-lg active:scale-95 disabled:opacity-30 disabled:pointer-events-none group"
                  >
-                   <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+                   <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
                  </button>
               </div>
             </div>

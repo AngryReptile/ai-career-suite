@@ -11,7 +11,8 @@ const ADZUNA_APP_KEY = process.env.ADZUNA_APP_KEY || '1796be4b4a1f6874eb0594a86b
 export async function GET(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : null;
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
     
     const { searchParams } = new URL(req.url);
     // Use an empty string as the default query
@@ -192,7 +193,8 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
     const { jobId, jobTitle } = await req.json();
 
     await (prisma as any).activity.create({

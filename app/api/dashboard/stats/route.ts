@@ -9,7 +9,8 @@ export const dynamic = 'force-dynamic';
 export async function GET() {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
 
     // 1. Get active resume - Prioritize the one the user explicitly marked as selected
     const activeResume = await (prisma as any).userResume.findFirst({

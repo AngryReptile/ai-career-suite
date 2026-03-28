@@ -52,14 +52,15 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile Top Navigation Bar */}
-      <div className="md:hidden flex items-center justify-between w-full bg-black/60 backdrop-blur-3xl rounded-2xl p-4 border border-white/[0.04] shadow-2xl shrink-0 mb-4 z-30">
-        <div className="flex items-center gap-3">
-          <Hexagon className="h-6 w-6 text-fuchsia-400 fill-fuchsia-500/20" />
-          <span className="font-bold text-lg text-zinc-50 tracking-tight">Career Suite</span>
+      <div className="md:hidden flex items-center justify-between w-full liquid-glass p-4 shrink-0 z-30 mb-4 overflow-hidden relative">
+        <div className="liquid-glass-shine" />
+        <div className="flex items-center gap-3 relative z-10">
+          <Hexagon className="h-6 w-6 text-white" />
+          <span className="font-semibold text-xl text-white tracking-wide">Career Suite</span>
         </div>
         <button 
           onClick={() => setIsMobileOpen(true)}
-          className="text-zinc-400 hover:text-fuchsia-400 p-1.5 rounded-lg hover:bg-zinc-950 transition-all"
+          className="text-white hover:text-blue-400 p-1.5 rounded-xl hover:bg-white/10 transition-colors"
         >
           <Menu className="h-6 w-6" />
         </button>
@@ -75,25 +76,25 @@ export function Sidebar() {
 
       {/* Main Sidebar (Responsive) */}
       <aside 
-        className={`fixed inset-y-4 md:inset-auto z-50 md:z-20 md:relative flex flex-col h-[calc(100dvh-2rem)] md:h-full shrink-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden
-          ${isMobileOpen ? 'left-4 w-[calc(100vw-5rem)] max-w-sm rounded-[2rem] bg-black/80 border border-white/[0.04] backdrop-blur-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)]' : '-left-full w-[calc(100vw-5rem)] max-w-sm bg-transparent border-none'}
+        className={`fixed inset-y-4 md:inset-auto z-50 md:z-20 md:relative flex flex-col h-[calc(100dvh-2rem)] md:h-[calc(100dvh-3rem)] shrink-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] liquid-glass
+          ${isMobileOpen ? 'left-4 inset-y-4 h-[calc(100dvh-2rem)] w-[80vw] max-w-sm rounded-[2rem] border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]' : '-left-full w-[calc(100vw-5rem)] max-w-sm border-none'}
           md:left-0 md:transform-none ${isCollapsed ? 'md:w-20' : 'md:w-[260px] xl:w-[280px]'}`}
       >
+        <div className="liquid-glass-shine" />
         <div className="overflow-x-hidden overflow-y-auto custom-scrollbar h-full flex flex-col w-full pb-6">
           {/* Brand Header with Toggle */}
-          <div className={`p-6 flex items-center justify-between z-10 relative ${isCollapsed ? 'md:flex-col md:gap-4' : ''}`}>
+          <div className={`p-6 flex items-center justify-between z-10 relative border-b border-white/10 mb-4 ${isCollapsed ? 'md:flex-col md:gap-4' : ''}`}>
             <div className="flex items-center gap-3 shrink-0">
               <div className="relative">
-                <div className="absolute inset-0 bg-fuchsia-500/30 blur-xl rounded-full" />
-                <Hexagon className="h-8 w-8 text-fuchsia-400 fill-fuchsia-500/20 shrink-0 relative z-10" />
+                <Hexagon className="h-8 w-8 text-white shrink-0 relative z-10" />
               </div>
-              <span className={`font-black text-xl text-zinc-50 tracking-tighter whitespace-nowrap ${isCollapsed ? 'md:hidden' : ''}`}>Career Suite</span>
+              <span className={`font-semibold text-xl text-white tracking-wide leading-none ${isCollapsed ? 'md:hidden' : ''}`}>Career Suite</span>
             </div>
             
             {/* Desktop Collapse Toggle */}
             <button 
               onClick={() => setIsCollapsed(!isCollapsed)}
-              className="hidden md:flex text-zinc-500 hover:text-zinc-50 p-1.5 rounded-lg hover:bg-white/[0.04] transition-all"
+              className="hidden md:flex text-zinc-400 hover:text-white p-1.5 rounded-xl hover:bg-white/10 transition-colors"
             >
               <ChevronLeft className={`h-5 w-5 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isCollapsed ? 'rotate-180' : 'rotate-0'}`} />
             </button>
@@ -113,22 +114,12 @@ export function Sidebar() {
             const isActive = pathname.startsWith(item.href);
             
             const getActiveIconColor = (href: string) => {
-              if (!isActive) return 'group-hover:text-zinc-300';
-              if (href.includes('/omni-scout')) return 'text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]';
-              if (href.includes('/notes')) return 'text-emerald-400 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]';
-              if (href.includes('/summarizer')) return 'text-rose-400 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]';
-              if (href.includes('/tutor')) return 'text-fuchsia-400 drop-shadow-[0_0_8px_rgba(217,70,239,0.5)]';
-              if (href.includes('/dashboard')) return 'text-violet-400 drop-shadow-[0_0_8px_rgba(139,92,246,0.5)]';
-              return 'text-white';
+              if (!isActive) return 'group-hover:text-white';
+              return 'text-black';
             };
 
             const getActiveBgColor = (href: string) => {
-              if (href.includes('/omni-scout')) return 'bg-indigo-500/10 border-indigo-500/20 shadow-[0_0_20px_rgba(99,102,241,0.15)]';
-              if (href.includes('/notes')) return 'bg-emerald-500/10 border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.15)]';
-              if (href.includes('/summarizer')) return 'bg-rose-500/10 border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.15)]';
-              if (href.includes('/tutor')) return 'bg-fuchsia-500/10 border-fuchsia-500/20 shadow-[0_0_20px_rgba(217,70,239,0.15)]';
-              if (href.includes('/dashboard')) return 'bg-violet-500/10 border-violet-500/20 shadow-[0_0_20px_rgba(139,92,246,0.15)]';
-              return 'bg-white/[0.06] border-white/[0.04] shadow-[0_0_15px_rgba(255,255,255,0.03)]';
+              return 'bg-white shadow-[0_4px_12px_rgba(255,255,255,0.3)]';
             };
 
             return (
@@ -136,15 +127,15 @@ export function Sidebar() {
                 key={item.name}
                 href={item.href}
                 title={isCollapsed ? item.name : ""}
-                className={`relative flex items-center rounded-xl transition-all duration-200 group px-4 py-3 gap-4 w-full ${isCollapsed ? 'justify-center !px-0' : ''} ${
-                    isActive ? 'text-zinc-50 font-bold' : 'text-zinc-400 hover:text-zinc-50 hover:bg-white/[0.02]'
+                className={`relative flex items-center rounded-[14px] transition-all duration-200 group px-4 py-3 gap-4 w-full ${isCollapsed ? 'justify-center !px-0' : ''} ${
+                    isActive ? 'text-black font-bold' : 'text-zinc-300 hover:text-white hover:bg-white/10 font-semibold'
                 }`}
               >
                 {/* Sliding Active Background */}
                 {isActive && (
                   <motion.div
                     layoutId="active-pill"
-                    className={`absolute inset-0 rounded-xl border ${getActiveBgColor(item.href)}`}
+                    className={`absolute inset-0 rounded-[14px] ${getActiveBgColor(item.href)}`}
                     transition={{ type: "spring", stiffness: 450, damping: 35 }}
                   />
                 )}
@@ -155,16 +146,16 @@ export function Sidebar() {
             );
           })}
 
-          <div className={`mt-8 ${isCollapsed ? 'px-2' : 'px-4'}`}>
-            {!isCollapsed && <h3 className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-4 px-1">Documents</h3>}
+          <div className={`mt-8 ${isCollapsed ? 'px-2' : ''}`}>
+            {!isCollapsed && <h3 className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4 px-5">Documents</h3>}
             <div className="space-y-1">
                <Link 
                  href="/resume"
                  title={isCollapsed ? "View Resumes" : ""}
-                 className={`relative flex items-center rounded-xl transition-all hover:bg-white/[0.02] text-zinc-400 hover:text-zinc-50 group px-3 py-2.5 gap-3 w-full ${isCollapsed ? 'justify-center !px-0' : ''}`}
+                 className={`relative flex items-center rounded-[14px] transition-all hover:bg-white/10 text-zinc-300 font-semibold hover:text-white group px-4 py-3 gap-4 w-full ${isCollapsed ? 'justify-center !px-0' : ''}`}
                >
-                  <Eye className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110" />
-                  {!isCollapsed && <span className="text-sm font-medium whitespace-nowrap tracking-tight">View Resumes</span>}
+                  <Eye className="h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
+                  {!isCollapsed && <span className="tracking-tight whitespace-nowrap">View Resumes</span>}
                </Link>
 
                 <Link 
@@ -172,31 +163,31 @@ export function Sidebar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={isCollapsed ? "Create New" : ""}
-                  className={`relative flex items-center rounded-xl transition-all hover:bg-white/[0.02] text-zinc-400 hover:text-zinc-50 group px-3 py-2.5 gap-3 w-full ${isCollapsed ? 'justify-center !px-0' : ''}`}
+                  className={`relative flex items-center rounded-[14px] transition-all hover:bg-white/10 text-zinc-300 font-semibold hover:text-white group px-4 py-3 gap-4 w-full ${isCollapsed ? 'justify-center !px-0' : ''}`}
                 >
-                   <FilePlus className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110" />
-                   {!isCollapsed && <span className="text-sm font-medium whitespace-nowrap tracking-tight">Create AI Resume</span>}
+                   <FilePlus className="h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
+                   {!isCollapsed && <span className="tracking-tight whitespace-nowrap">Create AI Resume</span>}
                 </Link>
              </div>
           </div>
         </nav>
         
-        <div className={`mt-auto mb-6 ${isCollapsed ? 'px-2' : 'px-4'} relative z-10 w-full`}>
-          {!isCollapsed && <h3 className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-4 px-1">Account</h3>}
-          <div className="space-y-1 w-full">
+        <div className={`mt-auto mb-6 ${isCollapsed ? 'px-2' : ''} relative z-10 w-full`}>
+          {!isCollapsed && <h3 className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4 px-5">Account</h3>}
+          <div className="space-y-1 w-full px-3">
             {/* User Profile Section */}
-            <div className={`flex items-center rounded-2xl transition-all text-zinc-400 bg-white/[0.02] border border-white/[0.04] mb-3 ${isCollapsed ? 'justify-center p-2' : 'px-3 py-3 gap-3'} shadow-inner`}>
-               <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden shrink-0 bg-zinc-900 flex items-center justify-center relative shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+            <div className={`flex items-center rounded-2xl transition-all text-white bg-black/20 border border-white/5 shadow-inner mb-3 ${isCollapsed ? 'justify-center p-2' : 'px-3 py-3 gap-3'}`}>
+               <div className="w-8 h-8 rounded-full border border-white/20 overflow-hidden shrink-0 bg-white/10 flex items-center justify-center relative shadow-sm">
                   {session?.user?.image ? (
                     <Image src={session.user.image} alt="Profile" fill sizes="32px" className="object-cover" />
                   ) : (
-                    <User className="w-4 h-4 text-zinc-600" />
+                    <User className="w-4 h-4 text-white" />
                   )}
                </div>
                {!isCollapsed && (
                  <div className="flex flex-col min-w-0">
-                    <span className="text-sm font-bold text-zinc-200 truncate tracking-tight">{session?.user?.name || 'User'}</span>
-                    <span className="text-[10px] text-zinc-500 truncate font-semibold tracking-wide">Standard Account</span>
+                    <span className="font-bold text-sm text-white truncate tracking-tight">{session?.user?.name || 'USER'}</span>
+                    <span className="text-[10px] text-zinc-400 truncate font-semibold uppercase tracking-wide">{(session?.user as any)?.role === 'ADMIN' ? 'Administrator' : 'Standard User'}</span>
                  </div>
                )}
             </div>
@@ -204,19 +195,32 @@ export function Sidebar() {
             <Link
               href="/settings"
               title={isCollapsed ? "Settings" : ""}
-              className={`relative flex items-center rounded-xl transition-all duration-200 group px-3 py-2.5 gap-3 w-full hover:bg-white/[0.04] text-zinc-400 hover:text-zinc-50 ${isCollapsed ? 'justify-center !px-0' : ''}`}
+              className={`relative flex items-center font-semibold rounded-[14px] transition-all duration-200 group px-4 py-3 gap-4 w-full hover:bg-white/10 text-zinc-300 hover:text-white ${isCollapsed ? 'justify-center !px-0' : ''}`}
             >
               <Settings className="h-5 w-5 shrink-0 transition-transform group-hover:rotate-45 duration-300" />
-              {!isCollapsed && <span className="text-sm font-medium whitespace-nowrap tracking-tight">Settings</span>}
+              {!isCollapsed && <span className="whitespace-nowrap tracking-tight">Settings</span>}
             </Link>
+
+            {(session?.user as any)?.role === 'ADMIN' && (
+              <Link
+                href="/admin"
+                title={isCollapsed ? "Admin System" : ""}
+                className={`relative flex items-center font-bold rounded-[14px] transition-all duration-200 group px-4 py-3 gap-4 w-full hover:bg-[#5E5CE6] text-[#5E5CE6] hover:text-white ${isCollapsed ? 'justify-center !px-0' : ''}`}
+              >
+                <div className="relative">
+                  <Hexagon className="h-5 w-5 shrink-0 relative z-10" />
+                </div>
+                {!isCollapsed && <span className="whitespace-nowrap">Admin OS</span>}
+              </Link>
+            )}
             
             <button
               onClick={() => signOut({ callbackUrl: '/login' })}
               title={isCollapsed ? "Sign Out" : ""}
-              className={`relative flex justify-center md:justify-start items-center rounded-xl transition-all duration-200 group px-3 py-2.5 gap-3 w-full hover:bg-rose-500/10 hover:text-rose-400 text-zinc-500 ${isCollapsed ? 'justify-center !px-0' : ''}`}
+              className={`relative flex justify-center md:justify-start font-semibold items-center rounded-[14px] transition-all duration-200 group px-4 py-3 gap-4 w-full hover:bg-[#FF3B30] hover:text-white text-zinc-300 ${isCollapsed ? 'justify-center !px-0' : ''}`}
             >
               <LogOut className="h-5 w-5 shrink-0 transition-transform group-hover:-translate-x-1" />
-              {!isCollapsed && <span className="text-sm font-medium whitespace-nowrap tracking-tight">Sign Out</span>}
+              {!isCollapsed && <span className="whitespace-nowrap tracking-tight">Disconnect</span>}
             </button>
           </div>
           </div>

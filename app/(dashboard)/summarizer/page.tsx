@@ -17,7 +17,8 @@ export default function SummarizerView() {
   const { data: history, mutate } = useSWR('/api/summarize', fetcher, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
-    revalidateOnReconnect: false
+    revalidateOnReconnect: false,
+    dedupingInterval: 60000
   });
   
   const [url, setUrl] = useState("");
@@ -121,22 +122,22 @@ export default function SummarizerView() {
         </div>
       }
       sidebar={
-        <>
-          <div className="h-16 px-4 border-b border-zinc-800/80 bg-zinc-900 flex justify-between items-center shrink-0">
-            <div className="flex items-center gap-2 font-semibold text-zinc-50/80">
-              <Clock className="w-4 h-4 text-zinc-400" /> Previous Scans
+         <div className="flex flex-col h-full md:border-r border-white/5">
+          <div className="h-16 px-6 border-b border-white/10 flex justify-between items-center shrink-0">
+            <div className="flex items-center gap-2 font-bold tracking-wide text-xs uppercase text-zinc-400">
+              <Clock className="w-4 h-4" /> Previous Scans
             </div>
           </div>
-          <div className="flex-1 overflow-y-auto p-2 space-y-1">
+          <div className="flex-1 overflow-y-auto p-4 space-y-2 custom-scrollbar">
             {!history && <div className="p-4 text-center text-zinc-400 text-xs flex justify-center"><Loader2 className="w-4 h-4 animate-spin" /></div>}
             {history && history.length === 0 && <div className="p-4 text-center text-zinc-500 font-medium text-xs">No summaries generated yet.</div>}
             {history && Array.isArray(history) && history.map((item: any) => (
               <button 
                 key={item.id}
                 onClick={() => loadHistoryItem(item)}
-                className={`w-full text-left px-3 py-3 rounded-xl transition-all border ${selectedHistoryId === item.id ? 'bg-white/[0.06] border-white/[0.04] shadow-sm text-zinc-50 font-bold' : 'bg-transparent border-transparent hover:bg-white/[0.02] text-zinc-500 hover:text-zinc-300'}`}
+                className={`w-full text-left px-4 py-3.5 rounded-xl transition-all border ${selectedHistoryId === item.id ? 'bg-white/10 border-white/10 shadow-sm text-white font-semibold' : 'bg-transparent border-transparent hover:bg-white/5 text-zinc-400 hover:text-white'}`}
               >
-                <div className="text-sm tracking-tight truncate">{item.title}</div>
+                <div className="text-sm tracking-tight truncate font-sans">{item.title}</div>
                 <div className="text-[10px] tracking-wide mt-1 flex justify-between items-center opacity-70">
                   <span className="truncate max-w-[120px]">{item.url}</span>
                   <span>{new Date(item.createdAt).toLocaleDateString()}</span>
@@ -144,10 +145,10 @@ export default function SummarizerView() {
               </button>
             ))}
           </div>
-        </>
+         </div>
       }
     >
-              <div className="min-h-[4rem] p-4 md:px-6 md:py-0 border-b border-white/[0.04] bg-black/20 flex flex-col justify-center shrink-0">
+              <div className="min-h-[4rem] p-4 md:px-6 md:py-0 border-b border-white/10 bg-white/5 flex flex-col justify-center shrink-0">
                   <YouTubeSummarizerBox
                     url={url} 
                     setUrl={setUrl} 
@@ -167,14 +168,14 @@ export default function SummarizerView() {
                  )}
                  
                  {(isSummarizing || isDeepScanning) && !summaryData && (
-                    <div className="border border-zinc-800/50 rounded-xl overflow-hidden opacity-50 w-full">
-                      <div className="px-4 py-3 bg-zinc-900 border-b border-zinc-800 flex justify-between items-center">
-                        <div className="w-1/3 h-4 bg-zinc-800 rounded animate-pulse"></div>
+                    <div className="border border-white/10 bg-white/5 backdrop-blur-3xl rounded-[2rem] overflow-hidden opacity-50 w-full shadow-2xl">
+                      <div className="px-8 py-6 border-b border-white/10 flex justify-between items-center bg-white/5">
+                        <div className="w-1/3 h-6 bg-white/10 rounded-full animate-pulse"></div>
                       </div>
-                      <div className="p-6 space-y-4">
-                        <div className="w-full h-3 bg-zinc-800 rounded animate-pulse"></div>
-                        <div className="w-5/6 h-3 bg-zinc-800 rounded animate-pulse"></div>
-                        <div className="w-3/4 h-3 bg-zinc-800 rounded animate-pulse"></div>
+                      <div className="p-10 space-y-6">
+                        <div className="w-full h-4 bg-white/10 rounded-full animate-pulse"></div>
+                        <div className="w-5/6 h-4 bg-white/10 rounded-full animate-pulse"></div>
+                        <div className="w-3/4 h-4 bg-white/10 rounded-full animate-pulse"></div>
                       </div>
                     </div>
                  )}
@@ -187,21 +188,24 @@ export default function SummarizerView() {
 
                   {summaryData && !(isSummarizing || isDeepScanning) && (
                     <div className="w-full space-y-6 animate-in slide-in-from-bottom-4 duration-700">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2 text-rose-500 font-black text-xl tracking-tight">
-                          <CheckCircle2 className="w-6 h-6" /> Comprehensive Summary Ready
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-3 text-white font-bold text-2xl tracking-tight">
+                          <div className="p-2 bg-emerald-500/20 text-emerald-400 rounded-xl shadow-inner border border-emerald-500/30">
+                            <CheckCircle2 className="w-6 h-6" />
+                          </div>
+                          Analysis Complete
                         </div>
                         <button 
                           onClick={handleChatWithVideo}
                           disabled={isTutorLearning}
-                          className="bg-zinc-50 hover:bg-zinc-200 text-zinc-950 text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95 disabled:opacity-50"
+                          className="bg-white text-black hover:bg-zinc-200 text-sm font-bold tracking-wide px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-xl active:scale-95 disabled:opacity-50 border border-white/20"
                         >
-                          {isTutorLearning ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                          {isTutorLearning ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4 text-rose-500" />}
                           {isTutorLearning ? 'Redirecting...' : 'Chat with Video'}
                         </button>
                       </div>
-                      <div className="border border-white/[0.04] bg-white/[0.01] rounded-[2rem] overflow-hidden shadow-inner">
-                         <div className="p-8 md:p-12 prose prose-invert prose-rose max-w-none text-zinc-300 leading-relaxed space-y-4">
+                      <div className="border border-white/10 bg-white/5 backdrop-blur-3xl rounded-[2.5rem] overflow-hidden shadow-2xl">
+                         <div className="p-8 md:p-12 prose prose-invert prose-indigo max-w-none font-sans text-zinc-300 leading-relaxed space-y-4">
                             <div className="text-zinc-300 leading-relaxed pt-2">
                               <ReactMarkdown
                                 components={{
@@ -228,8 +232,8 @@ export default function SummarizerView() {
                                     return <p className="mb-4">{children}</p>;
                                   },
                                   strong: ({ children }) => <strong className="font-bold text-zinc-100">{children}</strong>,
-                                  h2: ({ children }) => <h2 className="text-xl font-bold text-zinc-100 mb-4 mt-8 pb-2 border-b border-zinc-800/50">{children}</h2>,
-                                  h3: ({ children }) => <h3 className="text-lg font-bold text-zinc-200 mb-3 mt-6">{children}</h3>
+                                  h2: ({ children }) => <h2 className="text-2xl font-bold text-white mb-6 mt-10 pb-4 border-b border-white/10">{children}</h2>,
+                                  h3: ({ children }) => <h3 className="text-lg font-semibold text-zinc-200 mb-4 mt-8">{children}</h3>
                                 }}
                               >
                                 {typeof summaryData === 'string' ? summaryData : JSON.stringify(summaryData, null, 2)}
@@ -240,7 +244,7 @@ export default function SummarizerView() {
                       <button 
                         onClick={handleMakeNoteRedir}
                         disabled={isMakingNote}
-                        className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-sm font-bold transition-all shadow-lg shadow-emerald-500/20 disabled:opacity-50 flex justify-center items-center gap-2 active:scale-[0.98]"
+                        className="w-full py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-xl rounded-2xl text-sm font-semibold transition-all shadow-lg disabled:opacity-50 flex justify-center items-center gap-2 active:scale-[0.98]"
                       >
                         {isMakingNote ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : <FileText className="w-5 h-5" />}
                         {isMakingNote ? 'Transferring...' : 'Make Note'}
@@ -250,9 +254,11 @@ export default function SummarizerView() {
 
                  {!summaryData && !isSummarizing && !isDeepScanning && !errorMsg && (
                     <div className="h-full flex flex-col items-center justify-center text-zinc-500 text-sm pb-12">
-                       <Youtube className="w-16 h-16 text-zinc-800 mb-4" />
-                       <p className="font-medium text-zinc-400">Your summaries will appear here.</p>
-                       <p className="text-zinc-600 mt-1 max-w-xs text-center">Select a previous scan from the sidebar or generate a new one.</p>
+                       <div className="w-24 h-24 bg-white/5 rounded-3xl flex items-center justify-center mb-6 shadow-sm border border-white/10">
+                         <Youtube className="w-10 h-10 text-zinc-400 drop-shadow-lg" />
+                       </div>
+                       <p className="font-bold text-xl tracking-tight text-white">Your summaries will appear here</p>
+                       <p className="text-zinc-500 mt-2 max-w-xs text-center font-medium leading-relaxed">Select a previous scan from the sidebar or generate a new one above.</p>
                     </div>
                  )}
              </div>

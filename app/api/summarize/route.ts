@@ -150,7 +150,8 @@ async function extractTranscript(url: string) {
 export async function GET(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
     const summaries = await (prisma as any).summary.findMany({ where: { userId }, orderBy: { createdAt: 'desc' } });
     return NextResponse.json(summaries);
   } catch (error: any) {
@@ -161,7 +162,8 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user ? ((session.user as any).id || session.user.email) : 'demo_user';
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    const userId = (session.user as any).id || session.user.email;
     if (!process.env.GEMINI_API_KEY) {
       return NextResponse.json({ error: "API Key Missing" }, { status: 500 });
     }

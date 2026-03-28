@@ -11,7 +11,8 @@ export default function ResumeManagementView() {
   const { data: resumes = [], mutate, error } = useSWR('/api/resume', fetcher, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
-    revalidateOnReconnect: false
+    revalidateOnReconnect: false,
+    dedupingInterval: 60000
   });
   const [isUploading, setIsUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState<string | null>(null);
@@ -138,10 +139,10 @@ export default function ResumeManagementView() {
         {resumes.map((res: any) => (
           <div 
             key={res.id}
-            className={`relative group bg-zinc-900 border rounded-3xl p-6 transition-all duration-300 shadow-xl ${
+            className={`relative group backdrop-blur-3xl border rounded-[2rem] p-6 transition-all duration-500 shadow-2xl ${
               res.isSelected 
-                ? 'border-indigo-500 ring-2 ring-app-primary/20 bg-indigo-500/5' 
-                : 'border-zinc-800 hover:border-app-muted'
+                ? 'border-indigo-500/50 hover:border-indigo-400 bg-indigo-500/10' 
+                : 'border-white/10 hover:border-white/30 bg-white/5'
             }`}
           >
             {res.isSelected && (
@@ -152,18 +153,18 @@ export default function ResumeManagementView() {
 
             <div className="flex flex-col h-full">
               <div className="flex items-start justify-between mb-6">
-                <div className={`p-4 rounded-2xl ${res.isSelected ? 'bg-indigo-500/20 text-indigo-400' : 'bg-zinc-950 text-zinc-400'}`}>
+                <div className={`p-4 rounded-2xl border ${res.isSelected ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' : 'bg-white/5 text-zinc-300 border-white/10'}`}>
                   <FileText className="h-8 w-8" />
                 </div>
                 <button 
                   onClick={() => setConfirmDeleteId(res.id)}
-                  className="p-2 text-zinc-400 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all"
+                  className="p-2 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all"
                 >
                   <Trash2 className="h-5 w-5" />
                 </button>
               </div>
 
-              <h3 className="text-xl font-bold text-zinc-50 mb-1 truncate">{res.filename}</h3>
+              <h3 className="text-xl font-semibold text-white mb-1 truncate" title={res.filename}>{res.filename}</h3>
               <div className="flex items-center gap-2 text-zinc-400 text-xs mb-8">
                 <Clock className="w-3.5 h-3.5" />
                 {new Date(res.createdAt).toLocaleDateString()}
@@ -172,7 +173,7 @@ export default function ResumeManagementView() {
               <div className="mt-auto flex flex-col sm:flex-row gap-3">
                 <button 
                   onClick={() => setPreviewResume(res)}
-                  className="w-full sm:flex-1 py-3 px-4 bg-zinc-950 hover:bg-zinc-950/80 text-zinc-50 rounded-xl text-sm font-bold transition-all border border-zinc-800 flex items-center justify-center gap-2"
+                  className="w-full sm:flex-1 py-3 px-4 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-semibold transition-all border border-white/10 flex items-center justify-center gap-2 shadow-sm"
                 >
                   <Eye className="h-4 w-4" /> <span className="whitespace-nowrap">Preview</span>
                 </button>
@@ -180,14 +181,14 @@ export default function ResumeManagementView() {
                 {res.isSelected ? (
                   <button 
                     onClick={(e) => handleUnselect(e)}
-                    className="w-full sm:flex-1 py-3 px-4 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-xl text-xs font-black uppercase tracking-widest transition-all border border-red-500/20 flex items-center justify-center text-center"
+                    className="w-full sm:flex-1 py-3 px-4 bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 rounded-xl text-sm font-bold transition-all border border-amber-500/20 flex items-center justify-center text-center shadow-sm"
                   >
-                    Unselect Active
+                    Unselect
                   </button>
                 ) : (
                   <button 
                     onClick={(e) => handleSelect(res.id, e)}
-                    className="w-full sm:flex-1 py-3 px-4 bg-indigo-500 hover:bg-indigo-500/80 text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg flex items-center justify-center text-center"
+                    className="w-full sm:flex-1 py-3 px-4 bg-indigo-500 hover:bg-indigo-400 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center text-center"
                   >
                     Make Active
                   </button>
@@ -198,44 +199,46 @@ export default function ResumeManagementView() {
         ))}
 
         {resumes.length === 0 && !isUploading && (
-          <div className="col-span-full h-80 flex flex-col items-center justify-center bg-zinc-900/30 border-2 border-dashed border-zinc-800 rounded-3xl">
-            <FileText className="h-12 w-12 text-zinc-400 mb-4 opacity-50" />
-            <p className="text-zinc-400 font-medium text-sm">No resumes uploaded yet.</p>
+          <div className="col-span-full h-80 flex flex-col items-center justify-center bg-white/5 backdrop-blur-3xl border border-dashed border-white/20 rounded-[2.5rem] shadow-inner">
+            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-white/5">
+              <FileText className="h-8 w-8 text-white/50" />
+            </div>
+            <p className="text-zinc-300 font-medium text-sm">No resumes uploaded yet.</p>
           </div>
         )}
       </div>
 
       {previewResume && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 lg:p-10 bg-zinc-950/95 backdrop-blur-xl animate-in fade-in">
-          <div className="bg-zinc-900 border border-zinc-800 w-full h-full rounded-[2.5rem] overflow-hidden flex flex-col shadow-[0_0_100px_rgba(0,0,0,0.8)] relative">
-            <div className="p-6 border-b border-zinc-800 flex items-center justify-between shrink-0 bg-zinc-900/50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 lg:p-10 bg-black/60 backdrop-blur-2xl animate-in fade-in">
+          <div className="bg-white/10 backdrop-blur-3xl border border-white/20 w-full h-full rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl relative">
+            <div className="p-6 border-b border-white/10 flex items-center justify-between shrink-0 bg-white/5">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-zinc-950 rounded-2xl border border-zinc-800">
-                  <FileText className="h-6 w-6 text-indigo-400" />
+                <div className="p-3 bg-white/10 rounded-2xl border border-white/10 shadow-inner">
+                  <FileText className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="font-bold text-zinc-50 truncate max-w-md">{previewResume.filename}</h2>
-                  <p className="text-[10px] text-zinc-500 uppercase font-black tracking-[0.2em] mt-0.5">Original Document Peek</p>
+                  <h2 className="font-semibold text-white truncate max-w-md text-lg">{previewResume.filename}</h2>
+                  <p className="text-xs text-zinc-400 font-medium mt-0.5">Original Document View</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <a 
                   href={previewResume.fileData} 
                   download={previewResume.filename}
-                  className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-bold rounded-xl border border-zinc-700 transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 bg-white text-black hover:bg-zinc-200 text-sm font-semibold rounded-xl transition-all flex items-center gap-2 shadow-lg active:scale-95"
                 >
                   Download Original
                 </a>
                 <button 
                   onClick={() => setPreviewResume(null)}
-                  className="p-3 hover:bg-red-500/10 text-zinc-400 hover:text-red-500 rounded-2xl transition-all active:scale-95"
+                  className="p-2 bg-white/5 hover:bg-red-500 text-zinc-300 hover:text-white border border-white/10 hover:border-red-500 rounded-xl transition-all active:scale-95"
                 >
                   <X className="h-6 w-6" />
                 </button>
               </div>
             </div>
             
-            <div className="flex-1 bg-black/40 relative overflow-hidden">
+            <div className="flex-1 bg-black/20 relative overflow-hidden backdrop-blur-md">
                {previewResume.fileData ? (
                  <embed 
                    src={previewResume.fileData} 
@@ -243,13 +246,13 @@ export default function ResumeManagementView() {
                    className="w-full h-full"
                  />
                ) : (
-                 <div className="w-full h-full p-12 overflow-y-auto flex flex-col items-center bg-zinc-950">
-                    <div className="w-full max-w-4xl bg-zinc-900/50 border border-zinc-800 rounded-3xl p-10 font-mono text-[13px] text-zinc-400 leading-relaxed shadow-inner">
-                        <div className="flex items-center gap-2 text-amber-500 mb-6 bg-amber-500/5 px-4 py-2 rounded-xl border border-amber-500/10 w-fit">
+                 <div className="w-full h-full p-12 overflow-y-auto flex flex-col items-center">
+                    <div className="w-full max-w-4xl bg-white/5 border border-white/10 rounded-[2rem] p-10 text-sm text-zinc-300 leading-relaxed shadow-2xl">
+                        <div className="flex items-center gap-2 text-amber-400 mb-6 bg-amber-500/10 px-4 py-2 rounded-xl border border-amber-400/20 w-fit font-medium">
                            <AlertCircle className="w-4 h-4" />
-                           <span className="font-sans font-bold uppercase tracking-wider text-[10px]">Legacy Extraction (No original file stored)</span>
+                           <span className="text-xs">Legacy Extraction (No Document Display Available)</span>
                         </div>
-                        <div className="whitespace-pre-wrap">
+                        <div className="whitespace-pre-wrap font-mono relative z-10">
                           {previewResume.content}
                         </div>
                     </div>
@@ -261,16 +264,17 @@ export default function ResumeManagementView() {
       )}
 
       {confirmDeleteId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-md">
-          <div className="bg-zinc-900 border border-zinc-800 max-w-sm rounded-[2.5rem] p-8 text-center">
-            <div className="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-2xl animate-in zoom-in-95">
+          <div className="bg-white/10 border border-white/20 backdrop-blur-3xl max-w-sm w-full rounded-[2.5rem] p-8 text-center shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-red-500/50"></div>
+            <div className="w-16 h-16 bg-red-500/20 text-red-400 border border-red-500/30 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
               <Trash2 className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold text-zinc-50 mb-4">Delete Resume?</h3>
-            <p className="text-zinc-400 text-sm mb-8">This will affect AI matching and cannot be undone.</p>
+            <h3 className="text-xl font-semibold text-white mb-3">Delete Resume?</h3>
+            <p className="text-zinc-400 text-sm mb-8 font-medium">This will remove it from AI matching systems. This action cannot be undone.</p>
             <div className="flex gap-4">
-              <button onClick={() => setConfirmDeleteId(null)} className="flex-1 py-3 bg-zinc-950 text-zinc-50 rounded-2xl border border-zinc-800 font-bold">Cancel</button>
-              <button onClick={() => handleDelete(confirmDeleteId)} className="flex-1 py-3 bg-red-600 text-white rounded-2xl font-bold shadow-lg shadow-red-600/20">Delete</button>
+              <button onClick={() => setConfirmDeleteId(null)} className="flex-1 py-3 bg-white/5 hover:bg-white/10 text-white rounded-2xl border border-white/10 font-semibold transition-all">Cancel</button>
+              <button onClick={() => handleDelete(confirmDeleteId)} className="flex-1 py-3 bg-red-500 hover:bg-red-400 text-white rounded-2xl font-bold shadow-lg transition-all active:scale-95">Delete</button>
             </div>
           </div>
         </div>

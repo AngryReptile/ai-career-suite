@@ -3,19 +3,27 @@
 
 @theme {
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-mono: var(--font-space-mono);
+  --font-glyph: var(--font-vt323);
+}
+
+html, body {
+
+  background-color: transparent !important;
+  color: #ededed;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer base {
-  body {
-    background-color: #000; /* true black for OLED premium feel */
-    color: #ededed;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    -webkit-font-smoothing: antialiased;
+  @keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
   
   ::selection {
-    background-color: #3b82f6; /* Blue selection */
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
   }
 }
@@ -29,5 +37,90 @@
       black 90%,
       transparent
     );
+  }
+
+  /* Liquid Glass Core Utilities */
+  .liquid-glass {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+    /* 
+       True Liquid Refraction:
+       Warping background with custom SVG Displacement Map 
+    */
+    backdrop-filter: url(#liquid-refraction) blur(28px) saturate(190%) brightness(105%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%) brightness(105%);
+    
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.25),    /* Soft ambient depth */
+      inset 0 1px 1px rgba(255, 255, 255, 0.2); /* Top edge light catch */
+    
+    border-radius: 2rem;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  /* Specular Highlight Layer (The "Liquid" Glint) */
+  .liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    /* Apply SVG Specular Lighting for sharp pinpoint highlights */
+    filter: url(#liquid-specular);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* Chromatic Aberration & Premium Grain */
+  .liquid-glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px; /* Physical glass edge thickness */
+    
+    /* 
+       Chromatic Aberration: 
+       A beveled edge that splits light into cyan/magenta 
+    */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(100, 150, 255, 0.15) 15%,
+      transparent 40%,
+      transparent 60%,
+      rgba(255, 100, 150, 0.1) 85%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+    
+    -webkit-mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+    mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    /* Apply fine organic grain */
+    backdrop-filter: url(#liquid-grain);
+    
+    pointer-events: none;
+    z-index: 30;
+  }
+
+  /* Inner Liquid Glow Overlay */
+  .liquid-glass-shine {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 60%
+    );
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 25;
   }
 }

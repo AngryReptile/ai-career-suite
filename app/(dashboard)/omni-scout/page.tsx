@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import useSWR from 'swr';
 import { 
   Search, MapPin, Briefcase, ExternalLink, Sparkles, 
@@ -10,8 +10,6 @@ import {
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DashboardShell } from "@/components/DashboardShell";
-import ReactMarkdown from 'react-markdown';
-
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const getJobApplyUrl = (job: any) => {
@@ -53,10 +51,10 @@ const getDomainIcon = (url: string) => {
 };
 
 export default function OmniScoutPage() {
-  const { data: resumes } = useSWR('/api/resume', fetcher);
+  const { data: resumes } = useSWR('/api/resume', fetcher, { revalidateOnFocus: false, dedupingInterval: 60000 });
   const activeResume = resumes?.find((r: any) => r.isSelected);
 
-  const { data: historyRes, mutate: mutateHistory } = useSWR('/api/scout/history', fetcher);
+  const { data: historyRes, mutate: mutateHistory } = useSWR('/api/scout/history', fetcher, { revalidateOnFocus: false, dedupingInterval: 60000 });
   const historyList = historyRes?.history || [];
 
   const [query, setQuery] = useState("");
@@ -207,30 +205,35 @@ export default function OmniScoutPage() {
         }
       } else {
         // AGENT MODE
-        addLog("Initializing Jina Stealth Endpoint...");
-        await new Promise(r => setTimeout(r, 800));
+        // SOVEREIGN AGENT LOGGING SEQUENCE
+        addLog("INITIALIZING SOVEREIGN KERNEL...");
+        const isUrlInput = activeQuery.startsWith('http');
         
-        const isUrl = query.startsWith('http');
-        if (isUrl) addLog(`Bypassing site firewalls for ${new URL(activeQuery).hostname}...`);
-        else addLog(`Executing Google Dork for deep platform search...`);
+        if (isUrlInput) {
+           addLog(`BYPASSING FIREWALLS FOR: ${new URL(activeQuery).hostname}...`);
+        } else {
+           addLog("PHASE 1: GENERATING STRATEGIC RESEARCH PLAN...");
+           await new Promise(r => setTimeout(r, 800));
+           addLog("PHASE 2: EXECUTING PARALLEL DISCOVERY STREAMS...");
+           await new Promise(r => setTimeout(r, 1200));
+           addLog("PHASE 3: ANALYZING SERP FOR HIGH-VALUE DATA NODES...");
+           await new Promise(r => setTimeout(r, 1000));
+           addLog("PHASE 4: RECURSING INTO TARGETED DEEP-WEB URLS...");
+        }
         
-        await new Promise(r => setTimeout(r, 1500));
-        addLog("Converting raw DOM into LLM-ready Markdown...");
-
         const res = await fetch('/api/scout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
              input: sanitizedQuery, 
-             mode: isUrl ? 'url' : 'search', 
+             mode: isUrlInput ? 'url' : 'search', 
              page: 1,
              schemaKeys: pendingSchema?.schema?.fields_to_extract || null,
              schemaIntent: pendingSchema?.schema?.intent || 'data'
           })
         });
 
-        addLog("Feeding Markdown to Groq for strict JSON extraction...");
-
+        addLog("PHASE 5: FUSING MULTI-SOURCE DATA & FINAL SYNTHESIS...");
         const data = await res.json();
 
         if (!res.ok) throw new Error(data.error || "Scout failed");
@@ -333,6 +336,115 @@ export default function OmniScoutPage() {
      }
   }
 
+  // MEMOIZED HEAVY COMPONENTS TO MAINTAIN 60FPS DURING TYPING
+  const memoizedDynamicTable = useMemo(() => {
+     if (!isDynamic || jobs.length === 0) return null;
+     return (
+       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="w-full border border-zinc-800 rounded-2xl bg-[#0A0A0A] shadow-2xl overflow-x-auto relative">
+         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 opacity-50"></div>
+         <table className="w-full text-left text-sm text-zinc-300">
+           <thead className="bg-zinc-900/40 text-[10px] font-black text-zinc-500 uppercase tracking-widest border-b border-zinc-800">
+             <tr>
+               {dynamicSchemaKeys.map((key, i) => (
+                 <th key={i} className="py-4 px-6 whitespace-nowrap">{key}</th>
+               ))}
+             </tr>
+           </thead>
+           <tbody className="divide-y divide-zinc-800/60">
+             {jobs.map((item, idx) => (
+               <motion.tr 
+                 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: idx * 0.05 }}
+                 key={idx} className="hover:bg-white/[0.02] transition-colors"
+               >
+                 {dynamicSchemaKeys.map((key, j) => {
+                    const val = item[key] || item[key.toLowerCase()] || item[key.toLowerCase().replace(/ /g, '_')] || item[key.replace(/ /g, '')] || "-";
+                    const isUrl = typeof val === 'string' && val.startsWith('http');
+                    return (
+                      <td key={j} className="py-4 px-6 max-w-xs truncate" title={String(val)}>
+                        {isUrl ? (
+                           <a href={val} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-xl text-indigo-400 font-bold text-xs hover:bg-zinc-800 hover:text-indigo-300 transition-colors hover:border-indigo-500/30">
+                             <img src={`https://www.google.com/s2/favicons?domain=${getDomainIcon(val)}&sz=64`} alt="logo" loading="lazy" decoding="async" className="w-4 h-4 rounded-sm object-contain bg-white" onError={(e) => { (e.currentTarget as any).style.display = 'none'; }} />
+                             Visit <ExternalLink className="w-3 h-3" />
+                           </a>
+                        ) : (
+                           String(val)
+                        )}
+                      </td>
+                    );
+                 })}
+               </motion.tr>
+             ))}
+           </tbody>
+         </table>
+       </motion.div>
+     );
+  }, [isDynamic, jobs, dynamicSchemaKeys]);
+
+  const memoizedStaticJobsList = useMemo(() => {
+     if (isDynamic || jobs.length === 0) return null;
+     return (
+       <div className="w-full border border-white/10 bg-white/5 backdrop-blur-3xl rounded-3xl shadow-2xl overflow-hidden">
+         {/* Table Header */}
+         <div className="hidden md:grid grid-cols-12 gap-4 p-5 border-b border-white/10 bg-white/10 font-sans text-xs font-semibold text-white/50 uppercase tracking-wide">
+           <div className="col-span-4 pl-2">Role & Company</div>
+           <div className="col-span-2">Location</div>
+           <div className="col-span-4">AI Synthesis</div>
+           <div className="col-span-2 text-right pr-2">Action</div>
+         </div>
+         
+         {/* Table Body */}
+         <div className="divide-y divide-white/5">
+           {jobs.map((job, idx) => (
+             <motion.div 
+               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: idx * 0.03 }}
+               key={idx} className="grid grid-cols-1 md:grid-cols-12 gap-4 p-5 md:items-center hover:bg-white/5 transition-colors group relative"
+             >
+                <div className="col-span-1 md:col-span-4 flex items-center gap-4 min-w-0">
+                 <div className="w-12 h-12 bg-white/10 rounded-2xl border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all shadow-inner">
+                   <Briefcase className="w-5 h-5 text-white/30 group-hover:text-white/70 transition-colors absolute z-0" />
+                   <img 
+                      src={`https://www.google.com/s2/favicons?domain=${getDomainIcon(job.source_url)}&sz=128`} 
+                      alt="" loading="lazy" decoding="async"
+                      className="relative z-10 w-6 h-6 object-contain drop-shadow-md"
+                      onError={(e) => { (e.currentTarget as any).style.display = 'none'; }}
+                   />
+                 </div>
+                 <div className="min-w-0">
+                   <h3 className="text-base font-semibold text-white truncate">{job.title}</h3>
+                   <p className="text-sm text-blue-400 truncate mt-0.5">{job.company}</p>
+                 </div>
+               </div>
+               
+               <div className="col-span-1 md:col-span-2 flex flex-col justify-center min-w-0 py-2 md:py-0">
+                 <span className="text-xs text-zinc-300 flex items-center gap-1.5 truncate">
+                   <MapPin className="w-4 h-4 text-blue-400 shrink-0" /> {job.location || "Remote"}
+                 </span>
+                 {job.salary && job.salary !== "Competitive" && (
+                   <span className="text-xs font-medium text-white truncate mt-1 pl-5">{job.salary}</span>
+                 )}
+               </div>
+               
+               <div className="col-span-1 md:col-span-4 min-w-0 pr-4">
+                  <p className="text-sm text-zinc-400 line-clamp-2 leading-relaxed">{job.ai_insight || job.experience}</p>
+               </div>
+               
+               <div className="col-span-1 md:col-span-2 flex items-center justify-between md:justify-end gap-3 shrink-0 mt-2 md:mt-0">
+                 {job.match_score && (
+                   <span className="text-xs font-semibold text-white bg-emerald-500/20 border border-emerald-500/30 rounded-xl px-3 py-1.5 shadow-sm">
+                     {job.match_score}% Match
+                   </span>
+                 )}
+                 <Link href={getJobApplyUrl(job)} target="_blank" className="py-2.5 px-5 bg-white text-black hover:bg-zinc-200 rounded-xl transition-all flex items-center gap-2 text-sm font-bold active:scale-95 shadow-lg shadow-white/10">
+                    Visit <ExternalLink className="w-4 h-4" />
+                 </Link>
+               </div>
+             </motion.div>
+           ))}
+         </div>
+       </div>
+     );
+  }, [isDynamic, jobs]);
+
   return (
     <DashboardShell 
       unconstrainedHeight={true}
@@ -354,39 +466,37 @@ export default function OmniScoutPage() {
         >
           {!hasSearched && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10 w-full">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-6 whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
-                <Sparkles className="w-3.5 h-3.5 shrink-0" /> <span className="truncate">Introducing Omni-Scout</span>
+              <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-wide mb-6 shadow-xl">
+                <Sparkles className="w-3.5 h-3.5 shrink-0 text-blue-400" /> <span>Omni-Scout Intelligence</span>
               </div>
-              <h1 className="font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-500 mb-4 tracking-tight leading-[1.1] pb-2" style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)' }}>AI Career & Web Researcher</h1>
-              <p className="text-zinc-400 font-medium mx-auto leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.125rem)', maxWidth: '600px' }}>
-                Directly scrape career domains, explore articles, or aggregate 1000s of live jobs instantly. Your unified scout agent.
+              <h1 className="font-sans font-bold text-white mb-4 tracking-tight leading-tight" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)' }}>Omni<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">-Scout</span></h1>
+              <p className="font-sans text-zinc-300 font-medium mx-auto leading-relaxed text-lg" style={{ maxWidth: '600px' }}>
+                Seamlessly scrape domains, explore articles, or aggregate live data instantly. Your unified autonomous research engine.
               </p>
             </motion.div>
           )}
 
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-500/20 via-indigo-500/20 to-emerald-500/20 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <form onSubmit={handleScout} className="relative flex flex-col md:flex-row bg-zinc-950 border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden p-2">
+          <div className="relative group w-full">
+            <form onSubmit={handleScout} className="relative flex flex-col md:flex-row bg-white/5 backdrop-blur-2xl border border-white/20 hover:border-white/40 transition-all duration-500 rounded-3xl shadow-2xl overflow-hidden p-2 focus-within:border-white/50 focus-within:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
               <div className="flex-1 flex items-center px-4 relative w-full">
-                <Search className="w-5 h-5 md:w-6 md:h-6 text-zinc-500 shrink-0" />
+                <Search className="w-5 h-5 md:w-6 md:h-6 text-zinc-400 shrink-0" />
                 <input 
                   type="text" 
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Paste URL or search 'React Dev'" 
-                  className="w-full bg-transparent border-none py-3 md:py-4 px-3 md:px-4 text-[clamp(0.875rem,2.5vw,1.125rem)] text-zinc-50 placeholder:text-zinc-600 focus:outline-none"
+                  placeholder="What would you like to scout?" 
+                  className="w-full bg-transparent border-none py-3 md:py-4 px-3 md:px-4 font-sans text-[clamp(1rem,2vw,1.2rem)] text-white placeholder:text-zinc-500 font-medium focus:outline-none"
                 />
               </div>
 
-              <div className="flex p-2 shrink-0 border-t md:border-t-0 md:border-l border-white/10 mt-2 md:mt-0 w-full md:w-auto">
+              <div className="flex p-0 shrink-0 mt-2 md:mt-0 w-full md:w-auto">
                 <button 
                   type="submit" 
                   disabled={isSearching || isClarifying || !query.trim()}
-                  className="w-full md:w-auto bg-indigo-500 hover:bg-indigo-400 text-white px-6 h-12 rounded-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 shadow-[0_0_15px_rgba(99,102,241,0.5)] font-bold text-sm tracking-wide"
+                  className="w-full md:w-auto bg-white hover:bg-zinc-200 text-black px-8 h-[56px] rounded-2xl flex items-center justify-center gap-3 transition-all disabled:opacity-50 font-sans font-bold text-sm shadow-xl"
                 >
-                  {(isSearching || isClarifying) ? <Loader2 className="w-5 h-5 animate-spin shrink-0" /> : <Sparkles className="w-5 h-5 shrink-0" />}
-                  <span className="whitespace-nowrap">{isClarifying ? 'Translating...' : isSearching ? 'Executing...' : 'Run Agent'}</span>
+                  {(isSearching || isClarifying) ? <Loader2 className="w-5 h-5 animate-spin shrink-0 text-blue-500" /> : <Sparkles className="w-5 h-5 shrink-0 text-blue-500" />}
+                  <span className="whitespace-nowrap">{isClarifying ? 'Thinking...' : isSearching ? 'Scouting...' : 'Launch Scout'}</span>
                 </button>
               </div>
             </form>
@@ -408,7 +518,7 @@ export default function OmniScoutPage() {
             {/* CLARIFICATION CHIPS UI */}
             <AnimatePresence>
               {clarification && (
-                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="mt-4 p-5 md:p-6 border border-indigo-500/20 bg-black shadow-[0_10px_40px_rgba(99,102,241,0.1)] rounded-2xl relative overflow-hidden z-20">
+                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="mt-4 p-5 md:p-6 border border-white/20 bg-white/5 backdrop-blur-[20px] backdrop-saturate-150 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-2xl relative overflow-hidden z-20">
                     <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-fuchsia-500 opacity-50"></div>
                     <h3 className="text-zinc-200 font-bold text-sm mb-4 flex items-center gap-2"><Sparkles className="w-4 h-4 text-indigo-400 animate-pulse" /> {clarification.question}</h3>
                     <div className="flex flex-wrap gap-2.5">
@@ -507,7 +617,7 @@ export default function OmniScoutPage() {
            {/* SCHEMA PREVIEW UI */}
            <AnimatePresence>
              {pendingSchema && (
-               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="p-6 md:p-8 bg-black border border-indigo-500/30 rounded-2xl relative overflow-hidden z-20 shadow-[0_20px_60px_rgba(99,102,241,0.15)] mt-6">
+               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="p-6 md:p-8 bg-white/5 backdrop-blur-[20px] backdrop-saturate-150 border border-white/20 rounded-2xl relative overflow-hidden z-20 shadow-[0_20px_60px_rgba(0,0,0,0.3)] mt-6">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none"></div>
                   <div className="flex items-center gap-3 text-indigo-400 mb-6 border-b border-indigo-500/20 pb-4 relative z-10">
                     <Terminal className="w-5 h-5" />
@@ -588,19 +698,20 @@ export default function OmniScoutPage() {
               
               {/* Agent Mode Loading / Logs */}
               {isSearching && scoutMode === 'agent' && (
-                <div className="bg-black/60 border border-indigo-500/30 rounded-2xl p-6 font-mono text-xs w-full max-w-2xl mx-auto shadow-[0_0_30px_rgba(99,102,241,0.1)] mb-8">
-                  <div className="flex items-center gap-3 text-indigo-400 mb-4 border-b border-indigo-500/20 pb-4">
-                    <Bot className="w-5 h-5" />
-                    <span className="font-bold uppercase tracking-widest">Agent Execution Log</span>
+                <div className="bg-black border-2 border-zinc-800 rounded-none p-6 font-mono text-xs w-full max-w-2xl mx-auto mb-8 relative">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-red-500"></div>
+                  <div className="flex items-center gap-3 text-red-500 mb-4 border-b-2 border-zinc-800 pb-4 ml-4">
+                    <Terminal className="w-5 h-5" />
+                    <span className="font-bold uppercase tracking-widest">SYSTEM EXECUTION LOG</span>
                   </div>
-                  <div className="space-y-3 text-zinc-400">
+                  <div className="space-y-3 text-zinc-500 ml-4">
                     {agentLogs.map((log, i) => (
                       <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} key={i} className="flex gap-3">
-                         <span className="text-zinc-600">&gt;&gt;</span> {log}
+                         <span className="text-zinc-700">&gt;_</span> {log}
                       </motion.div>
                     ))}
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ repeat: Infinity, duration: 0.8 }} className="flex gap-3 text-indigo-400 font-bold">
-                       <span>&gt;&gt;</span> █
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ repeat: Infinity, duration: 0.8 }} className="flex gap-3 text-white font-bold">
+                       <span>&gt;_</span> █
                     </motion.div>
                   </div>
                 </div>
@@ -608,14 +719,14 @@ export default function OmniScoutPage() {
 
               {/* Status Bar */}
               {!isSearching && (
-                <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-4">
-                   <h2 className="text-lg font-semibold text-zinc-50 flex items-center gap-2">
-                     {scoutMode === 'agent' ? <Terminal className="w-5 h-5 text-indigo-400" /> : <Network className="w-5 h-5 text-fuchsia-400" />}
-                     {searchSummary || "Results"}
+                <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-zinc-800 pb-4">
+                   <h2 className="text-lg font-glyph text-white uppercase flex items-center gap-3 tracking-widest leading-none">
+                     {scoutMode === 'agent' ? <Terminal className="w-6 h-6 text-red-500" /> : <Network className="w-6 h-6 text-red-500" />}
+                     {searchSummary || "RESULTS_"}
                    </h2>
                    {jobs.length > 0 && (
-                     <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-xs font-bold text-zinc-300">
-                        {jobs.length} Matches Extracted
+                     <div className="px-4 py-1.5 bg-black border-2 border-zinc-700 font-mono text-xs font-bold text-white uppercase tracking-widest">
+                        [{jobs.length} EXTRACTED]
                      </div>
                    )}
                 </div>
@@ -628,131 +739,25 @@ export default function OmniScoutPage() {
                 ) : (
                   <>
                     {/* Render dynamic extracted objects array */}
-                    {isDynamic && jobs.length > 0 && (
-                       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="w-full border border-zinc-800 rounded-2xl bg-[#0A0A0A] shadow-2xl overflow-x-auto relative">
-                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 opacity-50"></div>
-                         <table className="w-full text-left text-sm text-zinc-300">
-                           <thead className="bg-zinc-900/40 text-[10px] font-black text-zinc-500 uppercase tracking-widest border-b border-zinc-800">
-                             <tr>
-                               {dynamicSchemaKeys.map((key, i) => (
-                                 <th key={i} className="py-4 px-6 whitespace-nowrap">{key}</th>
-                               ))}
-                             </tr>
-                           </thead>
-                           <tbody className="divide-y divide-zinc-800/60">
-                             {jobs.map((item, idx) => (
-                               <motion.tr 
-                                 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: idx * 0.05 }}
-                                 key={idx} className="hover:bg-white/[0.02] transition-colors"
-                               >
-                                 {dynamicSchemaKeys.map((key, j) => {
-                                    // LLMs sometimes snake_case the keys instead, so fallback matching
-                                    const val = item[key] || item[key.toLowerCase()] || item[key.toLowerCase().replace(/ /g, '_')] || item[key.replace(/ /g, '')] || "-";
-                                    const isUrl = typeof val === 'string' && val.startsWith('http');
-                                    return (
-                                      <td key={j} className="py-4 px-6 max-w-xs truncate" title={String(val)}>
-                                        {isUrl ? (
-                                           <a href={val} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-xl text-indigo-400 font-bold text-xs hover:bg-zinc-800 hover:text-indigo-300 transition-colors hover:border-indigo-500/30">
-                                             <img src={`https://www.google.com/s2/favicons?domain=${getDomainIcon(val)}&sz=64`} alt="logo" className="w-4 h-4 rounded-sm object-contain bg-white" onError={(e) => { (e.currentTarget as any).style.display = 'none'; }} />
-                                             Visit <ExternalLink className="w-3 h-3" />
-                                           </a>
-                                        ) : (
-                                           String(val)
-                                        )}
-                                      </td>
-                                    );
-                                 })}
-                               </motion.tr>
-                             ))}
-                           </tbody>
-                         </table>
-                       </motion.div>
-                    )}
+                    {memoizedDynamicTable}
 
                     {/* Render extracted jobs in CSV/Table Format */}
-                    {!isDynamic && jobs.length > 0 && (
-                      <div className="w-full border border-zinc-800 rounded-2xl overflow-hidden bg-[#0A0A0A] shadow-2xl">
-                        {/* Table Header */}
-                        <div className="hidden md:grid grid-cols-12 gap-4 p-4 border-b border-zinc-800 bg-zinc-900/40 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
-                          <div className="col-span-4 pl-2">Job Title & Company</div>
-                          <div className="col-span-2">Location</div>
-                          <div className="col-span-4">AI Insight</div>
-                          <div className="col-span-2 text-right pr-2">Action</div>
-                        </div>
-                        
-                        {/* Table Body */}
-                        <div className="divide-y divide-zinc-800/60">
-                          {jobs.map((job, idx) => (
-                            <motion.div 
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.3, delay: idx * 0.03 }}
-                              key={idx} 
-                              className="grid grid-cols-1 md:grid-cols-12 gap-4 p-4 md:items-center hover:bg-white/[0.02] transition-colors group relative"
-                            >
-                              <div className="col-span-1 md:col-span-4 flex items-center gap-4 min-w-0">
-                                <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-inner group-hover:border-indigo-500/30 group-hover:bg-indigo-500/10 transition-colors">
-                                  <Briefcase className="w-4 h-4 text-zinc-400 group-hover:text-indigo-400 transition-colors absolute z-0 opacity-50" />
-                                  <img 
-                                     src={`https://www.google.com/s2/favicons?domain=${getDomainIcon(job.source_url)}&sz=128`} 
-                                     alt="" 
-                                     className="relative z-10 w-5 h-5 object-contain rounded-[4px] shadow-sm transform group-hover:scale-110 transition-transform duration-300"
-                                     onError={(e) => { (e.currentTarget as any).style.display = 'none'; }}
-                                  />
-                                </div>
-                                <div className="min-w-0">
-                                  <h3 className="text-sm font-bold text-zinc-100 truncate group-hover:text-indigo-400 transition-colors">{job.title}</h3>
-                                  <p className="text-xs text-zinc-500 truncate mt-0.5">{job.company}</p>
-                                </div>
-                              </div>
-                              
-                              <div className="col-span-1 md:col-span-2 flex flex-col justify-center min-w-0 py-2 md:py-0">
-                                <span className="text-xs text-zinc-300 flex items-center gap-1.5 truncate">
-                                  <MapPin className="w-3.5 h-3.5 text-zinc-600 shrink-0" /> {job.location || "Remote"}
-                                </span>
-                                {job.salary && job.salary !== "Competitive" && (
-                                  <span className="text-[10px] text-zinc-500 truncate mt-1 pl-5">{job.salary}</span>
-                                )}
-                              </div>
-                              
-                              <div className="col-span-1 md:col-span-4 min-w-0 pr-4">
-                                 <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">{job.ai_insight || job.experience}</p>
-                              </div>
-                              
-                              <div className="col-span-1 md:col-span-2 flex items-center justify-between md:justify-end gap-3 shrink-0 mt-2 md:mt-0">
-                                {job.match_score && (
-                                  <span className="text-[10px] font-black text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
-                                    {job.match_score}% MATCH
-                                  </span>
-                                )}
-                                <Link 
-                                  href={getJobApplyUrl(job)} 
-                                  target="_blank" 
-                                  className="py-1.5 px-3 bg-zinc-100 hover:bg-white text-zinc-900 rounded-lg transition-all shadow-md flex items-center gap-2 text-xs font-bold active:scale-95"
-                                >
-                                   Apply <ExternalLink className="w-3.5 h-3.5 text-zinc-500" />
-                                </Link>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
-                        
-                        {/* Load More Button */}
-                        {scoutMode === 'agent' && jobs.length > 0 && !isSearching && (
-                          <div className="p-4 border-t border-zinc-800/60 flex justify-center bg-zinc-950/50">
-                            <button 
-                              onClick={handleLoadMore}
-                              disabled={isLoadingMore}
-                              className="flex items-center gap-2 px-6 py-2.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm font-bold rounded-xl hover:bg-white hover:text-black transition-all disabled:opacity-50 disabled:hover:bg-zinc-900 disabled:hover:text-zinc-300 shadow-sm shadow-black"
-                            >
-                              {isLoadingMore ? (
-                                 <><Loader2 className="w-4 h-4 animate-spin text-indigo-400" /> Deep Scraping Page {currentPage + 1}...</>
-                              ) : (
-                                 <><ArrowDown className="w-4 h-4" /> Load Next 15 Matches</>
-                              )}
-                            </button>
-                          </div>
-                        )}
+                    {memoizedStaticJobsList}
+
+                    {/* Extracted Load More Button outside of Memo */}
+                    {!isDynamic && scoutMode === 'agent' && jobs.length > 0 && !isSearching && (
+                      <div className="w-full border-x-2 border-b-2 border-zinc-800 p-4 flex justify-center bg-[#070707] shadow-2xl">
+                        <button 
+                          onClick={handleLoadMore}
+                          disabled={isLoadingMore}
+                          className="flex items-center gap-2 px-6 py-2.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm font-bold rounded-xl hover:bg-white hover:text-black transition-all disabled:opacity-50 disabled:hover:bg-zinc-900 disabled:hover:text-zinc-300 shadow-sm shadow-black"
+                        >
+                          {isLoadingMore ? (
+                             <><Loader2 className="w-4 h-4 animate-spin text-indigo-400" /> Deep Scraping Page {currentPage + 1}...</>
+                          ) : (
+                             <><ArrowDown className="w-4 h-4" /> Load Next 15 Matches</>
+                          )}
+                        </button>
                       </div>
                     )}
 
