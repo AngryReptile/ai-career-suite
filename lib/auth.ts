@@ -31,12 +31,19 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET || "fallback_secret_for_local_dev",
   callbacks: {
-    async jwt({ token, user, trigger, session }) {
+    async jwt({ token, user }) {
       if (user) {
-        // Initial sign in
-        const dbUser = await prisma.user.findUnique({ where: { id: user.id } });
-        token.role = dbUser?.role || "USER";
         token.id = user.id;
+      }
+      
+      if (token.id) {
+        const dbUser = await prisma.user.findUnique({ 
+          where: { id: token.id as string }, 
+          select: { role: true } 
+        });
+        if (dbUser) {
+          token.role = dbUser.role;
+        }
       }
       return token;
     },
