@@ -8,7 +8,7 @@ import { DashboardShell } from "@/components/DashboardShell";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ResumeManagementView() {
-  const { data: resumes = [], mutate, error } = useSWR('/api/resume', fetcher, {
+  const { data: resumes = [], mutate, error, isLoading: resumesLoading } = useSWR('/api/resume', fetcher, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
@@ -27,7 +27,6 @@ export default function ResumeManagementView() {
     setUploadStatus("Syncing document...");
 
     try {
-      // Read file as Data URL for preview
       const readFileAsDataURL = (file: File): Promise<string> => {
         return new Promise((resolve, reject) => {
           const reader = new FileReader();
@@ -38,9 +37,6 @@ export default function ResumeManagementView() {
       };
 
       const fileData = await readFileAsDataURL(file);
-      
-      // For content (matching), we'll use a placeholder or dummy text if we can't parse PDF easily in browser
-      // Ideally, the backend would parse this, but for now we'll send the filename and a snippet
       const mockContent = `Resume: ${file.name}. This document has been uploaded for AI analysis.`;
       
       const res = await fetch('/api/resume', {
@@ -136,77 +132,98 @@ export default function ResumeManagementView() {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {resumes.map((res: any) => (
-          <div 
-            key={res.id}
-            className={`relative group backdrop-blur-3xl border rounded-[2rem] p-6 transition-all duration-500 shadow-2xl ${
-              res.isSelected 
-                ? 'border-indigo-500/50 hover:border-indigo-400 bg-indigo-500/10' 
-                : 'border-white/10 hover:border-white/30 bg-white/5'
-            }`}
-          >
-            {res.isSelected && (
-              <div className="absolute -top-3 -right-3 bg-indigo-500 text-white p-2 rounded-full shadow-lg z-10">
-                <CheckCircle2 className="h-5 w-5" />
-              </div>
-            )}
-
-            <div className="flex flex-col h-full">
-              <div className="flex items-start justify-between mb-6">
-                <div className={`p-4 rounded-2xl border ${res.isSelected ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' : 'bg-white/5 text-zinc-300 border-white/10'}`}>
-                  <FileText className="h-8 w-8" />
+          {resumesLoading ? (
+            [0,1,2].map(i => (
+              <div key={i} className="relative backdrop-blur-3xl border border-white/10 rounded-[2rem] p-6 shadow-2xl bg-white/5">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="skeleton w-16 h-16 rounded-2xl" style={{ animationDelay: `${i*0.15}s` }} />
+                    <div className="skeleton-circle w-9 h-9" style={{ animationDelay: `${i*0.15+0.1}s` }} />
+                  </div>
+                  <div className="skeleton-line h-6 w-3/4 mb-2" style={{ animationDelay: `${i*0.15+0.15}s` }} />
+                  <div className="skeleton-line h-4 w-1/3 mb-8" style={{ animationDelay: `${i*0.15+0.2}s` }} />
+                  <div className="mt-auto flex gap-3">
+                    <div className="skeleton h-12 flex-1 rounded-xl" style={{ animationDelay: `${i*0.15+0.25}s` }} />
+                    <div className="skeleton h-12 flex-1 rounded-xl" style={{ animationDelay: `${i*0.15+0.3}s` }} />
+                  </div>
                 </div>
-                <button 
-                  onClick={() => setConfirmDeleteId(res.id)}
-                  className="p-2 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all"
+              </div>
+            ))
+          ) : (
+            <>
+              {resumes.map((res: any) => (
+                <div 
+                  key={res.id}
+                  className={`relative group backdrop-blur-3xl border rounded-[2rem] p-6 transition-all duration-500 shadow-2xl ${
+                    res.isSelected 
+                      ? 'border-indigo-500/50 hover:border-indigo-400 bg-indigo-500/10' 
+                      : 'border-white/10 hover:border-white/30 bg-white/5'
+                  }`}
                 >
-                  <Trash2 className="h-5 w-5" />
-                </button>
-              </div>
+                  {res.isSelected && (
+                    <div className="absolute -top-3 -right-3 bg-indigo-500 text-white p-2 rounded-full shadow-lg z-10">
+                      <CheckCircle2 className="h-5 w-5" />
+                    </div>
+                  )}
 
-              <h3 className="text-xl font-semibold text-white mb-1 truncate" title={res.filename}>{res.filename}</h3>
-              <div className="flex items-center gap-2 text-zinc-400 text-xs mb-8">
-                <Clock className="w-3.5 h-3.5" />
-                {new Date(res.createdAt).toLocaleDateString()}
-              </div>
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className={`p-4 rounded-2xl border ${res.isSelected ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' : 'bg-white/5 text-zinc-300 border-white/10'}`}>
+                        <FileText className="h-8 w-8" />
+                      </div>
+                      <button 
+                        onClick={() => setConfirmDeleteId(res.id)}
+                        className="p-2 text-zinc-400 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all"
+                      >
+                        <Trash2 className="h-5 w-5" />
+                      </button>
+                    </div>
 
-              <div className="mt-auto flex flex-col sm:flex-row gap-3">
-                <button 
-                  onClick={() => setPreviewResume(res)}
-                  className="w-full sm:flex-1 py-3 px-4 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-semibold transition-all border border-white/10 flex items-center justify-center gap-2 shadow-sm"
-                >
-                  <Eye className="h-4 w-4" /> <span className="whitespace-nowrap">Preview</span>
-                </button>
-                
-                {res.isSelected ? (
-                  <button 
-                    onClick={(e) => handleUnselect(e)}
-                    className="w-full sm:flex-1 py-3 px-4 bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 rounded-xl text-sm font-bold transition-all border border-amber-500/20 flex items-center justify-center text-center shadow-sm"
-                  >
-                    Unselect
-                  </button>
-                ) : (
-                  <button 
-                    onClick={(e) => handleSelect(res.id, e)}
-                    className="w-full sm:flex-1 py-3 px-4 bg-indigo-500 hover:bg-indigo-400 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center text-center"
-                  >
-                    Make Active
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
+                    <h3 className="text-xl font-semibold text-white mb-1 truncate" title={res.filename}>{res.filename}</h3>
+                    <div className="flex items-center gap-2 text-zinc-400 text-xs mb-8">
+                      <Clock className="w-3.5 h-3.5" />
+                      {new Date(res.createdAt).toLocaleDateString()}
+                    </div>
 
-        {resumes.length === 0 && !isUploading && (
-          <div className="col-span-full h-80 flex flex-col items-center justify-center bg-white/5 backdrop-blur-3xl border border-dashed border-white/20 rounded-[2.5rem] shadow-inner">
-            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-white/5">
-              <FileText className="h-8 w-8 text-white/50" />
-            </div>
-            <p className="text-zinc-300 font-medium text-sm">No resumes uploaded yet.</p>
-          </div>
-        )}
-      </div>
+                    <div className="mt-auto flex flex-col sm:flex-row gap-3">
+                      <button 
+                        onClick={() => setPreviewResume(res)}
+                        className="w-full sm:flex-1 py-3 px-4 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-semibold transition-all border border-white/10 flex items-center justify-center gap-2 shadow-sm"
+                      >
+                        <Eye className="h-4 w-4" /> <span className="whitespace-nowrap">Preview</span>
+                      </button>
+                      
+                      {res.isSelected ? (
+                        <button 
+                          onClick={(e) => handleUnselect(e)}
+                          className="w-full sm:flex-1 py-3 px-4 bg-amber-500/10 hover:bg-amber-500/20 text-amber-500 rounded-xl text-sm font-bold transition-all border border-amber-500/20 flex items-center justify-center text-center shadow-sm"
+                        >
+                          Unselect
+                        </button>
+                      ) : (
+                        <button 
+                          onClick={(e) => handleSelect(res.id, e)}
+                          className="w-full sm:flex-1 py-3 px-4 bg-indigo-500 hover:bg-indigo-400 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center text-center"
+                        >
+                          Make Active
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {resumes.length === 0 && !isUploading && (
+                <div className="col-span-full h-80 flex flex-col items-center justify-center bg-white/5 backdrop-blur-3xl border border-dashed border-white/20 rounded-[2.5rem] shadow-inner">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-white/5">
+                    <FileText className="h-8 w-8 text-white/50" />
+                  </div>
+                  <p className="text-zinc-300 font-medium text-sm">No resumes uploaded yet.</p>
+                </div>
+              )}
+            </>
+          )}
+        </div>
 
       {previewResume && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-2 lg:p-10 bg-black/60 backdrop-blur-2xl animate-in fade-in">
