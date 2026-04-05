@@ -19,7 +19,6 @@ export function AnimatedBackground() {
           animate={{ x: ["0%", "-25%", "15%", "0%"], y: ["0%", "-20%", "30%", "0%"], scale: [1, 0.8, 1.1, 1] }}
           transition={{ duration: 35, repeat: Infinity, ease: "easeInOut" }}
         />
-      </div>
 
       {/* Layer 2: Refined Fluid Lines (SVG Paths) */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.15]" xmlns="http://www.w3.org/2000/svg">
