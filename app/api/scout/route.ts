@@ -315,14 +315,29 @@ CRITICAL:
     
     let parsedData = null;
     let attempts = 0;
-    const maxParseAttempts = 2;
+    const maxParseAttempts = 3;
     let outputText = "";
 
     while (attempts < maxParseAttempts) {
       try {
         // Call Gemini
         const result = await generateWithRetry(prompt, systemInstruction);
-        outputText = (await result.response).text().trim();
+        
+        // Safely extract text - the SDK throws "The string did not match the expected pattern"
+        // when the response has no valid candidates (empty response, safety block, or non-STOP finish).
+        let rawText: string;
+        try {
+          rawText = (await result.response).text().trim();
+        } catch (sdkError: any) {
+          console.warn(`[SCOUT] Gemini SDK .text() extraction failed on attempt ${attempts + 1}:`, sdkError?.message);
+          attempts++;
+          if (attempts < maxParseAttempts) {
+            await new Promise(r => setTimeout(r, 1500)); // Brief cooldown before retry
+            continue;
+          }
+          throw new Error("The AI model returned an empty or blocked response. Please try again.");
+        }
+        outputText = rawText;
         
         // Robust JSON extraction matching
         let cleanedText = outputText;
