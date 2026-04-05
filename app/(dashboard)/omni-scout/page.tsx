@@ -79,6 +79,47 @@ export default function OmniScoutPage() {
   // Agent Logs
   const [agentLogs, setAgentLogs] = useState<string[]>([]);
 
+  // RESTORE STATE: On mount, restore last search results from sessionStorage so work survives navigation
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem('omni-scout-state');
+      if (saved) {
+        const state = JSON.parse(saved);
+        if (state.query) setQuery(state.query);
+        if (state.hasSearched) setHasSearched(true);
+        if (state.scoutMode) setScoutMode(state.scoutMode);
+        if (state.isDynamic) setIsDynamic(true);
+        if (state.dynamicSchemaKeys?.length) setDynamicSchemaKeys(state.dynamicSchemaKeys);
+        if (state.jobs?.length) setJobs(state.jobs);
+        if (state.researchData) setResearchData(state.researchData);
+        if (state.productsData?.length) setProductsData(state.productsData);
+        if (state.searchSummary) setSearchSummary(state.searchSummary);
+      }
+    } catch (e) {
+      console.warn('[OmniScout] Failed to restore session state:', e);
+    }
+  }, []);
+
+  // SAVE STATE: Persist results to sessionStorage whenever they change (debounced via key fields)
+  useEffect(() => {
+    if (!hasSearched) return; // Don't save empty initial state
+    try {
+      sessionStorage.setItem('omni-scout-state', JSON.stringify({
+        query,
+        hasSearched,
+        scoutMode,
+        isDynamic,
+        dynamicSchemaKeys,
+        jobs,
+        researchData,
+        productsData,
+        searchSummary,
+      }));
+    } catch (e) {
+      // sessionStorage full or unavailable — non-critical
+    }
+  }, [hasSearched, jobs, researchData, productsData, searchSummary, isDynamic, dynamicSchemaKeys, query, scoutMode]);
+
   // Automatically switch mode if URL is pasted
   useEffect(() => {
     if (query.startsWith('http://') || query.startsWith('https://')) {
@@ -89,6 +130,7 @@ export default function OmniScoutPage() {
   const addLog = (msg: string) => {
     setAgentLogs(prev => [...prev, msg]);
   };
+
 
   const loadHistoryItem = (h: any) => {
     try {

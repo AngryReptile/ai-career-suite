@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
@@ -24,19 +24,16 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         style={{ zIndex: -10 }}
       />
       
-      {/* Fluid Page Router */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={pathname}
-          initial={{ opacity: 0, scale: 0.98, y: 15, filter: "blur(12px)" }}
-          animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
-          exit={{ opacity: 0, scale: 0.98, y: -15, filter: "blur(12px)" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full flex-1 flex flex-col min-h-0"
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+      {/* Simple fade-in on mount — no AnimatePresence/exit animations that can get stuck */}
+      <motion.div
+        key={pathname}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="w-full flex-1 flex flex-col min-h-0"
+      >
+        {children}
+      </motion.div>
     </>
   );
 }
