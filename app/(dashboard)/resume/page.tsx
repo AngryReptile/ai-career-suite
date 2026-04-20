@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { FileText, Upload, Trash2, Eye, Loader2, CheckCircle2, AlertCircle, Sparkles, Clock, MoreVertical, X } from "lucide-react";
 import { DashboardShell } from "@/components/DashboardShell";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 export default function ResumeManagementView() {
   const { data: resumes = [], mutate, error, isLoading: resumesLoading } = useSWR('/api/resume', fetcher, {

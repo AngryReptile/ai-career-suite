@@ -10,7 +10,7 @@ import {
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DashboardShell } from "@/components/DashboardShell";
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 const getJobApplyUrl = (job: any) => {
   if (job.source_url) {

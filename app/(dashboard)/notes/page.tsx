@@ -7,7 +7,7 @@ import { DashboardShell } from "@/components/DashboardShell";
 import { RichTextEditor } from "@/components/RichTextEditor";
 import { motion, AnimatePresence } from 'framer-motion';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 export default function NotesSaverView() {
   const { data: notes, mutate } = useSWR('/api/notes', fetcher, { revalidateOnFocus: false, dedupingInterval: 60000 });

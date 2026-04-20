@@ -27,7 +27,7 @@ import {
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 export default function DashboardOverview() {
   const { data: session } = useSession();
@@ -45,7 +45,7 @@ export default function DashboardOverview() {
   const [heatData, setHeatData] = useState<any[]>([]);
   
   useEffect(() => {
-    if (!activities) return;
+    if (!activities || !Array.isArray(activities)) return;
     
     const today = new Date();
     const data = [];
@@ -312,7 +312,7 @@ export default function DashboardOverview() {
         </div>
         <div className="text-left md:text-right bg-white/5 backdrop-blur-md md:bg-transparent rounded-3xl md:rounded-none border border-white/10 md:border-transparent p-6 md:p-0 w-full md:w-auto shadow-xl md:shadow-none">
            <p className="font-sans text-xs sm:text-sm text-zinc-400 font-semibold tracking-wide mb-1">Total Activities</p>
-           <AnimatedNumber value={activities?.length || 0} className="font-sans font-bold text-5xl sm:text-7xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60" />
+           <AnimatedNumber value={Array.isArray(activities) ? activities.length : 0} className="font-sans font-bold text-5xl sm:text-7xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60" />
         </div>
       </div>
 

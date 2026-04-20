@@ -5,7 +5,7 @@ import { Settings, User, Bell, Shield, LogOut, Sparkles, Moon, Globe, Mail, Chec
 import { useState, useEffect } from "react";
 import useSWR from "swr";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 export default function SettingsPage() {
   const { data: session } = useSession();

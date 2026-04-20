@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { GraduationCap, Star, Send, Loader2, Clock, Plus, BookOpen } from "lucide-react";
 import { DashboardShell } from "@/components/DashboardShell";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 export default function TutorView() {
   const { data: history, mutate } = useSWR('/api/tutor', fetcher, {

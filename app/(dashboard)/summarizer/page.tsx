@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 
 const ReactMarkdown = dynamic(() => import('react-markdown'), { ssr: false });
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => { if (!res.ok) throw new Error('API Error'); return res.json(); });
 
 export default function SummarizerView() {
   const router = useRouter();
