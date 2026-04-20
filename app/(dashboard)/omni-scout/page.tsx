@@ -858,8 +858,14 @@ export default function OmniScoutPage() {
                     {!isSearching && jobs.length === 0 && !researchData && productsData.length === 0 && hasSearched && !pendingSchema && !clarification && (
                       <div className="col-span-full py-20 text-center bg-zinc-900/20 border border-dashed border-zinc-800 rounded-[2.5rem]">
                          <AlertCircle className="h-12 w-12 text-zinc-500 mx-auto mb-4 opacity-50" />
-                         <h3 className="text-lg font-bold text-zinc-400">No data could be extracted.</h3>
-                         <p className="text-zinc-600 text-sm mt-2 max-w-sm mx-auto">Try adjusting your advanced query or ensure the target domain does not have strict firewall captchas enabled.</p>
+                         <h3 className="text-lg font-bold text-zinc-400">
+                           {searchSummary.toLowerCase().includes('error') ? 'Scout Extraction Failed' : 'No data could be extracted.'}
+                         </h3>
+                         <p className="text-zinc-600 text-sm mt-2 max-w-sm mx-auto">
+                           {searchSummary.toLowerCase().includes('error') 
+                             ? searchSummary 
+                             : 'Try adjusting your advanced query or ensure the target domain does not have strict firewall captchas enabled.'}
+                         </p>
                       </div>
                     )}
                   </>
