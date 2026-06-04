@@ -9,15 +9,15 @@ export async function generateWithRetry(
   systemInstruction?: string,
   maxRetries: number = 5
 ) {
-  // DISCOVERED STABLE MODELS: Based on API probe
-  // Primary: gemini-2.0-flash (High speed, multi-modal)
-  // Backup: gemini-1.5-flash (Extremely reliable fallback)
+  // DISCOVERED STABLE MODELS: Based on API probe (June 2026)
+  // Primary: gemini-2.5-flash (Latest, fastest, 1M context)
+  // Backup: gemini-2.0-flash (Proven reliable fallback)
   const modelsToTry = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
-    "gemini-1.5-pro",
-    "gemma-2-27b-it",
-    "gemma-3-27b-it"
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+    "gemma-4-26b-a4b-it",
+    "gemma-4-31b-it"
   ];
   let lastError = null;
 
@@ -30,7 +30,7 @@ export async function generateWithRetry(
         });
 
         const generationConfig: any = {
-          maxOutputTokens: modelName.includes('gemma') ? 3072 : 8192,
+          maxOutputTokens: modelName.includes('gemma') ? 4096 : 8192,
           temperature: 0.3,
         };
 
@@ -43,13 +43,13 @@ export async function generateWithRetry(
         const filteredParts = parts
           .filter((p: any) => p.text || p.inlineData)
           .map((p: any) => {
-            if (p.text && modelName.includes('gemma') && p.text.length > 25000) {
+            if (p.text && modelName.includes('gemma') && p.text.length > 50000) {
                const sections = p.text.split('---');
                if (sections.length > 1) {
-                  const limitPerSection = Math.floor(25000 / sections.length);
+                  const limitPerSection = Math.floor(50000 / sections.length);
                   return { text: sections.map((s: string) => s.substring(0, limitPerSection)).join('\n\n---\n\n') };
                }
-               return { text: p.text.substring(0, 25000) };
+               return { text: p.text.substring(0, 50000) };
             }
             return p;
           });

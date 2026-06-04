@@ -69,12 +69,12 @@ Example 4: "latest AI news 2026" -> NOT VAGUE -> Generate schema for research (t
 
     return NextResponse.json(parsed);
   } catch (error: any) {
-    console.error("[CLARIFY API ERROR]", error);
+    console.error("[CLARIFY API ERROR]", error?.message || error);
     // Fail semi-silently and allow the main search to proceed to avoid hard-blocking the user
     return NextResponse.json({ 
       is_vague: false, 
-      search_target: "Executing fallback string search",
-      extraction_schema: { intent: "Web Scrape", fields_to_extract: ["Title", "Data"], reasoning: "Fallback engaged" }
+      search_target: `Executing fallback string search (AI model error: ${error?.message?.slice(0, 80) || 'unknown'})`,
+      extraction_schema: { intent: "Web Scrape", fields_to_extract: ["Title", "Data"], reasoning: "Fallback engaged due to AI model error" }
     });
   }
 }
