@@ -7,6 +7,21 @@ import { generateWithRetry } from '@/lib/gemini';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60; // Allow more time for deep scraping
 
+async function fetchWithTimeout(url: string, options: RequestInit & { timeout?: number } = {}) {
+  const { timeout = 12000, ...fetchOptions } = options;
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+  try {
+    const response = await fetch(url, {
+      ...fetchOptions,
+      signal: controller.signal
+    });
+    return response;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
@@ -40,9 +55,10 @@ export async function POST(req: Request) {
     
     if (mode === 'url') {
       // Direct Web Scraping
-      const jinaRes = await fetch(`https://r.jina.ai/${input}`, {
+      const jinaRes = await fetchWithTimeout(`https://r.jina.ai/${input}`, {
         headers: { "X-Return-Format": "markdown" },
-        cache: 'no-store'
+        cache: 'no-store',
+        timeout: 15000
       });
       if (!jinaRes.ok) throw new Error("Failed to scrape the provided URL.");
       markdown = await jinaRes.text();
@@ -107,7 +123,7 @@ Respond ONLY with a JSON array of 3 strings: ["q1", "q2", "q3"]`;
            
            // STAGE 2: MULTI-STREAM DISCOVERY
            const searchPromises = tacticalQueries.map(q => 
-             fetch(`https://r.jina.ai/https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}`, { headers: { "X-Return-Format": "markdown" }, cache: 'no-store' })
+             fetchWithTimeout(`https://r.jina.ai/https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}`, { headers: { "X-Return-Format": "markdown" }, cache: 'no-store', timeout: 10000 })
              .then(r => r.text())
              .catch(() => "")
            );
@@ -143,9 +159,9 @@ Respond ONLY with a JSON array of absolute URLs: ["url1", "url2", ...]`;
 
            // STAGE 4: MASSIVE RECURSIVE RECRUSION
            if (deepSourceUrls.length > 0) {
-              console.log(`[SOVEREIGN AGENT] Phase 4: Recursing into ${deepSourceUrls.length} Targeted Nodes...`);
-              const recursiveRes = await Promise.allSettled(deepSourceUrls.slice(0, 8).map(u => 
-                fetch(`https://r.jina.ai/${u}`, { headers: {"X-Return-Format": "markdown"} })
+              console.log(`[SOVEREIGN AGENT] Phase 4: Recursing into ${Math.min(deepSourceUrls.length, 3)} Targeted Nodes...`);
+              const recursiveRes = await Promise.allSettled(deepSourceUrls.slice(0, 3).map(u => 
+                fetchWithTimeout(`https://r.jina.ai/${u}`, { headers: {"X-Return-Format": "markdown"}, timeout: 8000 })
                 .then(async r => `[SOURCE_NODE: ${u}]\n\n` + await r.text())
                 .catch(() => "")
               ));
@@ -184,7 +200,7 @@ Respond ONLY with a JSON array of absolute URLs: ["url1", "url2", ...]`;
         ];
 
         const fetchPromises = platforms.map(url => 
-          fetch(`https://r.jina.ai/${url}`, { headers: { "X-Return-Format": "markdown" }, cache: 'no-store' })
+          fetchWithTimeout(`https://r.jina.ai/${url}`, { headers: { "X-Return-Format": "markdown" }, cache: 'no-store', timeout: 10000 })
             .then(async res => {
               const txt = await res.text();
               console.log(`NEXT.JS FETCH: ${url} | Length: ${txt.length}`);
