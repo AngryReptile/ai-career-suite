@@ -199,7 +199,14 @@ export default function OmniScoutPage() {
                headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify({ input: sanitizedQuery })
            });
-           const clarifyData = await clarifyRes.json();
+           let clarifyData;
+           try {
+             const clarifyText = await clarifyRes.text();
+             clarifyData = JSON.parse(clarifyText);
+           } catch (jsonErr) {
+             console.error('[OmniScout] Clarify API returned non-JSON response');
+             clarifyData = { is_vague: false };
+           }
            if (clarifyData.is_vague) {
                setClarification({ question: clarifyData.question, suggestions: clarifyData.suggestions || [] });
                setIsClarifying(false);
@@ -239,7 +246,13 @@ export default function OmniScoutPage() {
           results_per_page: '20'
         });
         const res = await fetch(`/api/jobs?${params.toString()}`);
-        const data = await res.json();
+        let data;
+        try {
+          const rawText = await res.text();
+          data = JSON.parse(rawText);
+        } catch (jsonErr) {
+          throw new Error('Job aggregator returned an invalid response. Please try again.');
+        }
         
         if (res.ok) {
           setJobs(data.jobs || []);
@@ -276,7 +289,13 @@ export default function OmniScoutPage() {
         });
 
         addLog("PHASE 5: FUSING MULTI-SOURCE DATA & FINAL SYNTHESIS...");
-        const data = await res.json();
+        let data;
+        try {
+          const rawText = await res.text();
+          data = JSON.parse(rawText);
+        } catch (jsonErr) {
+          throw new Error('Scout API returned an invalid response. The server may have timed out — please try a simpler query.');
+        }
 
         if (!res.ok) throw new Error(data.error || "Scout failed");
         
@@ -343,7 +362,14 @@ export default function OmniScoutPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input: sanitizedQuery, mode: isUrl ? 'url' : 'search', page: nextPage })
       });
-      const data = await res.json();
+      let data;
+      try {
+        const rawText = await res.text();
+        data = JSON.parse(rawText);
+      } catch (jsonErr) {
+        console.error('[OmniScout] Load more returned non-JSON response');
+        return;
+      }
       if (res.ok && data.type === 'jobs') {
         const existingUrls = new Set(jobs.map((j: any) => j.source_url));
         const newUniqueJobs = data.data.filter((j: any) => !existingUrls.has(j.source_url));

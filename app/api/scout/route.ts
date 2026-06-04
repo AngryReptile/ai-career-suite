@@ -475,6 +475,25 @@ CRITICAL:
     return NextResponse.json(parsedData);
   } catch (error: any) {
     console.error("Omni-Scout API Error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const errorMessage = typeof error?.message === 'string' 
+      ? error.message 
+      : 'An unexpected error occurred in the Scout engine.';
+    
+    // Always return structured JSON so the frontend never encounters plain-text parsing failures
+    return NextResponse.json(
+      { 
+        type: 'research',
+        data: {
+          title: 'Scout Error',
+          summary: errorMessage,
+          key_takeaways: ['The request failed. Please try again with a simpler query or wait a moment.']
+        },
+        error: errorMessage 
+      }, 
+      { 
+        status: 500,
+        headers: { 'Cache-Control': 'no-store' }
+      }
+    );
   }
 }
