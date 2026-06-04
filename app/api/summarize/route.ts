@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import prisma from '@/lib/prisma';
 import { generateWithRetry } from '@/lib/gemini';
+import { execFile } from 'child_process';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -10,6 +12,65 @@ export const revalidate = 0;
 import { YoutubeTranscript } from 'youtube-transcript';
 import { Innertube } from 'youtubei.js';
 import ytdl from '@distube/ytdl-core';
+
+function runPythonTranscript(videoId: string): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const scriptPath = path.join(process.cwd(), 'get_transcript.py');
+    const pythonPaths = [
+      '/Library/Frameworks/Python.framework/Versions/3.13/bin/python3',
+      '/usr/local/bin/python3',
+      '/usr/bin/python3',
+      'python3',
+      'python'
+    ];
+    
+    let index = 0;
+    
+    function tryNext() {
+      if (index >= pythonPaths.length) {
+        return reject(new Error("Python executable not found in paths. Checked: " + pythonPaths.join(', ')));
+      }
+      
+      const pyExec = pythonPaths[index++];
+      console.log(`Trying Python path: ${pyExec} on ${scriptPath}`);
+      
+      execFile(pyExec, [scriptPath, videoId], (error, stdout, stderr) => {
+        if (error) {
+          const isNotFound = (error as any).code === 'ENOENT';
+          if (isNotFound) {
+            return tryNext();
+          }
+          
+          try {
+            const parsed = JSON.parse(stdout);
+            if (parsed && parsed.error) {
+              console.error(`Python script error output:`, parsed.error);
+              return reject(new Error(parsed.error));
+            }
+          } catch (e) {}
+          
+          console.error(`Python execution error for ${pyExec}:`, error.message, stderr);
+          return reject(new Error(stderr || error.message));
+        }
+        
+        try {
+          const parsed = JSON.parse(stdout);
+          if (parsed.success) {
+            resolve(parsed);
+          } else {
+            console.error(`Python script reports failure:`, parsed.error);
+            reject(new Error(parsed.error || "Unknown error"));
+          }
+        } catch (e) {
+          console.error(`Failed to parse Python stdout:`, stdout);
+          reject(new Error("Failed to parse Python script output: " + stdout));
+        }
+      });
+    }
+    
+    tryNext();
+  });
+}
 
 async function getOembedMetadata(videoId: string) {
   try {
@@ -67,6 +128,21 @@ async function extractTranscript(url: string) {
   }
 
   const metadata = { title, author };
+
+  // Attempt 0: Python youtube-transcript-api script (highly reliable PO-token bypass)
+  try {
+    console.log(`Attempting Python youtube-transcript-api for: ${videoId}`);
+    const pyData = await runPythonTranscript(videoId);
+    if (pyData && pyData.transcript && pyData.transcript.length > 0) {
+      console.log(`Successfully extracted transcript using Python youtube-transcript-api for: ${videoId}`);
+      return {
+        transcript: pyData.transcript,
+        metadata
+      };
+    }
+  } catch (err: any) {
+    console.warn(`Python youtube-transcript-api failed for ${videoId}: ${err.message}`);
+  }
 
   // Attempt 1: youtube-transcript (Fastest, uses specialized endpoints)
   try {

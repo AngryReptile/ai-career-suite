@@ -16,6 +16,8 @@ export async function generateWithRetry(
     "gemini-2.5-flash",
     "gemini-2.0-flash",
     "gemini-2.0-flash-lite",
+    "gemini-1.5-flash",
+    "gemini-flash-latest",
     "gemma-4-26b-a4b-it",
     "gemma-4-31b-it"
   ];
@@ -81,11 +83,12 @@ export async function generateWithRetry(
         const isRateLimit = error?.message?.includes('429') || error?.message?.includes('503');
         const isNotFound = error?.message?.includes('404');
 
-        if (isRateLimit && attempt < maxRetries - 1) {
+        const isLimitZero = error?.message?.includes('limit: 0') || error?.message?.includes('limit:0');
+        if (isRateLimit && !isLimitZero && attempt < maxRetries - 1) {
           attempt++;
           // A tiny 2-second delay to prevent spam-banning the API key
           await delay(2000);
-        } else if (isNotFound) {
+        } else if (isNotFound || isLimitZero) {
           break; // Move to next model in list
         } else {
           break; // Move to next model

@@ -100,12 +100,14 @@ export default function TutorView() {
         })
       });
       const data = await res.json();
-      if (data.reply) {
+      if (res.ok && data.reply) {
          setTutorMessages([...newMessages, { role: 'assistant', content: data.reply }]);
          if (data.conversationId && data.conversationId !== activeConversationId) {
              setActiveConversationId(data.conversationId);
          }
          await mutate(); // Refresh sidebar history
+      } else {
+         setTutorMessages([...newMessages, { role: 'assistant', content: data.error || "Failed to retrieve a response from the Tutor." }]);
       }
     } catch (err) {
        console.error(err);
